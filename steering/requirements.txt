@@ -1,0 +1,3 @@
+numpy
+huggingface_hub
+# torch / transformers / peft / bitsandbytes : voir ../training/requirements.txt
