@@ -179,7 +179,7 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
                                            "groupe": opp, "texte": cri,
                                            "interjection": True})
                         if verbose:
-                            print(f"      ↯ {heckler.nom} ({opp}) : {cri[:90]}")
+                            print(f"      >> {heckler.nom} ({opp}) : {cri[:90]}")
         for a in agents:
             a.fj_update(heard, affinites)
         last_speakers = round_speakers
