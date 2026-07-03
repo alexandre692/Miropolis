@@ -23,14 +23,20 @@
   #texte h2{margin:0 0 6px;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--ink2)}
   #texte .t{font-size:13px;color:#cfd5e3}
   #texte .meta{margin-top:8px;font-size:11.5px;color:var(--ink2);border-top:1px solid var(--line);padding-top:6px}
-  #speech{left:50%;transform:translateX(-50%);bottom:86px;width:min(720px,88vw);
-    background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 17px;display:none}
-  #speech .who{font-weight:600;font-size:14px;display:flex;align-items:center;gap:8px}
-  #speech .chip{display:inline-block;width:10px;height:10px;border-radius:3px}
-  #speech .grp{color:var(--ink2);font-size:12px}
-  #speech .txt{margin-top:6px;font-size:14px;color:#d5dae6;max-height:110px;overflow-y:auto}
-  #speech.interj{border-color:#8a4a52}
-  #speech.interj .txt{font-style:italic}
+  /* fil du débat : les interventions DÉROULENT à droite, sous le tally */
+  #feed{right:16px;top:315px;bottom:64px;width:300px;background:var(--panel);
+    border:1px solid var(--line);border-radius:12px;padding:10px 0 10px 12px;
+    display:flex;flex-direction:column}
+  #feed h2{margin:0 0 6px;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--ink2)}
+  #feed .scroll{overflow-y:auto;flex:1;padding-right:10px}
+  .msg{margin:0 0 10px;padding:8px 10px;background:#20242f;border-radius:10px;font-size:12.5px}
+  .msg .who{font-weight:600;font-size:12.5px;display:flex;align-items:center;gap:6px}
+  .msg .chip{display:inline-block;width:9px;height:9px;border-radius:3px;flex:none}
+  .msg .grp{color:var(--ink2);font-size:11px;font-weight:400}
+  .msg .txt{margin-top:4px;color:#cdd3e0}
+  .msg.interj{background:#2b2027;font-style:italic}
+  .msg.pres{background:#242a3d}
+  .msg.pres .txt{color:var(--ink2)}
   #tally{top:76px;right:16px;width:225px;background:var(--panel);border:1px solid var(--line);
     border-radius:12px;padding:12px 14px}
   #tally h2{margin:0 0 8px;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--ink2)}
@@ -83,11 +89,7 @@
   <div id="verdict"></div>
 </div>
 
-<div class="hud" id="speech">
-  <div class="who"><span class="chip" id="s-chip"></span><span id="s-nom"></span>
-    <span class="grp" id="s-grp"></span></div>
-  <div class="txt" id="s-txt"></div>
-</div>
+<div class="hud" id="feed"><h2>Débat en séance</h2><div class="scroll" id="feed-scroll"></div></div>
 
 <div class="hud" id="legend"></div>
 
@@ -119,15 +121,17 @@ const GROUP_COLOR = {
 
 /* ---------- scène ---------- */
 const canvas = document.getElementById('scene');
-const renderer = new THREE.WebGLRenderer({canvas, antialias:true});
-renderer.setPixelRatio(Math.min(devicePixelRatio,1.5)); // perf
+const renderer = new THREE.WebGLRenderer({canvas, antialias:false,
+  powerPreference:'high-performance'});
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.25)); // perf (GPU intégrés)
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x14161f);
 scene.fog = new THREE.Fog(0x14161f, 70, 150);
 const cam = new THREE.PerspectiveCamera(48, 1, .1, 400);
 
-/* caméra côté perchoir : on regarde l'hémicycle DE FACE (vue de la présidence) */
-let az=Math.PI, el=.42, dist=38, target=new THREE.Vector3(0,1.4,10);
+/* caméra côté perchoir : on regarde l'hémicycle DE FACE (vue de la présidence),
+   avec du recul — l'amphithéâtre monte en hauteur */
+let az=Math.PI, el=.34, dist=52, target=new THREE.Vector3(0,2.6,11);
 function placeCam(){
   cam.position.set(target.x+dist*Math.cos(el)*Math.sin(az),
                    target.y+dist*Math.sin(el),
@@ -157,6 +161,15 @@ floor.rotation.x=-Math.PI/2; floor.position.z=8; scene.add(floor);
 const dais = new THREE.Mesh(new THREE.BoxGeometry(8,1.1,2.6),
   new THREE.MeshLambertMaterial({color:0x272c3e}));
 dais.position.set(0,.55,-2.2); scene.add(dais);
+/* la présidente de séance, au perchoir */
+const presidente=new THREE.Group();
+const pTorso=new THREE.Mesh(new THREE.BoxGeometry(.5,.95,.34),
+  new THREE.MeshStandardMaterial({color:0xbfc6da, emissive:0xbfc6da, emissiveIntensity:.05, roughness:.5}));
+pTorso.position.y=.48; presidente.add(pTorso);
+const pHead=new THREE.Mesh(new THREE.SphereGeometry(.17,10,8),
+  new THREE.MeshLambertMaterial({color:0xe8d6c0}));
+pHead.position.y=1.13; presidente.add(pHead);
+presidente.position.set(0,1.1,-2.2); presidente.rotation.y=0; scene.add(presidente);
 
 /* ---------- hémicycle : bonhommes instanciés ---------- */
 const ROWS=8, R0=10, DR=2.3, A0=Math.PI-0.18, A1=0.18;
@@ -184,12 +197,20 @@ function buildHemicycle(run){
     for(let i=0;i<cap;i++){const f=cap===1?.5:i/(cap-1); slots.push({r, ang:A1+(A0-A1)*f});}
   }
   slots.sort((a,b)=>a.ang-b.ang || a.r-b.r);
-  // gradins (anneaux) pour asseoir visuellement les rangées
+  // gradins en AMPHITHÉÂTRE : plateau + contremarche par rangée
+  const STEP=.62;
   for(let r=0;r<ROWS;r++){
+    const y=.02+r*STEP;
     const ring=new THREE.Mesh(
-      new THREE.RingGeometry(R0+r*DR-0.9, R0+r*DR+0.9, 48, 1, A1, A0-A1),
+      new THREE.RingGeometry(R0+r*DR-1.05, R0+r*DR+1.05, 48, 1, A1, A0-A1),
       new THREE.MeshLambertMaterial({color:0x20242f}));
-    ring.rotation.x=-Math.PI/2; ring.position.y=.02+r*.34; rowsGroup.add(ring);
+    ring.rotation.x=-Math.PI/2; ring.position.y=y; rowsGroup.add(ring);
+    if(r>0){
+      const riser=new THREE.Mesh(
+        new THREE.CylinderGeometry(R0+r*DR-1.05, R0+r*DR-1.05, STEP, 48, 1, true, A1-Math.PI/2, A0-A1),
+        new THREE.MeshLambertMaterial({color:0x1a1d28, side:THREE.DoubleSide}));
+      riser.position.y=y-STEP/2; rowsGroup.add(riser);
+    }
   }
   // instanced : torse assis + tête
   const torsoGeo=new THREE.BoxGeometry(.5,.55,.34);
@@ -199,7 +220,7 @@ function buildHemicycle(run){
   const c=new THREE.Color();
   slots.slice(0,N).forEach((s,k)=>{
     const d=deps[k];
-    const radius=R0+s.r*DR, y=.02+s.r*.34;
+    const radius=R0+s.r*DR, y=.02+s.r*.62;
     const x=Math.cos(s.ang)*radius, z=0.5+Math.sin(s.ang)*radius;
     const rotY=Math.atan2(x-0, z-(-2)); // face au perchoir
     seatData.push({d, x, y, z, rotY});
@@ -279,8 +300,28 @@ function tallyRows(run, current){
 
 /* ---------- replay ---------- */
 let events=[], idx=-1, playing=false, speed=1;
+const PRESIDENTE="Yaël Braun-Pivet";
+function buildEvents(run){
+  // la présidente de séance donne la parole avant chaque orateur (pas avant
+  // les interjections, qui fusent) — comme dans le vrai compte rendu
+  const out=[{presidence:true, nom:PRESIDENTE,
+              texte:"La séance est ouverte. L'ordre du jour appelle la discussion sur : "
+                    +(run.scrutin?.titre||"")+"."}];
+  for(const ev of run.transcript){
+    if(!ev.interjection){
+      const civ=/^(Mme|Marie|Anne|Nathalie|Sophie|Clémence|Mathilde|Eva|Cyrielle|Sandrine|Danielle|Elsa|Ségolène|Christine|Émilie|Julie|Laure|Sabrina|Karen|Alma|Andrée|Béatrice|Blandine)/.test(ev.nom)?"Mme":"M.";
+      out.push({presidence:true, nom:PRESIDENTE,
+                texte:`La parole est à ${civ} ${ev.nom}, pour le groupe ${ev.groupe}.`});
+    }
+    out.push(ev);
+  }
+  out.push({presidence:true, nom:PRESIDENTE,
+            texte:"La discussion est close. Je mets aux voix."});
+  return out;
+}
 function prepare(run){
-  events=run.transcript;
+  events=buildEvents(run);
+  $('feed-scroll').innerHTML='';
   $('prog').max=Math.max(events.length-1,1);
   $('t-titre').textContent='Miropolis — scrutin '+(run.scrutin?.uid||'');
   $('t-sub').textContent=`${run.deputes.length} députés · ${events.length} prises de parole · thème ${run.scrutin?.theme||'?'}`;
@@ -295,34 +336,59 @@ function opinionAt(frac){
   RUN.deputes.forEach(d=>{for(const p in t){t[p]+=d.opinion0[p]+(d.opinion[p]-d.opinion0[p])*frac;}});
   return t;
 }
+let typer=null;
+function feedMsg(ev){
+  const div=document.createElement('div');
+  div.className='msg'+(ev.interjection?' interj':'')+(ev.presidence?' pres':'');
+  const chip=ev.presidence?'#bfc6da':(GROUP_COLOR[ev.groupe]||'#666');
+  const grp=ev.presidence?'présidente de séance':ev.groupe+(ev.interjection?' — interjection':'');
+  div.innerHTML=`<div class="who"><span class="chip" style="background:${chip}"></span>
+    ${ev.interjection?'💥 ':''}${ev.nom} <span class="grp">${grp}</span></div><div class="txt"></div>`;
+  $('feed-scroll').appendChild(div);
+  // le texte DÉROULE (machine à écrire), le fil auto-scrolle
+  const txt=div.querySelector('.txt'); let c=0;
+  if(typer) clearInterval(typer);
+  typer=setInterval(()=>{
+    c=Math.min(ev.texte.length, c+3);
+    txt.textContent=ev.texte.slice(0,c);
+    $('feed-scroll').scrollTop=$('feed-scroll').scrollHeight;
+    if(c>=ev.texte.length) clearInterval(typer);
+  }, 16/Math.min(speed,2));
+}
 function showEvent(i){
   idx=i; $('prog').value=i;
   const ev=events[i]; if(!ev) return;
-  const k=seatData.findIndex(s=>s.d.nom===ev.nom);
-  if(lastIdx>=0) setSeatVisible(lastIdx,true);
-  if(k>=0){
-    const s=seatData[k];
-    setSeatVisible(k,false);            // il quitte son siège…
-    standing.visible=true;               // …et se lève
-    standing.position.set(s.x,s.y,s.z);
-    standing.rotation.y=s.rotY;
-    const col=new THREE.Color(GROUP_COLOR[s.d.groupe]||'#666');
-    standing.children[0].material.color.copy(col);
-    standing.children[0].material.emissive.copy(col);
-    standingHead.material.color.copy(col.clone().lerp(new THREE.Color('#e8d6c0'),.55));
-    spot.visible=true; spot.position.set(s.x,15,s.z+3);
-    spot.target.position.set(s.x,1,s.z); spot.intensity=300;
-    influenceArcs(s, RUN);
-    const lean=Math.max(-.35,Math.min(.35,Math.atan2(s.x,26)));
-    az+=((Math.PI-lean)-az)*.35; placeCam();
-    lastIdx=k;
+  if(ev.presidence){
+    // la présidente parle : orateur rassis, focus perchoir
+    if(lastIdx>=0){setSeatVisible(lastIdx,true); lastIdx=-1;}
+    standing.visible=false; clearArcs();
+    pTorso.material.emissiveIntensity=.5;
+    spot.visible=true; spot.position.set(0,14,2);
+    spot.target.position.set(0,1.5,-2.2); spot.intensity=250;
+    az+=(Math.PI-az)*.4; placeCam();
+  } else {
+    pTorso.material.emissiveIntensity=.05;
+    const k=seatData.findIndex(s=>s.d.nom===ev.nom);
+    if(lastIdx>=0) setSeatVisible(lastIdx,true);
+    if(k>=0){
+      const s=seatData[k];
+      setSeatVisible(k,false);            // il quitte son siège…
+      standing.visible=true;               // …et se lève
+      standing.position.set(s.x,s.y,s.z);
+      standing.rotation.y=s.rotY;
+      const col=new THREE.Color(GROUP_COLOR[s.d.groupe]||'#666');
+      standing.children[0].material.color.copy(col);
+      standing.children[0].material.emissive.copy(col);
+      standingHead.material.color.copy(col.clone().lerp(new THREE.Color('#e8d6c0'),.55));
+      spot.visible=true; spot.position.set(s.x,15,s.z+3);
+      spot.target.position.set(s.x,1,s.z); spot.intensity=300;
+      influenceArcs(s, RUN);
+      const lean=Math.max(-.35,Math.min(.35,Math.atan2(s.x,26)));
+      az+=((Math.PI-lean)-az)*.35; placeCam();
+      lastIdx=k;
+    }
   }
-  const sp=$('speech'); sp.style.display='block';
-  sp.className=ev.interjection?'hud interj':'hud';
-  $('s-chip').style.background=GROUP_COLOR[ev.groupe]||'#666';
-  $('s-nom').textContent=(ev.interjection?'💥 ':'')+ev.nom;
-  $('s-grp').textContent=ev.groupe+(ev.interjection?' — interjection':'');
-  $('s-txt').textContent=ev.texte;
+  feedMsg(ev);
   tallyRows(RUN, opinionAt((i+1)/events.length));
   if(i>=events.length-1) finish();
 }
@@ -340,18 +406,34 @@ function tick(){
   if(playing){
     if(idx<events.length-1) showEvent(idx+1); else {playing=false; return;}
     const ev=events[idx];
-    const delay=(ev?.interjection?1600:4200)/speed;
+    const delay=(ev?.presidence?2300:ev?.interjection?1600:4200)/speed;
     if(playing) setTimeout(tick, delay);
   }
 }
+function rebuildFeed(upto){
+  if(typer) clearInterval(typer);
+  $('feed-scroll').innerHTML='';
+  for(let j=0;j<=upto;j++){
+    const ev=events[j]; if(!ev) continue;
+    const div=document.createElement('div');
+    div.className='msg'+(ev.interjection?' interj':'')+(ev.presidence?' pres':'');
+    const chip=ev.presidence?'#bfc6da':(GROUP_COLOR[ev.groupe]||'#666');
+    const grp=ev.presidence?'présidente de séance':ev.groupe+(ev.interjection?' — interjection':'');
+    div.innerHTML=`<div class="who"><span class="chip" style="background:${chip}"></span>
+      ${ev.interjection?'💥 ':''}${ev.nom} <span class="grp">${grp}</span></div>
+      <div class="txt">${ev.texte}</div>`;
+    $('feed-scroll').appendChild(div);
+  }
+  $('feed-scroll').scrollTop=$('feed-scroll').scrollHeight;
+}
 $('b-play').onclick=()=>{
-  if(idx>=events.length-1){idx=-1;$('verdict').style.display='none';}
+  if(idx>=events.length-1){idx=-1;$('verdict').style.display='none';$('feed-scroll').innerHTML='';}
   playing=!playing; $('b-play').textContent=playing?'⏸ Pause':'▶ Lancer la séance';
   if(playing) tick();
 };
 $('b-next').onclick=()=>{playing=false;showEvent(Math.min(idx+1,events.length-1));};
-$('b-prev').onclick=()=>{playing=false;showEvent(Math.max(idx-1,0));};
-$('prog').oninput=e=>{playing=false;showEvent(+e.target.value);};
+$('b-prev').onclick=()=>{playing=false;rebuildFeed(Math.max(idx-1,0)-1);showEvent(Math.max(idx-1,0));};
+$('prog').oninput=e=>{playing=false;rebuildFeed(+e.target.value-1);showEvent(+e.target.value);};
 $('b-speed').onclick=e=>{speed=speed>=4?1:speed*2;e.target.textContent='×'+speed;};
 $('file').onchange=e=>{
   const f=e.target.files[0]; if(!f)return;
