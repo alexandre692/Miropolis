@@ -3,3 +3,4 @@ __pycache__/
 training/out/
 .venv/
 data_cr/
+runs/
