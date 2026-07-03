@@ -63,11 +63,29 @@ def _call(model, messages, temperature=0.7, max_tokens=400, json_mode=False,
                          "X-Title": "Miropolis"})
             with urllib.request.urlopen(req, timeout=120) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
-            return data["choices"][0]["message"]["content"]
-        except Exception as e:  # réseau/quota : backoff simple
+            content = data["choices"][0]["message"]["content"]
+            if content is None:  # refus/filtre du modèle : contenu vide renvoyé tel quel
+                raise RuntimeError(f"contenu vide renvoyé par {model} (refus/filtre probable)")
+            return content
+        except Exception as e:  # réseau/quota/contenu vide : backoff simple
             last_err = e
             time.sleep(2 * (attempt + 1))
     raise RuntimeError(f"OpenRouter KO après {retries} essais : {last_err}")
+
+
+def _extract_intervention(raw):
+    """Isole le texte dans <intervention>...</intervention> et retire toute
+    balise résiduelle. Tolérant à la troncature par max_tokens (balise
+    ouverte jamais refermée) et au markdown autour des balises (**<...>**).
+    Si la réflexion elle-même est tronquée (jamais fermée), on garde son
+    contenu plutôt que de renvoyer du vide — dégradé vaut mieux que blanc."""
+    m = re.search(r"<intervention>(.*?)(?:</intervention>|$)", raw, re.S)
+    if m:
+        text = m.group(1)
+    else:
+        text = re.sub(r"<reflexion>.*?</reflexion>", "", raw, flags=re.S)
+    return re.sub(r"\*{0,2}</?(?:intervention|reflexion)>\*{0,2}", "", text,
+                  flags=re.I).strip()
 
 
 def _parse_probs(text):
@@ -188,9 +206,7 @@ class OpenRouterBrain:
                         [{"role": "system", "content": system},
                          {"role": "user", "content": user}],
                         temperature=0.85, max_tokens=max_tokens)
-            m = re.search(r"<intervention>(.*?)</intervention>", raw, re.S)
-            return (m.group(1) if m else re.sub(
-                r"<reflexion>.*?</reflexion>", "", raw, flags=re.S)).strip()
+            return _extract_intervention(raw)
         except RuntimeError as e:
             return f"[intervention indisponible : {e}]"
 
