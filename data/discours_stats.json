@@ -1,0 +1,241 @@
+{
+  "seances": 580,
+  "interventions_gardees": 71500,
+  "interventions_courtes_exclues": 79791,
+  "paroles_de_fauteuil_exclues": 84470,
+  "paragraphes_non_deputes": 72739,
+  "par_groupe": {
+    "LFI-NFP": {
+      "interventions": 32228,
+      "chars_corpus": 13148836
+    },
+    "DR": {
+      "interventions": 21351,
+      "chars_corpus": 7890855
+    },
+    "RN": {
+      "interventions": 20176,
+      "chars_corpus": 7737193
+    },
+    "EPR": {
+      "interventions": 19062,
+      "chars_corpus": 9090785
+    },
+    "ECOS": {
+      "interventions": 17007,
+      "chars_corpus": 7074954
+    },
+    "SOC": {
+      "interventions": 13196,
+      "chars_corpus": 7069180
+    },
+    "DEM": {
+      "interventions": 8195,
+      "chars_corpus": 4643686
+    },
+    "GDR": {
+      "interventions": 6454,
+      "chars_corpus": 3912168
+    },
+    "LIOT": {
+      "interventions": 4788,
+      "chars_corpus": 3941293
+    },
+    "HOR": {
+      "interventions": 4650,
+      "chars_corpus": 3527379
+    },
+    "UDDPLR": {
+      "interventions": 3604,
+      "chars_corpus": 2583759
+    },
+    "NI": {
+      "interventions": 580,
+      "chars_corpus": 556598
+    }
+  },
+  "deputes_couverts": 573,
+  "top30_deputes": [
+    {
+      "acteur": "PA642847",
+      "nom": "Thibault Bazin",
+      "interventions": 3935,
+      "chars_corpus": 1477568
+    },
+    {
+      "acteur": "PA346782",
+      "nom": "Philippe Juvin",
+      "interventions": 2520,
+      "chars_corpus": 836263
+    },
+    {
+      "acteur": "PA795746",
+      "nom": "Antoine Léaument",
+      "interventions": 2419,
+      "chars_corpus": 559490
+    },
+    {
+      "acteur": "PA720430",
+      "nom": "Ugo Bernalicis",
+      "interventions": 2239,
+      "chars_corpus": 616512
+    },
+    {
+      "acteur": "PA794954",
+      "nom": "Emeric Salmon",
+      "interventions": 2162,
+      "chars_corpus": 99570
+    },
+    {
+      "acteur": "PA794802",
+      "nom": "Charles Sitzenstuhl",
+      "interventions": 1999,
+      "chars_corpus": 775277
+    },
+    {
+      "acteur": "PA793736",
+      "nom": "Hadrien Clouet",
+      "interventions": 1705,
+      "chars_corpus": 662397
+    },
+    {
+      "acteur": "PA942",
+      "nom": "Charles de Courson",
+      "interventions": 1686,
+      "chars_corpus": 818753
+    },
+    {
+      "acteur": "PA331582",
+      "nom": "Philippe Vigier",
+      "interventions": 1642,
+      "chars_corpus": 570135
+    },
+    {
+      "acteur": "PA795636",
+      "nom": "Benjamin Lucas-Lundy",
+      "interventions": 1536,
+      "chars_corpus": 228981
+    },
+    {
+      "acteur": "PA608416",
+      "nom": "Patrick Hetzel",
+      "interventions": 1524,
+      "chars_corpus": 605012
+    },
+    {
+      "acteur": "PA794598",
+      "nom": "Laurent Jacobelli",
+      "interventions": 1390,
+      "chars_corpus": 157422
+    },
+    {
+      "acteur": "PA795318",
+      "nom": "Louis Boyard",
+      "interventions": 1362,
+      "chars_corpus": 640530
+    },
+    {
+      "acteur": "PA718850",
+      "nom": "Pierre Cordier",
+      "interventions": 1359,
+      "chars_corpus": 55526
+    },
+    {
+      "acteur": "PA795778",
+      "nom": "Jean-Philippe Tanguy",
+      "interventions": 1300,
+      "chars_corpus": 588017
+    },
+    {
+      "acteur": "PA342384",
+      "nom": "Élisa Martin",
+      "interventions": 1291,
+      "chars_corpus": 496068
+    },
+    {
+      "acteur": "PA795136",
+      "nom": "Jean-François Coulomme",
+      "interventions": 1248,
+      "chars_corpus": 305515
+    },
+    {
+      "acteur": "PA335612",
+      "nom": "Jean-Paul Lecoq",
+      "interventions": 1244,
+      "chars_corpus": 294351
+    },
+    {
+      "acteur": "PA794138",
+      "nom": "Ségolène Amiot",
+      "interventions": 1221,
+      "chars_corpus": 273527
+    },
+    {
+      "acteur": "PA605745",
+      "nom": "Nicolas Sansu",
+      "interventions": 1175,
+      "chars_corpus": 373086
+    },
+    {
+      "acteur": "PA817211",
+      "nom": "René Pilato",
+      "interventions": 1162,
+      "chars_corpus": 165125
+    },
+    {
+      "acteur": "PA720892",
+      "nom": "Mathilde Panot",
+      "interventions": 1122,
+      "chars_corpus": 262117
+    },
+    {
+      "acteur": "PA717379",
+      "nom": "Sylvain Maillard",
+      "interventions": 1115,
+      "chars_corpus": 67155
+    },
+    {
+      "acteur": "PA266797",
+      "nom": "Philippe Gosselin",
+      "interventions": 1108,
+      "chars_corpus": 312203
+    },
+    {
+      "acteur": "PA841515",
+      "nom": "Aurélien Le Coq",
+      "interventions": 1097,
+      "chars_corpus": 358069
+    },
+    {
+      "acteur": "PA796018",
+      "nom": "Danielle Simonnet",
+      "interventions": 1080,
+      "chars_corpus": 289857
+    },
+    {
+      "acteur": "PA642988",
+      "nom": "Hervé de Lépinau",
+      "interventions": 1054,
+      "chars_corpus": 213164
+    },
+    {
+      "acteur": "PA793780",
+      "nom": "Christine Arrighi",
+      "interventions": 1054,
+      "chars_corpus": 216271
+    },
+    {
+      "acteur": "PA721202",
+      "nom": "Éric Coquerel",
+      "interventions": 1053,
+      "chars_corpus": 767048
+    },
+    {
+      "acteur": "PA719558",
+      "nom": "Erwan Balanant",
+      "interventions": 1002,
+      "chars_corpus": 179451
+    }
+  ],
+  "min_chars_corpus": 200
+}

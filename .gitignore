@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 training/out/
 .venv/
+data_cr/
