@@ -1,0 +1,50 @@
+{
+  "theme_counts_scrutins": {
+    "justice_institutions": 348,
+    "international_défense": 416,
+    "autre": 3172,
+    "santé": 951,
+    "fiscalité_finances": 1659,
+    "outre_mer": 371,
+    "agriculture_ruralité": 456,
+    "travail_social": 160,
+    "écologie_énergie": 326,
+    "immigration_sécurité": 18,
+    "logement": 69,
+    "éducation_recherche": 32
+  },
+  "salience_counts_scrutins": {
+    "basse": 6819,
+    "moyenne": 936,
+    "haute": 223
+  },
+  "total_group_scrutin_examples": 84662,
+  "sampled_total": 7930,
+  "sampled_salience": {
+    "moyenne": 3729,
+    "haute": 1886,
+    "basse": 2315
+  },
+  "sampled_theme": {
+    "justice_institutions": 841,
+    "autre": 1565,
+    "fiscalité_finances": 926,
+    "travail_social": 516,
+    "international_défense": 577,
+    "écologie_énergie": 537,
+    "agriculture_ruralité": 603,
+    "santé": 978,
+    "outre_mer": 687,
+    "éducation_recherche": 297,
+    "logement": 299,
+    "immigration_sécurité": 104
+  },
+  "sampled_cohesion": {
+    "modérée": 454,
+    "unanime": 6502,
+    "forte": 669,
+    "divisé": 305
+  },
+  "train": 7137,
+  "val": 793
+}
