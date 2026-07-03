@@ -203,7 +203,7 @@ class OpenRouterBrain:
             f"« {target_text[:300]} ». Lance UNE interjection d'une phrase, "
             "vive mais dans le registre parlementaire réel (pas d'insulte).")}]
         try:
-            return _call(self._dep_model(agent.groupe), messages,
+            return _call(self._dep_model(agent), messages,
                          temperature=1.0, max_tokens=max_tokens).strip()
         except RuntimeError:
             return "(Protestations.)"
