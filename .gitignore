@@ -6,3 +6,4 @@ training/out/gemma-deputes-lora/checkpoint-*/
 .venv/
 data_cr/
 runs/
+.env
