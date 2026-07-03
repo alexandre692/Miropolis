@@ -5,48 +5,53 @@
 <title>Miropolis — Séance simulée</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  /* Palette groupes validée (dark, CVD 9.8–12 avec encodage secondaire :
+  /* Palette groupes validée (dark, CVD ok avec encodage secondaire :
      blocs spatiaux contigus + légende + labels au survol). */
   :root{
-    --bg:#14161f; --panel:#1c1f2bE6; --ink:#E6E9F0; --ink2:#9aa3b5; --line:#2a2f3f;
+    --bg:#14161f; --panel:rgba(24,27,38,.94); --ink:#E6E9F0; --ink2:#9aa3b5; --line:#2a2f3f;
   }
   html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
     font:14px/1.45 "Segoe UI",system-ui,sans-serif;overflow:hidden}
   #scene{position:fixed;inset:0}
   .hud{position:fixed;z-index:10}
-  #titlebar{top:0;left:0;right:0;padding:14px 20px;background:linear-gradient(#14161fF2,#14161f00);}
-  #titlebar h1{margin:0;font-size:17px;font-weight:600;letter-spacing:.2px}
-  #titlebar .sub{color:var(--ink2);font-size:12.5px;margin-top:2px}
-  #speech{left:50%;transform:translateX(-50%);bottom:86px;width:min(760px,92vw);
-    background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px;
-    backdrop-filter:blur(6px);display:none}
+  #titlebar{top:0;left:0;right:0;padding:12px 20px;background:linear-gradient(#14161fF2,#14161f00);}
+  #titlebar h1{margin:0;font-size:16px;font-weight:600;letter-spacing:.2px;white-space:nowrap;
+    overflow:hidden;text-overflow:ellipsis}
+  #titlebar .sub{color:var(--ink2);font-size:12px;margin-top:2px}
+  #texte{top:76px;left:16px;width:270px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:12px 14px;max-height:52vh;overflow-y:auto}
+  #texte h2{margin:0 0 6px;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--ink2)}
+  #texte .t{font-size:13px;color:#cfd5e3}
+  #texte .meta{margin-top:8px;font-size:11.5px;color:var(--ink2);border-top:1px solid var(--line);padding-top:6px}
+  #speech{left:50%;transform:translateX(-50%);bottom:86px;width:min(720px,88vw);
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 17px;display:none}
   #speech .who{font-weight:600;font-size:14px;display:flex;align-items:center;gap:8px}
   #speech .chip{display:inline-block;width:10px;height:10px;border-radius:3px}
   #speech .grp{color:var(--ink2);font-size:12px}
-  #speech .txt{margin-top:6px;font-size:14.5px;color:#d5dae6}
+  #speech .txt{margin-top:6px;font-size:14px;color:#d5dae6;max-height:110px;overflow-y:auto}
   #speech.interj{border-color:#8a4a52}
   #speech.interj .txt{font-style:italic}
-  #tally{top:64px;right:16px;width:230px;background:var(--panel);border:1px solid var(--line);
+  #tally{top:76px;right:16px;width:225px;background:var(--panel);border:1px solid var(--line);
     border-radius:12px;padding:12px 14px}
-  #tally h2{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--ink2)}
+  #tally h2{margin:0 0 8px;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--ink2)}
   .trow{margin:7px 0}
   .trow .lab{display:flex;justify-content:space-between;font-size:12px;color:var(--ink2)}
   .trow .lab b{color:var(--ink);font-weight:600}
   .bar{height:7px;border-radius:4px;background:#232736;margin-top:3px;position:relative;overflow:visible}
   .bar .fill{height:100%;border-radius:4px;background:#aeb9d6;transition:width .4s}
   .bar .real{position:absolute;top:-3px;width:2px;height:13px;background:#fff;border-radius:1px}
-  #tally .foot{margin-top:10px;font-size:11.5px;color:var(--ink2);border-top:1px solid var(--line);padding-top:8px}
+  #tally .foot{margin-top:10px;font-size:11px;color:var(--ink2);border-top:1px solid var(--line);padding-top:8px}
   #verdict{margin-top:8px;font-size:12.5px;display:none}
   #legend{left:16px;bottom:16px;background:var(--panel);border:1px solid var(--line);
-    border-radius:12px;padding:10px 12px;max-width:210px}
-  #legend .g{display:inline-flex;align-items:center;gap:5px;margin:3px 8px 3px 0;font-size:11.5px;color:var(--ink2)}
+    border-radius:12px;padding:9px 11px;max-width:200px}
+  #legend .g{display:inline-flex;align-items:center;gap:5px;margin:2px 7px 2px 0;font-size:11px;color:var(--ink2)}
   #legend .chip{width:9px;height:9px;border-radius:3px;display:inline-block}
   #controls{left:50%;transform:translateX(-50%);bottom:16px;display:flex;align-items:center;gap:10px;
     background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 14px}
   #controls button{background:#262b3c;color:var(--ink);border:1px solid var(--line);border-radius:8px;
     padding:5px 12px;font-size:13px;cursor:pointer}
   #controls button:hover{background:#303650}
-  #prog{width:200px;accent-color:#aeb9d6}
+  #prog{width:190px;accent-color:#aeb9d6}
   #tip{position:fixed;z-index:20;background:#0f1118F2;border:1px solid var(--line);border-radius:8px;
     padding:8px 10px;font-size:12px;pointer-events:none;display:none;max-width:240px}
   #tip .n{font-weight:600}
@@ -61,6 +66,12 @@
 
 <div class="hud" id="titlebar"><h1 id="t-titre">Miropolis</h1>
   <div class="sub" id="t-sub">simulation projective de séance — Assemblée nationale</div></div>
+
+<div class="hud" id="texte">
+  <h2>Texte en débat</h2>
+  <div class="t" id="x-titre"></div>
+  <div class="meta" id="x-meta"></div>
+</div>
 
 <div class="hud" id="drop"><label>charger un autre run (runs/*.json)<input type="file" id="file" accept=".json"></label></div>
 
@@ -109,14 +120,14 @@ const GROUP_COLOR = {
 /* ---------- scène ---------- */
 const canvas = document.getElementById('scene');
 const renderer = new THREE.WebGLRenderer({canvas, antialias:true});
-renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.5)); // perf
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x14161f);
-scene.fog = new THREE.Fog(0x14161f, 60, 140);
-const cam = new THREE.PerspectiveCamera(46, 1, .1, 400);
+scene.fog = new THREE.Fog(0x14161f, 70, 150);
+const cam = new THREE.PerspectiveCamera(48, 1, .1, 400);
 
-/* orbite simple (drag + molette) */
-let az=0, el=.62, dist=46, target=new THREE.Vector3(0,1.2,6);
+/* caméra côté perchoir : on regarde l'hémicycle DE FACE (vue de la présidence) */
+let az=Math.PI, el=.42, dist=38, target=new THREE.Vector3(0,1.4,10);
 function placeCam(){
   cam.position.set(target.x+dist*Math.cos(el)*Math.sin(az),
                    target.y+dist*Math.sin(el),
@@ -124,97 +135,128 @@ function placeCam(){
   cam.lookAt(target);
 }
 let drag=null;
+const mouse=new THREE.Vector2(-2,-2);
 canvas.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY};});
 addEventListener('pointerup',()=>drag=null);
 addEventListener('pointermove',e=>{
-  if(drag){az-=(e.clientX-drag.x)*.005; el=Math.min(1.35,Math.max(.15,el+(e.clientY-drag.y)*.004));
+  if(drag){az-=(e.clientX-drag.x)*.005; el=Math.min(1.35,Math.max(.12,el+(e.clientY-drag.y)*.004));
     drag={x:e.clientX,y:e.clientY}; placeCam();}
   mouse.x=(e.clientX/innerWidth)*2-1; mouse.y=-(e.clientY/innerHeight)*2+1;
 });
-canvas.addEventListener('wheel',e=>{dist=Math.min(90,Math.max(18,dist+e.deltaY*.02)); placeCam();},{passive:true});
+canvas.addEventListener('wheel',e=>{dist=Math.min(90,Math.max(15,dist+e.deltaY*.02)); placeCam();},{passive:true});
 
-scene.add(new THREE.HemisphereLight(0x8899cc, 0x11131c, 1.0));
-const key = new THREE.DirectionalLight(0xffffff, 1.5); key.position.set(-14,26,18); scene.add(key);
-const spot = new THREE.SpotLight(0xfff2d0, 0, 60, .32, .5, 1.2); spot.visible=false;
+scene.add(new THREE.HemisphereLight(0x8899cc, 0x11131c, 1.05));
+const key = new THREE.DirectionalLight(0xffffff, 1.4); key.position.set(-14,26,30); scene.add(key);
+const spot = new THREE.SpotLight(0xfff2d0, 0, 60, .3, .5, 1.1); spot.visible=false;
 scene.add(spot); scene.add(spot.target);
 
-/* sol + tribune */
-const floor = new THREE.Mesh(new THREE.CircleGeometry(42, 72, Math.PI, Math.PI),
-  new THREE.MeshStandardMaterial({color:0x1b1e2b, roughness:.9}));
-floor.rotation.x = -Math.PI/2; floor.position.z = 6; scene.add(floor);
-const dais = new THREE.Mesh(new THREE.BoxGeometry(9,1.6,3.4),
-  new THREE.MeshStandardMaterial({color:0x2a2f42, roughness:.7}));
-dais.position.set(0,.8,-1.4); scene.add(dais);
-const pupitre = new THREE.Mesh(new THREE.BoxGeometry(2.2,1.1,1.2),
-  new THREE.MeshStandardMaterial({color:0x39415c, roughness:.6}));
-pupitre.position.set(0,1.95,-1.0); scene.add(pupitre);
+/* sol + perchoir (dans notre dos) + gradins */
+const floor = new THREE.Mesh(new THREE.CircleGeometry(44, 64),
+  new THREE.MeshLambertMaterial({color:0x1b1e2b}));
+floor.rotation.x=-Math.PI/2; floor.position.z=8; scene.add(floor);
+const dais = new THREE.Mesh(new THREE.BoxGeometry(8,1.1,2.6),
+  new THREE.MeshLambertMaterial({color:0x272c3e}));
+dais.position.set(0,.55,-2.2); scene.add(dais);
 
-/* ---------- hémicycle ---------- */
-let seats=[], seatMeshes=new THREE.Group(), arcsGroup=new THREE.Group();
-scene.add(seatMeshes); scene.add(arcsGroup);
-const raycaster=new THREE.Raycaster(), mouse=new THREE.Vector2(-2,-2);
+/* ---------- hémicycle : bonhommes instanciés ---------- */
+const ROWS=8, R0=10, DR=2.3, A0=Math.PI-0.18, A1=0.18;
+let seatData=[];               // {d, x,y,z, rotY}
+let torsoIM=null, headIM=null; // InstancedMesh (2 draw calls pour tous)
+let standing=null, standingHead=null, lastIdx=-1;
+const arcsGroup=new THREE.Group(); scene.add(arcsGroup);
+const rowsGroup=new THREE.Group(); scene.add(rowsGroup);
+const bodiesGroup=new THREE.Group(); scene.add(bodiesGroup);
+const raycaster=new THREE.Raycaster();
+const M=new THREE.Matrix4(), Q=new THREE.Quaternion(), S=new THREE.Vector3(1,1,1),
+      P=new THREE.Vector3(), EULER=new THREE.Euler();
 
 function buildHemicycle(run){
-  seatMeshes.clear(); seats=[];
-  // députés triés par groupe (ordre politique gauche→droite), puis nom
+  bodiesGroup.clear(); rowsGroup.clear(); seatData=[]; lastIdx=-1;
   const deps=[...run.deputes].sort((a,b)=>
     GROUP_ORDER.indexOf(a.groupe)-GROUP_ORDER.indexOf(b.groupe) || (a.nom<b.nom?-1:1));
   const N=deps.length;
-  const ROWS=8, r0=10, dr=2.3;
-  const A0=Math.PI-0.18, A1=0.18; // arc gauche→droite face au perchoir
-  // 1) générer tous les slots (rangée, angle), capacité ∝ rayon
+  // slots (rangée, angle) triés par angle → secteurs politiques
   const caps=[]; let tot=0;
-  for(let r=0;r<ROWS;r++){caps[r]=r0+r*dr; tot+=caps[r];}
-  const slots=[];
-  let rem=N;
+  for(let r=0;r<ROWS;r++){caps[r]=R0+r*DR; tot+=caps[r];}
+  const slots=[]; let rem=N;
   for(let r=0;r<ROWS;r++){
-    const cap=r===ROWS-1?rem:Math.max(1,Math.round(N*caps[r]/tot));
-    rem-=cap;
-    for(let i=0;i<cap;i++){
-      const frac=cap===1?.5:i/(cap-1);
-      slots.push({r, ang:A0-(A0-A1)*frac});
-    }
+    const cap=r===ROWS-1?rem:Math.max(1,Math.round(N*caps[r]/tot)); rem-=cap;
+    for(let i=0;i<cap;i++){const f=cap===1?.5:i/(cap-1); slots.push({r, ang:A1+(A0-A1)*f});}
   }
-  // 2) trier les slots par angle décroissant (gauche→droite), rangée ensuite
-  //    → les groupes forment des SECTEURS angulaires, comme le vrai hémicycle
-  slots.sort((a,b)=>b.ang-a.ang || a.r-b.r);
-  const geo=new THREE.BoxGeometry(.62,.5,.62);
+  slots.sort((a,b)=>a.ang-b.ang || a.r-b.r);
+  // gradins (anneaux) pour asseoir visuellement les rangées
+  for(let r=0;r<ROWS;r++){
+    const ring=new THREE.Mesh(
+      new THREE.RingGeometry(R0+r*DR-0.9, R0+r*DR+0.9, 48, 1, A1, A0-A1),
+      new THREE.MeshLambertMaterial({color:0x20242f}));
+    ring.rotation.x=-Math.PI/2; ring.position.y=.02+r*.34; rowsGroup.add(ring);
+  }
+  // instanced : torse assis + tête
+  const torsoGeo=new THREE.BoxGeometry(.5,.55,.34);
+  const headGeo=new THREE.SphereGeometry(.17,10,8);
+  torsoIM=new THREE.InstancedMesh(torsoGeo,new THREE.MeshLambertMaterial(),N);
+  headIM=new THREE.InstancedMesh(headGeo,new THREE.MeshLambertMaterial(),N);
+  const c=new THREE.Color();
   slots.slice(0,N).forEach((s,k)=>{
     const d=deps[k];
-    const radius=r0+s.r*dr, y=.25+s.r*.34;
-    const mat=new THREE.MeshStandardMaterial({
-      color:new THREE.Color(GROUP_COLOR[d.groupe]||'#666'),
-      roughness:.55, emissive:new THREE.Color(GROUP_COLOR[d.groupe]||'#666'),
-      emissiveIntensity:.06});
-    const m=new THREE.Mesh(geo,mat);
-    // perchoir en z≈0, hémicycle devant lui (z positif)
-    m.position.set(Math.cos(s.ang)*radius, y, 0.5+Math.sin(s.ang)*radius);
-    m.rotation.y=Math.atan2(m.position.x, m.position.z); // face au perchoir
-    m.userData=d;
-    seats.push(m); seatMeshes.add(m);
+    const radius=R0+s.r*DR, y=.02+s.r*.34;
+    const x=Math.cos(s.ang)*radius, z=0.5+Math.sin(s.ang)*radius;
+    const rotY=Math.atan2(x-0, z-(-2)); // face au perchoir
+    seatData.push({d, x, y, z, rotY});
+    Q.setFromEuler(EULER.set(0,rotY,0));
+    M.compose(P.set(x,y+.42,z),Q,S); torsoIM.setMatrixAt(k,M);
+    M.compose(P.set(x,y+.86,z),Q,S); headIM.setMatrixAt(k,M);
+    c.set(GROUP_COLOR[d.groupe]||'#666');
+    torsoIM.setColorAt(k,c);
+    headIM.setColorAt(k,c.clone().lerp(new THREE.Color('#e8d6c0'),.55));
   });
+  torsoIM.instanceMatrix.needsUpdate=true; headIM.instanceMatrix.needsUpdate=true;
+  if(torsoIM.instanceColor) torsoIM.instanceColor.needsUpdate=true;
+  if(headIM.instanceColor) headIM.instanceColor.needsUpdate=true;
+  bodiesGroup.add(torsoIM); bodiesGroup.add(headIM);
+  // bonhomme debout (réutilisé pour chaque orateur)
+  standing=new THREE.Group();
+  const st=new THREE.Mesh(new THREE.BoxGeometry(.5,.95,.34),
+    new THREE.MeshStandardMaterial({roughness:.5, emissiveIntensity:.7}));
+  st.position.y=.48; standing.add(st);
+  standingHead=new THREE.Mesh(headGeo,new THREE.MeshLambertMaterial());
+  standingHead.position.y=1.13; standing.add(standingHead);
+  standing.visible=false; scene.add(standing);
+}
+
+function setSeatVisible(k,on){
+  const s=seatData[k];
+  Q.setFromEuler(EULER.set(0,s.rotY,0));
+  const sc=on?S:new THREE.Vector3(1e-4,1e-4,1e-4);
+  M.compose(P.set(s.x,s.y+.42,s.z),Q,sc); torsoIM.setMatrixAt(k,M);
+  M.compose(P.set(s.x,s.y+.86,s.z),Q,sc); headIM.setMatrixAt(k,M);
+  torsoIM.instanceMatrix.needsUpdate=true; headIM.instanceMatrix.needsUpdate=true;
 }
 
 function groupCentroid(g){
-  const ms=seats.filter(s=>s.userData.groupe===g);
-  const v=new THREE.Vector3();
-  ms.forEach(m=>v.add(m.position)); if(ms.length)v.divideScalar(ms.length);
-  return v;
+  const v=new THREE.Vector3(); let n=0;
+  seatData.forEach(s=>{if(s.d.groupe===g){v.x+=s.x;v.y+=s.y;v.z+=s.z;n++;}});
+  if(n)v.divideScalar(n); return {v,n};
 }
 
-/* ---------- arcs d'influence ---------- */
-function influenceArcs(fromSeat, run){
+/* ---------- arcs d'influence (géométries libérées à chaque clear → pas de fuite) ---------- */
+function clearArcs(){
+  arcsGroup.children.forEach(m=>{m.geometry.dispose(); m.material.dispose();});
   arcsGroup.clear();
-  const aff=run.affinites?.[fromSeat.userData.groupe]||{};
+}
+function influenceArcs(seat, run){
+  clearArcs();
+  const aff=run.affinites?.[seat.d.groupe]||{};
   for(const g of GROUP_ORDER){
-    if(g===fromSeat.userData.groupe || !(g in aff)) continue;
+    if(g===seat.d.groupe || !(g in aff)) continue;
     const w=aff[g]; if(Math.abs(w)<0.05) continue;
-    const to=groupCentroid(g); if(to.lengthSq()===0) continue;
-    const mid=fromSeat.position.clone().add(to).multiplyScalar(.5); mid.y+=5+6*Math.abs(w);
-    const curve=new THREE.QuadraticBezierCurve3(fromSeat.position.clone().setY(fromSeat.position.y+.6), mid, to.clone().setY(to.y+.6));
-    const geo=new THREE.TubeGeometry(curve, 24, .05+.10*Math.abs(w), 6, false);
+    const {v:to,n}=groupCentroid(g); if(!n) continue;
+    const from=new THREE.Vector3(seat.x,seat.y+1.2,seat.z);
+    const mid=from.clone().add(to).multiplyScalar(.5); mid.y+=4+6*Math.abs(w);
+    const curve=new THREE.QuadraticBezierCurve3(from, mid, to.clone().setY(to.y+.8));
+    const geo=new THREE.TubeGeometry(curve, 20, .05+.10*Math.abs(w), 5, false);
     const mat=new THREE.MeshBasicMaterial({
-      color:w>0?0x57d18b:0xe06a6a, transparent:true, opacity:.12+.55*Math.abs(w)});
+      color:w>0?0x57d18b:0xe06a6a, transparent:true, opacity:.12+.5*Math.abs(w)});
     arcsGroup.add(new THREE.Mesh(geo,mat));
   }
 }
@@ -236,36 +278,44 @@ function tallyRows(run, current){
 }
 
 /* ---------- replay ---------- */
-let events=[], idx=-1, playing=false, speed=1, interpol={};
+let events=[], idx=-1, playing=false, speed=1;
 function prepare(run){
   events=run.transcript;
   $('prog').max=Math.max(events.length-1,1);
-  $('t-titre').textContent='Scrutin '+(run.scrutin?.uid||'')+' — '+(run.scrutin?.titre||'').slice(0,110);
-  $('t-sub').textContent=`thème ${run.scrutin?.theme||'?'} · ${run.deputes.length} députés · ${events.length} prises de parole · sort réel : ${run.scrutin?.sort||'?'}`;
+  $('t-titre').textContent='Miropolis — scrutin '+(run.scrutin?.uid||'');
+  $('t-sub').textContent=`${run.deputes.length} députés · ${events.length} prises de parole · thème ${run.scrutin?.theme||'?'}`;
+  $('x-titre').textContent=(run.scrutin?.titre||'').charAt(0).toUpperCase()+(run.scrutin?.titre||'').slice(1);
+  $('x-meta').innerHTML=`thème : ${run.scrutin?.theme||'?'}<br>sort réel : <b>${run.scrutin?.sort||'?'}</b> (révélé en fin de séance simulée)`;
   $('deplace').textContent=`voix déplacées par la séance : ${run.voix_deplacees_par_le_debat??'—'}`;
   legend(run); tallyRows(run, run.tally_avant_debat);
   buildHemicycle(run); placeCam();
 }
-function opinionAt(frac){ // interpolation opinion0→opinion pour le tally vivant
+function opinionAt(frac){
   const t={pour:0,contre:0,abstention:0};
   RUN.deputes.forEach(d=>{for(const p in t){t[p]+=d.opinion0[p]+(d.opinion[p]-d.opinion0[p])*frac;}});
   return t;
 }
-let lastSeat=null;
 function showEvent(i){
   idx=i; $('prog').value=i;
   const ev=events[i]; if(!ev) return;
-  const seat=seats.find(s=>s.userData.nom===ev.nom)||seats.find(s=>s.userData.groupe===ev.groupe);
-  if(lastSeat){lastSeat.scale.set(1,1,1); lastSeat.material.emissiveIntensity=.06;}
-  if(seat){
-    seat.scale.set(1.6,2.2,1.6); seat.material.emissiveIntensity=.9;
-    spot.visible=true; spot.position.set(seat.position.x,16,seat.position.z+4);
-    spot.target.position.copy(seat.position); spot.intensity=350;
-    influenceArcs(seat, RUN);
-    // caméra penche légèrement vers l'orateur (bornée : l'hémicycle reste cadré)
-    const lean=Math.max(-.38,Math.min(.38,Math.atan2(seat.position.x,24)));
-    az+=(lean-az)*.35; placeCam();
-    lastSeat=seat;
+  const k=seatData.findIndex(s=>s.d.nom===ev.nom);
+  if(lastIdx>=0) setSeatVisible(lastIdx,true);
+  if(k>=0){
+    const s=seatData[k];
+    setSeatVisible(k,false);            // il quitte son siège…
+    standing.visible=true;               // …et se lève
+    standing.position.set(s.x,s.y,s.z);
+    standing.rotation.y=s.rotY;
+    const col=new THREE.Color(GROUP_COLOR[s.d.groupe]||'#666');
+    standing.children[0].material.color.copy(col);
+    standing.children[0].material.emissive.copy(col);
+    standingHead.material.color.copy(col.clone().lerp(new THREE.Color('#e8d6c0'),.55));
+    spot.visible=true; spot.position.set(s.x,15,s.z+3);
+    spot.target.position.set(s.x,1,s.z); spot.intensity=300;
+    influenceArcs(s, RUN);
+    const lean=Math.max(-.35,Math.min(.35,Math.atan2(s.x,26)));
+    az+=((Math.PI-lean)-az)*.35; placeCam();
+    lastIdx=k;
   }
   const sp=$('speech'); sp.style.display='block';
   sp.className=ev.interjection?'hud interj':'hud';
@@ -278,6 +328,8 @@ function showEvent(i){
 }
 function finish(){
   playing=false; $('b-play').textContent='↺ Rejouer';
+  if(lastIdx>=0){setSeatVisible(lastIdx,true); lastIdx=-1;}
+  standing.visible=false; spot.visible=false; clearArcs();
   tallyRows(RUN, RUN.tally);
   const v=$('verdict'); v.style.display='block';
   const pred=RUN.tally.pour>RUN.tally.contre?'adopté':'rejeté';
@@ -286,7 +338,7 @@ function finish(){
 }
 function tick(){
   if(playing){
-    if(idx<events.length-1) showEvent(idx+1); else playing=false;
+    if(idx<events.length-1) showEvent(idx+1); else {playing=false; return;}
     const ev=events[idx];
     const delay=(ev?.interjection?1600:4200)/speed;
     if(playing) setTimeout(tick, delay);
@@ -307,13 +359,14 @@ $('file').onchange=e=>{
   r.readAsText(f);
 };
 
-/* tooltip 3D */
-const tip=$('tip');
+/* tooltip 3D — raycast throttlé (perf) */
+const tip=$('tip'); let frame=0;
 function hover(){
+  if(!torsoIM) return;
   raycaster.setFromCamera(mouse,cam);
-  const hit=raycaster.intersectObjects(seats)[0];
-  if(hit){
-    const d=hit.object.userData;
+  const hit=raycaster.intersectObject(torsoIM)[0];
+  if(hit && hit.instanceId!=null && seatData[hit.instanceId]){
+    const d=seatData[hit.instanceId].d;
     tip.style.display='block';
     tip.style.left=(innerWidth*(mouse.x+1)/2+14)+'px';
     tip.style.top=(innerHeight*(1-(mouse.y+1)/2)+10)+'px';
@@ -327,9 +380,10 @@ function resize(){renderer.setSize(innerWidth,innerHeight);cam.aspect=innerWidth
 addEventListener('resize',resize); resize();
 function loop(t){
   requestAnimationFrame(loop);
-  if(lastSeat){lastSeat.material.emissiveIntensity=.55+.35*Math.sin(t*.006);}
-  arcsGroup.children.forEach((a,i)=>{a.material.opacity=Math.max(.08,a.material.opacity*.997);});
-  hover(); renderer.render(scene,cam);
+  if(standing.visible){standing.children[0].material.emissiveIntensity=.45+.3*Math.sin(t*.006);
+    standing.position.y=seatData[lastIdx]?.y+.06*Math.max(0,Math.sin(t*.004)); }
+  if((frame++&3)===0) hover();
+  renderer.render(scene,cam);
 }
 prepare(RUN); requestAnimationFrame(loop);
 </script>
