@@ -34,9 +34,11 @@ def load_scrutin(uid):
     enrichies du thème/saillance d'Alexandre si disponibles."""
     scr = json.load(open(os.path.join("json", f"{uid}.json"), encoding="utf-8"))["scrutin"]
     titre = scr.get("titre", "")
+    date_scrutin = (scr.get("dateScrutin") or "").replace("-", "")[:8]  # YYYYMMDD
     meta = {
         "uid": uid,
         "titre": titre,
+        "date": date_scrutin,
         "typeVote": scr.get("typeVote", {}).get("libelleTypeVote", "scrutin public ordinaire"),
         "theme": "autre",
         "salience": "moyenne",
@@ -162,6 +164,22 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
                                        "cursors": speaker.cursors})
                 if verbose:
                     print(f"  [{r}] {speaker.nom} ({g}) : {texte[:110]}")
+                # spontanéité : le groupe le plus opposé peut interjecter
+                # (proba ∝ hostilité mesurée ; déterministe via hash → rejouable)
+                opp = min(groups, key=lambda x: affinites.get(g, {}).get(x, 0.0))
+                hostilite = -affinites.get(g, {}).get(opp, 0.0)
+                if hostilite > 0.3 and hash((scrutin["uid"], r, speaker.acteur)) % 10 < int(hostilite * 6):
+                    heckler = next((a for a in sorted(
+                        (x for x in agents if x.groupe == opp),
+                        key=lambda x: speaker_score(x, scrutin.get("theme", "autre"),
+                                                    propension), reverse=True)), None)
+                    if heckler and hasattr(brain, "interjection"):
+                        cri = brain.interjection(heckler, texte)
+                        transcript.append({"round": r, "nom": heckler.nom,
+                                           "groupe": opp, "texte": cri,
+                                           "interjection": True})
+                        if verbose:
+                            print(f"      ↯ {heckler.nom} ({opp}) : {cri[:90]}")
         for a in agents:
             a.fj_update(heard, affinites)
         last_speakers = round_speakers
