@@ -1,0 +1,19 @@
+{
+  "_config": {
+    "orchestrateur": "anthropic/claude-sonnet-4.5",
+    "depute_default": "mistralai/mistral-small-3.2-24b-instruct"
+  },
+  "_note": "groupe -> modèle OpenRouter. Diversité stylistique par famille de modèles (choix d'ingénierie, pas un claim scientifique). Vérifier les ids sur openrouter.ai/models avant le run.",
+  "RN": "mistralai/mistral-small-3.2-24b-instruct",
+  "UDR": "mistralai/mistral-small-3.2-24b-instruct",
+  "DR": "google/gemini-2.5-flash",
+  "EPR": "anthropic/claude-haiku-4.5",
+  "Dem": "anthropic/claude-haiku-4.5",
+  "HOR": "google/gemini-2.5-flash",
+  "LIOT": "google/gemini-2.5-flash",
+  "SOC": "anthropic/claude-haiku-4.5",
+  "EcoS": "mistralai/mistral-small-3.2-24b-instruct",
+  "GDR": "google/gemini-2.5-flash",
+  "LFI-NFP": "mistralai/mistral-small-3.2-24b-instruct",
+  "NI": "google/gemini-2.5-flash"
+}

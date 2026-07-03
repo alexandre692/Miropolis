@@ -147,7 +147,10 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
         for a in agents:
             a.fj_update(heard, affinites)
         last_speakers = round_speakers
-        summary = f"round {r + 1} : {len(heard)} interventions, groupes {', '.join(groups)}"
+        if hasattr(brain, "summarize"):  # résumé roulant par l'orchestrateur
+            summary = brain.summarize(transcript[-len(heard):], summary)
+        else:
+            summary = f"round {r + 1} : {len(heard)} interventions, groupes {', '.join(groups)}"
 
     tally = {p: round(sum(a.opinion[p] for a in agents), 1) for p in POSITIONS}
     return {"group_probs": group_probs, "transcript": transcript, "tally": tally}
@@ -157,6 +160,8 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--scrutin", required=True, help="uid, ex. VTANR5L17V4000")
     p.add_argument("--mock", action="store_true")
+    p.add_argument("--openrouter", action="store_true",
+                   help="moteur API multi-modèles (OPENROUTER_API_KEY requise)")
     p.add_argument("--adapter", default=None)
     p.add_argument("--rounds", type=int, default=2)
     p.add_argument("--speakers-per-group", type=int, default=1)
@@ -170,6 +175,10 @@ def main():
 
     if args.mock:
         brain = MockBrain()
+    elif args.openrouter:
+        from openrouter_brain import OpenRouterBrain
+        from prompt_pack import PromptPacks
+        brain = OpenRouterBrain(packs=PromptPacks(), priors=MockBrain())
     else:
         from model_io import GemmaBrain
 
