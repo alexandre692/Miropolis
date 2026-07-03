@@ -3,8 +3,9 @@ Charge le modèle de base + l'adaptateur LoRA et teste quelques exemples
 du jeu de validation pour vérifier que le fine-tuning a bien pris.
 
 Usage:
-    python inference_test.py --adapter ./out/mistral-deputes-lora --n 15
+    python inference_test.py --adapter ./out/gemma-deputes-lora --n 15
 """
+
 import argparse
 import json
 import re
@@ -16,8 +17,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument("--base-model", default="mistralai/Mistral-7B-Instruct-v0.3")
-    p.add_argument("--adapter", default="./out/mistral-deputes-lora")
+    p.add_argument("--base-model", default="google/gemma-2-9b-it")
+    p.add_argument("--adapter", default="./out/gemma-deputes-lora")
     p.add_argument("--val", default="../data/finetune_val.jsonl")
     p.add_argument("--n", type=int, default=15)
     return p.parse_args()
@@ -41,8 +42,12 @@ def main():
         bnb_4bit_compute_dtype=torch.bfloat16,
         bnb_4bit_use_double_quant=True,
     )
+    is_gemma = "gemma" in args.base_model.lower()
     base = AutoModelForCausalLM.from_pretrained(
-        args.base_model, quantization_config=bnb_config, device_map="auto"
+        args.base_model,
+        quantization_config=bnb_config,
+        device_map="auto",
+        attn_implementation="eager" if is_gemma else "sdpa",
     )
     model = PeftModel.from_pretrained(base, args.adapter)
     model.eval()
@@ -54,15 +59,21 @@ def main():
     for ex in examples:
         messages = ex["messages"]
         system, user, expected = messages[0]["content"], messages[1]["content"], messages[2]["content"]
+        if is_gemma:
+            # Gemma-2 ne supporte pas le rôle system : fusionné dans le tour user
+            # (même convention que merge_system_into_user dans train_qlora.py)
+            chat = [{"role": "user", "content": system + "\n\n" + user}]
+        else:
+            chat = [{"role": "system", "content": system}, {"role": "user", "content": user}]
         prompt = tokenizer.apply_chat_template(
-            [{"role": "system", "content": system}, {"role": "user", "content": user}],
+            chat,
             tokenize=False,
             add_generation_prompt=True,
         )
         inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
         with torch.no_grad():
             out = model.generate(**inputs, max_new_tokens=30, do_sample=False)
-        generated = tokenizer.decode(out[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True)
+        generated = tokenizer.decode(out[0][inputs["input_ids"].shape[1] :], skip_special_tokens=True)
 
         exp_pos, gen_pos = extract_position(expected), extract_position(generated)
         ok = exp_pos == gen_pos

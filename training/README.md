@@ -1,33 +1,40 @@
 # Fine-tuning QLoRA — agents-députés
 
-Sur le pod GPU (RunPod, RTX 4090 24 Go ou plus) :
+Base : **google/gemma-2-9b-it** (décision équipe 03/07). Raison : le stage 2 du projet
+(curseurs SAE par député, via Gemma Scope / `gemma-scope-9b-it-res`) exige des SAEs
+publics pré-entraînés — Gemma 2 est le seul candidat sérieux qui en a. Mistral n'a pas
+de SAEs publics, donc pas de steering possible.
+
+Sur le pod GPU (A40 48 Go — 9B en QLoRA 4-bit passe large) :
 
 ```bash
 cd training
 pip install -r requirements.txt
-huggingface-cli login          # nécessaire pour mistralai/Mistral-7B-Instruct-v0.3 (modèle gated)
+huggingface-cli login          # gemma-2-9b-it est gated : accepter la licence sur la page HF
 
 python train_qlora.py \
-    --base-model mistralai/Mistral-7B-Instruct-v0.3 \
     --train ../data/finetune_train.jsonl \
     --val ../data/finetune_val.jsonl \
-    --output ./out/mistral-deputes-lora
+    --output ./out/gemma-deputes-lora
 ```
-
-Sur un RTX 4090 (24 Go), 7137 exemples, 3 epochs : compter ~1-2h.
 
 Tester le résultat :
 
 ```bash
-python inference_test.py --adapter ./out/mistral-deputes-lora --n 15
+python inference_test.py --adapter ./out/gemma-deputes-lora --n 15
 ```
+
+## Spécificités Gemma-2 (gérées automatiquement par les scripts)
+
+- **Pas de rôle `system`** dans le chat template Gemma-2 : le system prompt du dataset
+  est fusionné dans le premier tour `user` au préprocessing (`merge_system_into_user`).
+- **`attn_implementation="eager"`** : le logit soft-capping de Gemma-2 est incompatible
+  avec flash-attn/sdpa à l'entraînement (dégradation silencieuse sinon).
+- Ces deux comportements s'activent si `gemma` apparaît dans `--base-model` ; le script
+  reste compatible avec un base model Mistral/Llama en le passant explicitement.
 
 ## Notes
 
-- Le modèle de base `Mistral-7B-Instruct-v0.3` est gated sur HuggingFace : accepter les
-  conditions sur la page du modèle avec le compte utilisé pour `huggingface-cli login`.
-- `--base-model mistralai/Mistral-7B-v0.3` (non-Instruct) est une alternative si l'accès
-  gated pose problème, mais nécessite d'adapter le format de prompt (pas de chat template).
-- Ajuster `--batch-size` / `--grad-accum` si out-of-memory (VRAM limitée).
-- L'adaptateur LoRA (quelques dizaines de Mo) est sauvegardé dans `--output`, pas le modèle
-  complet — pas besoin de re-uploader 7B de poids.
+- Ajuster `--batch-size` / `--grad-accum` si out-of-memory.
+- L'adaptateur LoRA (quelques dizaines de Mo) est sauvegardé dans `--output`, pas le
+  modèle complet — pas besoin de re-uploader 9B de poids.
