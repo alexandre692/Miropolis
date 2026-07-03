@@ -60,6 +60,9 @@ class MockBrain:
         return (f"[mock] {agent.nom} ({agent.groupe}) s'exprime {maj} "
                 f"sur « {scrutin.get('titre', '?')[:60]}… »{amb}")
 
+    def interjection(self, agent, target_text):
+        return f"[mock] {agent.nom} ({agent.groupe}) proteste !"
+
 
 class GemmaBrain:
     """Gemma-2-9B-it 4-bit + LoRA (training/out/…) + steering SAE optionnel.

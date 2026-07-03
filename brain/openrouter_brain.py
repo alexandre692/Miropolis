@@ -166,8 +166,8 @@ class OpenRouterBrain:
         # thématique passe par le résumé + les dernières interventions du contexte.
         bloc_verbatims = ""
         if self.packs:
-            bloc_verbatims = self.packs.bloc(agent.acteur,
-                                             scrutin.get("theme"), n=3)
+            bloc_verbatims = self.packs.bloc(agent.acteur, scrutin.get("theme"),
+                                             n=3, before=scrutin.get("date"))
         system = (
             f"{context}\n\n{bloc_verbatims}\n\n"
             "RÈGLES STRICTES : 4 à 6 phrases, première personne, registre de "
@@ -193,3 +193,17 @@ class OpenRouterBrain:
                 r"<reflexion>.*?</reflexion>", "", raw, flags=re.S)).strip()
         except RuntimeError as e:
             return f"[intervention indisponible : {e}]"
+
+    def interjection(self, agent, target_text, max_tokens=60):
+        """Interjection spontanée (1 phrase, style 'Exclamations sur les
+        bancs…') d'un opposant qui vient d'entendre `target_text`."""
+        messages = [{"role": "user", "content": (
+            f"Tu es {agent.nom}, député {agent.groupe} à l'Assemblée "
+            f"nationale. Un orateur adverse vient de dire : "
+            f"« {target_text[:300]} ». Lance UNE interjection d'une phrase, "
+            "vive mais dans le registre parlementaire réel (pas d'insulte).")}]
+        try:
+            return _call(self._dep_model(agent.groupe), messages,
+                         temperature=1.0, max_tokens=max_tokens).strip()
+        except RuntimeError:
+            return "(Protestations.)"

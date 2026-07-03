@@ -63,10 +63,15 @@ class PromptPacks:
         t = texte.lower()
         return sum(t.count(k.lower()) for k in keywords)
 
-    def verbatims(self, acteur, theme=None, n=3):
+    def verbatims(self, acteur, theme=None, n=3, before=None):
         """Les n meilleurs extraits du député : d'abord ceux qui collent au
-        thème, complétés par les plus récents (sa voix générale)."""
+        thème, complétés par les plus récents (sa voix générale).
+        `before` (YYYYMMDD) = pare-feu temporel : en mode backtest/démo, le
+        député ne peut citer que ce qu'il a dit AVANT la séance simulée —
+        sinon la "prédiction" fuiterait le futur."""
         docs = self.by_dep.get(acteur, [])
+        if before:
+            docs = [r for r in docs if r.get("date", "") < str(before)]
         if not docs:
             return []
         picked = []
@@ -84,9 +89,9 @@ class PromptPacks:
         return [{"date": r["date"], "seance": r.get("seance", ""),
                  "texte": r["texte"]} for r in picked[:n]]
 
-    def bloc(self, acteur, theme=None, n=3):
+    def bloc(self, acteur, theme=None, n=3, before=None):
         """Bloc prêt à coller dans le prompt."""
-        vs = self.verbatims(acteur, theme, n)
+        vs = self.verbatims(acteur, theme, n, before=before)
         if not vs:
             return ""
         lines = ["Extraits RÉELS de tes interventions passées en séance "

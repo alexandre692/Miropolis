@@ -34,9 +34,11 @@ def load_scrutin(uid):
     enrichies du thème/saillance d'Alexandre si disponibles."""
     scr = json.load(open(os.path.join("json", f"{uid}.json"), encoding="utf-8"))["scrutin"]
     titre = scr.get("titre", "")
+    date_scrutin = (scr.get("dateScrutin") or "").replace("-", "")[:8]  # YYYYMMDD
     meta = {
         "uid": uid,
         "titre": titre,
+        "date": date_scrutin,
         "typeVote": scr.get("typeVote", {}).get("libelleTypeVote", "scrutin public ordinaire"),
         "theme": "autre",
         "salience": "moyenne",
@@ -95,6 +97,18 @@ def load_affinites():
     return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
 
 
+def load_propension():
+    path = os.path.join("data", "orateurs_propension.json")
+    return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
+
+
+def speaker_score(agent, theme, propension):
+    """Qui parle ? Le spécialiste du thème d'abord (mesuré sur ses
+    interventions réelles), le gros parleur ensuite."""
+    p = propension.get(agent.acteur, {})
+    return p.get("par_theme", {}).get(theme, 0) * 3 + p.get("total", 0) * 0.1
+
+
 CONTAGION = 0.3  # fraction des curseurs d'un orateur qui se propage à qui l'écoute
 
 
@@ -119,9 +133,13 @@ def ambient_cursors(agent, last_speakers, affinites):
 def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=True):
     groups = sorted({a.groupe for a in agents})
     affinites = load_affinites()
+    propension = load_propension()
     group_probs = {g: brain.group_position(g, scrutin) for g in groups}
     for a in agents:
         a.init_opinion(group_probs[a.groupe], scrutin.get("theme", "autre"))
+    # tally AVANT débat = les consignes de vote en entrant dans l'hémicycle ;
+    # l'écart avec le tally final mesure ce que la séance elle-même a déplacé
+    tally_avant = {p: round(sum(a.opinion[p] for a in agents), 1) for p in POSITIONS}
 
     transcript, summary = [], ""
     last_speakers = []
@@ -131,8 +149,10 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
             members = [a for a in agents if a.groupe == g]
             if not members:
                 continue
-            # orateurs : les moins loyaux d'abord — c'est là que vit le débat
-            members.sort(key=lambda a: a.loyaute)
+            # orateurs prédits par leur historique réel : les spécialistes du
+            # thème du texte parlent (médiane réelle : 32 orateurs/séance)
+            members.sort(key=lambda a: speaker_score(a, scrutin.get("theme", "autre"),
+                                                     propension), reverse=True)
             for speaker in members[:speakers_per_group]:
                 ctx = speaker.context_block(summary, [t["texte"] for t in transcript[-3:]])
                 extra = ambient_cursors(speaker, last_speakers, affinites)
@@ -144,6 +164,22 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
                                        "cursors": speaker.cursors})
                 if verbose:
                     print(f"  [{r}] {speaker.nom} ({g}) : {texte[:110]}")
+                # spontanéité : le groupe le plus opposé peut interjecter
+                # (proba ∝ hostilité mesurée ; déterministe via hash → rejouable)
+                opp = min(groups, key=lambda x: affinites.get(g, {}).get(x, 0.0))
+                hostilite = -affinites.get(g, {}).get(opp, 0.0)
+                if hostilite > 0.3 and hash((scrutin["uid"], r, speaker.acteur)) % 10 < int(hostilite * 6):
+                    heckler = next((a for a in sorted(
+                        (x for x in agents if x.groupe == opp),
+                        key=lambda x: speaker_score(x, scrutin.get("theme", "autre"),
+                                                    propension), reverse=True)), None)
+                    if heckler and hasattr(brain, "interjection"):
+                        cri = brain.interjection(heckler, texte)
+                        transcript.append({"round": r, "nom": heckler.nom,
+                                           "groupe": opp, "texte": cri,
+                                           "interjection": True})
+                        if verbose:
+                            print(f"      >> {heckler.nom} ({opp}) : {cri[:90]}")
         for a in agents:
             a.fj_update(heard, affinites)
         last_speakers = round_speakers
@@ -153,7 +189,10 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
             summary = f"round {r + 1} : {len(heard)} interventions, groupes {', '.join(groups)}"
 
     tally = {p: round(sum(a.opinion[p] for a in agents), 1) for p in POSITIONS}
-    return {"group_probs": group_probs, "transcript": transcript, "tally": tally}
+    deplace = round(sum(abs(tally[p] - tally_avant[p]) for p in POSITIONS) / 2, 1)
+    return {"group_probs": group_probs, "transcript": transcript,
+            "tally_avant_debat": tally_avant, "tally": tally,
+            "voix_deplacees_par_le_debat": deplace}
 
 
 def main():
@@ -188,11 +227,13 @@ def main():
 
     reel = scrutin["reel"]
     print("\n================ TALLY ================")
-    print(f"{'':12s}{'prédit':>10s}{'réel':>10s}")
+    print(f"{'':12s}{'avant débat':>12s}{'après débat':>12s}{'réel':>8s}")
     for pos in POSITIONS:
-        print(f"{pos:12s}{res['tally'][pos]:>10.1f}{reel[pos]:>10d}")
+        print(f"{pos:12s}{res['tally_avant_debat'][pos]:>12.1f}"
+              f"{res['tally'][pos]:>12.1f}{reel[pos]:>8d}")
     pred_sort = "adopté" if res["tally"]["pour"] > res["tally"]["contre"] else "rejeté"
-    print(f"\nSort prédit : {pred_sort} — sort réel : {scrutin['sort']}")
+    print(f"\nVoix déplacées par la séance : {res['voix_deplacees_par_le_debat']}")
+    print(f"Sort prédit : {pred_sort} — sort réel : {scrutin['sort']}")
 
     out = {"scrutin": {k: scrutin[k] for k in ("uid", "titre", "theme", "sort")}, "reel": reel, **res}
     os.makedirs("runs", exist_ok=True)
