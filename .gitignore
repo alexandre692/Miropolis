@@ -1,6 +1,8 @@
 __pycache__/
 *.pyc
-training/out/
+training/out/*
+!training/out/gemma-deputes-lora/
+training/out/gemma-deputes-lora/checkpoint-*/
 .venv/
 data_cr/
 runs/
