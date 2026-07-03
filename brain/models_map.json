@@ -3,17 +3,53 @@
     "orchestrateur": "anthropic/claude-sonnet-4.5",
     "depute_default": "mistralai/mistral-small-3.2-24b-instruct"
   },
-  "_note": "groupe -> modèle OpenRouter. Diversité stylistique par famille de modèles (choix d'ingénierie, pas un claim scientifique). Vérifier les ids sur openrouter.ai/models avant le run.",
-  "RN": "mistralai/mistral-small-3.2-24b-instruct",
-  "UDR": "mistralai/mistral-small-3.2-24b-instruct",
-  "DR": "google/gemini-2.5-flash",
-  "EPR": "anthropic/claude-haiku-4.5",
-  "Dem": "anthropic/claude-haiku-4.5",
-  "HOR": "google/gemini-2.5-flash",
-  "LIOT": "google/gemini-2.5-flash",
-  "SOC": "anthropic/claude-haiku-4.5",
-  "EcoS": "mistralai/mistral-small-3.2-24b-instruct",
-  "GDR": "google/gemini-2.5-flash",
-  "LFI-NFP": "mistralai/mistral-small-3.2-24b-instruct",
-  "NI": "google/gemini-2.5-flash"
+  "_note": "groupe -> pool de modèles OpenRouter (un député pioche dedans de façon stable, via un hash de son acteurRef — toujours le même modèle pour le même député d'un run à l'autre). Diversité stylistique = choix d'ingénierie, pas un claim scientifique. Taille du pool pondérée par le poids réel du groupe dans l'Assemblée (comptage sur data/deputes_profils.json, 640 profils) : >15% sièges -> 4 modèles, 8-15% -> 3, 4-8% -> 2, <4% -> 1. Vérifier les ids sur openrouter.ai/models avant le run.",
+  "_poids_sieges": {
+    "RN": "20.2%", "EPR": "17.8%", "LFI-NFP": "11.4%", "SOC": "10.9%",
+    "DR": "9.7%", "HOR": "6.7%", "Dem": "6.4%", "EcoS": "5.9%",
+    "LIOT": "3.9%", "GDR": "2.8%", "UDR": "2.8%", "NI": "1.4%"
+  },
+  "RN": [
+    "mistralai/mistral-small-3.2-24b-instruct",
+    "mistralai/mistral-nemo",
+    "meta-llama/llama-3.3-70b-instruct",
+    "qwen/qwen3-30b-a3b-instruct-2507"
+  ],
+  "EPR": [
+    "anthropic/claude-haiku-4.5",
+    "mistralai/mistral-small-3.2-24b-instruct",
+    "google/gemma-3-27b-it",
+    "qwen/qwen3-30b-a3b-instruct-2507"
+  ],
+  "LFI-NFP": [
+    "mistralai/mistral-small-3.2-24b-instruct",
+    "qwen/qwen3-next-80b-a3b-instruct",
+    "deepseek/deepseek-chat-v3.1"
+  ],
+  "SOC": [
+    "anthropic/claude-haiku-4.5",
+    "meta-llama/llama-3.3-70b-instruct",
+    "google/gemma-3-27b-it"
+  ],
+  "DR": [
+    "google/gemini-2.5-flash",
+    "mistralai/mistral-nemo",
+    "amazon/nova-micro-v1"
+  ],
+  "HOR": [
+    "google/gemini-2.5-flash",
+    "mistralai/mistral-nemo"
+  ],
+  "Dem": [
+    "anthropic/claude-haiku-4.5",
+    "mistralai/mistral-small-3.2-24b-instruct"
+  ],
+  "EcoS": [
+    "mistralai/mistral-small-3.2-24b-instruct",
+    "qwen/qwen3-next-80b-a3b-instruct"
+  ],
+  "LIOT": ["google/gemini-2.5-flash"],
+  "GDR": ["google/gemini-2.5-flash"],
+  "UDR": ["mistralai/mistral-small-3.2-24b-instruct"],
+  "NI": ["google/gemini-2.5-flash"]
 }

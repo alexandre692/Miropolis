@@ -12,14 +12,18 @@ Architecture :
     interventions (brain/prompt_pack.py), choisis selon le thème du texte.
   - Les VOTES restent déterministes (ancre + FJ) — l'API ne vote jamais.
 
-Mapping groupe→modèle : brain/models_map.json (éditable). Note honnête :
-utiliser des modèles différents par groupe est un choix d'ingénierie pour
+Mapping groupe→pool de modèles : brain/models_map.json (éditable). Chaque
+député pioche un modèle dans le pool de son groupe, de façon stable (hash de
+son acteurRef). Taille du pool pondérée par le poids réel du groupe à
+l'Assemblée — plus un groupe pèse de sièges, plus il a de voix différentes.
+Note honnête : utiliser des modèles différents est un choix d'ingénierie pour
 diversifier les styles, PAS un claim scientifique — la représentativité vient
 des données (verbatims, ancres), pas de la loterie des architectures.
 
 Prérequis : variable d'environnement OPENROUTER_API_KEY.
 """
 
+import hashlib
 import json
 import os
 import re
@@ -97,8 +101,17 @@ class OpenRouterBrain:
         self.packs = packs          # PromptPacks (peut être None → pas de verbatims)
         self.priors = priors        # MockBrain, pour ancrer l'orchestrateur
 
-    def _dep_model(self, groupe):
-        return self.map.get(groupe, self.dep_default)
+    def _dep_model(self, agent):
+        """Pioche dans le pool de modèles du groupe (voir models_map.json),
+        de façon stable pour un même député (hash de son acteurRef) — pas de
+        tirage aléatoire, un run est reproductible."""
+        pool = self.map.get(agent.groupe, self.dep_default)
+        if isinstance(pool, str):
+            return pool
+        if not pool:
+            return self.dep_default
+        h = int(hashlib.sha256(agent.acteur.encode("utf-8")).hexdigest(), 16)
+        return pool[h % len(pool)]
 
     # ---------- ORCHESTRATEUR ----------
 
@@ -171,7 +184,7 @@ class OpenRouterBrain:
                 "vu ton historique, à quel argument précédent répondre). Puis "
                 "prononce ton intervention dans <intervention>...</intervention>.")
         try:
-            raw = _call(self._dep_model(agent.groupe),
+            raw = _call(self._dep_model(agent),
                         [{"role": "system", "content": system},
                          {"role": "user", "content": user}],
                         temperature=0.85, max_tokens=max_tokens)
