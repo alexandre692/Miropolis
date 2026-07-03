@@ -148,7 +148,7 @@ class OpenRouterBrain:
     # ---------- DÉPUTÉS ----------
 
     def intervention(self, agent, scrutin, context, extra_cursors=None,
-                     max_tokens=320):
+                     max_tokens=500):  # réflexion privée + intervention
         # extra_cursors (contagion SAE) sans objet en mode API : la contagion
         # thématique passe par le résumé + les dernières interventions du contexte.
         bloc_verbatims = ""
@@ -161,14 +161,22 @@ class OpenRouterBrain:
             "séance publique (adresse à la présidence, interpellations). Ne "
             "cite JAMAIS un chiffre qui n'est pas dans le contexte ci-dessus. "
             "Réponds aux arguments réellement exprimés avant toi. Ne change "
-            "pas de position par rapport à tes engagements listés.")
+            "pas de position par rapport à tes engagements listés. Tu n'es PAS "
+            "là pour trouver un consensus : maintiens le désaccord si c'est ta "
+            "position — c'est un débat parlementaire, pas une médiation.")
         user = (f"Le texte en débat : {scrutin.get('titre', '')}\n"
                 f"{scrutin.get('texte_contexte', '')}\n"
-                "Prononce ton intervention maintenant.")
+                "D'abord, réfléchis en privé dans <reflexion>...</reflexion> "
+                "(2-3 phrases : que dit vraiment ce texte, quel est TON angle "
+                "vu ton historique, à quel argument précédent répondre). Puis "
+                "prononce ton intervention dans <intervention>...</intervention>.")
         try:
-            return _call(self._dep_model(agent.groupe),
-                         [{"role": "system", "content": system},
-                          {"role": "user", "content": user}],
-                         temperature=0.85, max_tokens=max_tokens).strip()
+            raw = _call(self._dep_model(agent.groupe),
+                        [{"role": "system", "content": system},
+                         {"role": "user", "content": user}],
+                        temperature=0.85, max_tokens=max_tokens)
+            m = re.search(r"<intervention>(.*?)</intervention>", raw, re.S)
+            return (m.group(1) if m else re.sub(
+                r"<reflexion>.*?</reflexion>", "", raw, flags=re.S)).strip()
         except RuntimeError as e:
             return f"[intervention indisponible : {e}]"

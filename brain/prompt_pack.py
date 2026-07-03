@@ -81,7 +81,8 @@ class PromptPacks:
                 break
             if id(r) not in seen:
                 picked.append(r)
-        return [{"date": r["date"], "texte": r["texte"]} for r in picked[:n]]
+        return [{"date": r["date"], "seance": r.get("seance", ""),
+                 "texte": r["texte"]} for r in picked[:n]]
 
     def bloc(self, acteur, theme=None, n=3):
         """Bloc prêt à coller dans le prompt."""
@@ -92,7 +93,8 @@ class PromptPacks:
                  "(imite ce ton, ce registre, ces marqueurs) :"]
         for v in vs:
             d = f"{v['date'][:4]}-{v['date'][4:6]}" if len(v.get("date", "")) >= 6 else ""
-            lines.append(f"— ({d}) « {v['texte']} »")
+            src = f", CR {v['seance']}" if v.get("seance") else ""
+            lines.append(f"— ({d}{src}) « {v['texte']} »")
         return "\n".join(lines)
 
 
