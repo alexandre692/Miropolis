@@ -116,7 +116,7 @@ def main():
         save_strategy="steps",
         save_steps=200,
         save_total_limit=2,
-        max_seq_length=args.max_seq_len,
+        max_length=args.max_seq_len,
         packing=False,
         report_to="none",
     )
