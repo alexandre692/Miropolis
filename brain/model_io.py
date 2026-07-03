@@ -54,9 +54,11 @@ class MockBrain:
         total = sum(c.values())
         return {p: c.get(p, 0) / total for p in POSITIONS}
 
-    def intervention(self, agent, scrutin, context):
+    def intervention(self, agent, scrutin, context, extra_cursors=None):
         maj = max(agent.opinion or {"contre": 1}, key=(agent.opinion or {"contre": 1}).get)
-        return f"[mock] {agent.nom} ({agent.groupe}) s'exprime {maj} " f"sur « {scrutin.get('titre', '?')[:60]}… »"
+        amb = f" [+{len(extra_cursors)} concepts ambiants]" if extra_cursors else ""
+        return (f"[mock] {agent.nom} ({agent.groupe}) s'exprime {maj} "
+                f"sur « {scrutin.get('titre', '?')[:60]}… »{amb}")
 
 
 class GemmaBrain:
@@ -123,8 +125,10 @@ class GemmaBrain:
         probs = self.torch.softmax(logits[sel], dim=-1).tolist()
         return dict(zip(POSITIONS, probs))
 
-    def intervention(self, agent, scrutin, context, max_new_tokens=180):
-        """Intervention en séance, steerée par les curseurs SAE du député."""
+    def intervention(self, agent, scrutin, context, extra_cursors=None,
+                     max_new_tokens=180):
+        """Intervention en séance, steerée par les curseurs SAE du député
+        + les concepts ambiants du débat (contagion de saillance)."""
         system = context  # le context_block de l'agent EST le system prompt
         user = (
             f"Prononce une intervention courte (3-5 phrases) en séance sur : "
@@ -144,7 +148,8 @@ class GemmaBrain:
                 )
             return self.tokenizer.decode(out[0][inputs["input_ids"].shape[1] :], skip_special_tokens=True).strip()
 
-        if self.steerer and agent.cursors:
-            with self.steerer.steering(agent.cursors):
+        cursors = list(agent.cursors or []) + list(extra_cursors or [])
+        if self.steerer and cursors:
+            with self.steerer.steering(cursors):
                 return gen()
         return gen()

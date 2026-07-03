@@ -57,13 +57,33 @@ class DeputyAgent:
         self.opinion = dict(self.opinion0)
         return self.opinion
 
-    def fj_update(self, heard):
-        """Friedkin-Johnsen : opinion_t = λ·ancre + (1-λ)·moyenne des positions
-        entendues. `heard` = liste de distributions {pour, contre, abstention}."""
+    def fj_update(self, heard, affinites=None):
+        """Friedkin-Johnsen SIGNÉ : opinion_t = λ·ancre + (1-λ)·influence sociale.
+        `heard` = [{"groupe": g, "opinion": {...}}]. Le poids de chaque orateur
+        = l'affinité de vote MESURÉE entre son groupe et le mien
+        (data/group_affinites.json) : positive → attraction, négative →
+        répulsion (le discours d'un opposant renforce la position inverse)."""
         if not heard or self.opinion is None:
             return self.opinion
         lam = self.loyaute
-        social = {p: sum(h.get(p, 0.0) for h in heard) / len(heard) for p in POSITIONS}
+        num = {p: 0.0 for p in POSITIONS}
+        den = 0.0
+        for h in heard:
+            op = h.get("opinion", h) if isinstance(h, dict) else h
+            g = h.get("groupe") if isinstance(h, dict) else None
+            w = (affinites or {}).get(self.groupe, {}).get(g, 0.3) if g else 0.3
+            if w >= 0:
+                contrib = op
+            else:  # répulsion : la masse pour/contre s'inverse (boomerang)
+                contrib = {"pour": op.get("contre", 0.0),
+                           "contre": op.get("pour", 0.0),
+                           "abstention": op.get("abstention", 0.0)}
+            for p in POSITIONS:
+                num[p] += abs(w) * contrib.get(p, 0.0)
+            den += abs(w)
+        if den == 0:
+            return self.opinion
+        social = {p: num[p] / den for p in POSITIONS}
         self.opinion = {p: lam * self.opinion0[p] + (1 - lam) * social[p] for p in POSITIONS}
         return self.opinion
 

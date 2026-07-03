@@ -90,15 +90,43 @@ def build_agents(participants=None):
     return agents
 
 
+def load_affinites():
+    path = os.path.join("data", "group_affinites.json")
+    return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
+
+
+CONTAGION = 0.3  # fraction des curseurs d'un orateur qui se propage à qui l'écoute
+
+
+def ambient_cursors(agent, last_speakers, affinites):
+    """Contagion de saillance : les concepts activés par les orateurs du round
+    précédent deviennent temporairement saillants chez qui parle ensuite,
+    proportionnellement à |affinité| (on reprend les thèmes d'un allié POUR,
+    ceux d'un opposant CONTRE — dans les deux cas on en parle)."""
+    extra = []
+    for spk in last_speakers:
+        if spk["acteur"] == agent.acteur or not spk.get("cursors"):
+            continue
+        w = abs(affinites.get(agent.groupe, {}).get(spk["groupe"], 0.0))
+        if w == 0:
+            continue
+        for c in spk["cursors"][:2]:
+            extra.append({"id": c["id"], "label": c.get("label"),
+                          "coef": round(c.get("coef", 0.0) * CONTAGION * w, 2)})
+    return extra
+
+
 def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=True):
     groups = sorted({a.groupe for a in agents})
+    affinites = load_affinites()
     group_probs = {g: brain.group_position(g, scrutin) for g in groups}
     for a in agents:
         a.init_opinion(group_probs[a.groupe], scrutin.get("theme", "autre"))
 
     transcript, summary = [], ""
+    last_speakers = []
     for r in range(rounds):
-        heard = []
+        heard, round_speakers = [], []
         for g in groups:
             members = [a for a in agents if a.groupe == g]
             if not members:
@@ -107,14 +135,18 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
             members.sort(key=lambda a: a.loyaute)
             for speaker in members[:speakers_per_group]:
                 ctx = speaker.context_block(summary, [t["texte"] for t in transcript[-3:]])
-                texte = brain.intervention(speaker, scrutin, ctx)
+                extra = ambient_cursors(speaker, last_speakers, affinites)
+                texte = brain.intervention(speaker, scrutin, ctx, extra_cursors=extra)
                 speaker.remember(r, texte)
                 transcript.append({"round": r, "nom": speaker.nom, "groupe": g, "texte": texte})
-                heard.append(dict(speaker.opinion))
+                heard.append({"groupe": g, "opinion": dict(speaker.opinion)})
+                round_speakers.append({"acteur": speaker.acteur, "groupe": g,
+                                       "cursors": speaker.cursors})
                 if verbose:
                     print(f"  [{r}] {speaker.nom} ({g}) : {texte[:110]}")
         for a in agents:
-            a.fj_update(heard)
+            a.fj_update(heard, affinites)
+        last_speakers = round_speakers
         summary = f"round {r + 1} : {len(heard)} interventions, groupes {', '.join(groups)}"
 
     tally = {p: round(sum(a.opinion[p] for a in agents), 1) for p in POSITIONS}
