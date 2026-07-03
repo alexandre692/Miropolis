@@ -1,0 +1,86 @@
+{
+  "NI": {
+    "pour": 3762,
+    "contre": 5673,
+    "abstention": 484,
+    "nonVotant": 91,
+    "nb_scrutins": 7966
+  },
+  "LFI-NFP": {
+    "pour": 85389,
+    "contre": 82639,
+    "abstention": 8656,
+    "nonVotant": 516,
+    "nb_scrutins": 7966
+  },
+  "DR": {
+    "pour": 28383,
+    "contre": 35173,
+    "abstention": 4096,
+    "nonVotant": 2780,
+    "nb_scrutins": 7966
+  },
+  "UDR": {
+    "pour": 9615,
+    "contre": 8358,
+    "abstention": 1986,
+    "nonVotant": 0,
+    "nb_scrutins": 4925
+  },
+  "SOC": {
+    "pour": 70083,
+    "contre": 68692,
+    "abstention": 10043,
+    "nonVotant": 0,
+    "nb_scrutins": 7966
+  },
+  "EcoS": {
+    "pour": 43014,
+    "contre": 37668,
+    "abstention": 4475,
+    "nonVotant": 420,
+    "nb_scrutins": 7966
+  },
+  "Dem": {
+    "pour": 20589,
+    "contre": 40756,
+    "abstention": 2177,
+    "nonVotant": 1393,
+    "nb_scrutins": 7966
+  },
+  "RN": {
+    "pour": 174954,
+    "contre": 136516,
+    "abstention": 26649,
+    "nonVotant": 841,
+    "nb_scrutins": 7965
+  },
+  "GDR": {
+    "pour": 8591,
+    "contre": 7983,
+    "abstention": 1088,
+    "nonVotant": 0,
+    "nb_scrutins": 7966
+  },
+  "EPR": {
+    "pour": 51516,
+    "contre": 113939,
+    "abstention": 2646,
+    "nonVotant": 13243,
+    "nb_scrutins": 7966
+  },
+  "LIOT": {
+    "pour": 8850,
+    "contre": 11381,
+    "abstention": 1541,
+    "nonVotant": 644,
+    "nb_scrutins": 7966
+  },
+  "HOR": {
+    "pour": 19238,
+    "contre": 38537,
+    "abstention": 3760,
+    "nonVotant": 2587,
+    "nb_scrutins": 7966
+  }
+}
