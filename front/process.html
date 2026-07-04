@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Miropolis — Le process en 5 étapes</title>
+<style>
+  :root{--bg:#14161f;--panel:#1c1f2b;--ink:#E6E9F0;--ink2:#9aa3b5;--line:#2a2f3f}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);min-height:100vh;
+    font:15px/1.5 "Segoe UI",system-ui,sans-serif;display:flex;flex-direction:column;
+    justify-content:center;padding:30px 40px}
+  h1{margin:0 0 6px;font-size:24px;text-align:center}
+  .sub{color:var(--ink2);text-align:center;margin-bottom:36px;font-size:14px}
+  .steps{display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr 34px 1fr 34px 1fr;
+    align-items:stretch;max-width:1560px;margin:0 auto;width:100%}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    padding:20px 18px;border-top:4px solid var(--accent);display:flex;flex-direction:column}
+  .num{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase}
+  .step h2{margin:6px 0 10px;font-size:18px;line-height:1.25}
+  .step p{margin:0;color:#c9cfdd;font-size:13.5px}
+  .step .src{margin-top:auto;padding-top:12px;font-size:11.5px;color:var(--ink2);
+    border-top:1px solid var(--line)}
+  .arrow{display:flex;align-items:center;justify-content:center;color:#4a5268;font-size:26px}
+  .foot{text-align:center;color:var(--ink2);font-size:12.5px;margin-top:34px}
+  .foot b{color:var(--ink)}
+</style>
+</head>
+<body>
+<h1>MIROPOLIS — comment ça marche</h1>
+<div class="sub">un texte de loi entre, une séance complète sort — 100 % fondé sur l'open data de l'Assemblée nationale</div>
+
+<div class="steps">
+
+  <div class="step" style="--accent:#4A72DE">
+    <div class="num">1 · Entrée</div>
+    <h2>Un texte à l'ordre du jour</h2>
+    <p>Un scrutin réel à rejouer (backtest) ou un texte inventé (prospectif). C'est la seule chose qu'on donne au système.</p>
+    <div class="src">titre · thème · dossier législatif</div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="step" style="--accent:#2BA3B5">
+    <div class="num">2 · Amont — l'orchestrateur prépare</div>
+    <h2>Casting &amp; positions</h2>
+    <p><b>Qui parlera :</b> prédit depuis les données (rapporteur, amendements déposés, commission, habitués du dossier) — 9× le hasard.<br><br>
+    <b>Position de chaque groupe :</b> estimée par l'orchestrateur, ancrée à l'historique de ses 7 966 votes.</p>
+    <div class="src">amendements · dossiers · réunions · scrutins</div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="step" style="--accent:#C29B1F">
+    <div class="num">3 · La séance se joue</div>
+    <h2>577 agents débattent</h2>
+    <p>Chaque député parle <b>avec ses propres mots</b> (extraits réels du JO), répond aux orateurs précédents, garde ses engagements en mémoire. L'orchestrateur tient le fil du débat (résumé roulant). Interjections, présidente de séance.</p>
+    <div class="src">71 500 interventions réelles · multi-modèles</div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="step" style="--accent:#E5446D">
+    <div class="num">4 · Le vote</div>
+    <h2>Les données décident</h2>
+    <p>Le débat déplace les opinions selon des <b>affinités mesurées</b> entre groupes ; puis chaque député vote par ses statistiques réelles (fidélité, dissidences). <b>L'IA ne vote jamais.</b></p>
+    <div class="src">loyauté médiane 0.970 · affinités de co-vote</div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="step" style="--accent:#2FA45C">
+    <div class="num">5 · Aval — la sortie</div>
+    <h2>La séance complète</h2>
+    <p>Transcript du débat + prédiction du scrutin (pour/contre/abstention) + hémicycle 3D immersif — et en backtest, la <b>comparaison au résultat réel</b>, révélée à la fin.</p>
+    <div class="src">démo autonome · reproductible</div>
+  </div>
+</div>
+
+<div class="foot">Pare-feu temporel : le modèle est <b>gelé à la veille</b> de la séance qu'il prédit · règle d'or : <b>le génératif au service du mesurable, jamais l'inverse</b></div>
+</body>
+</html>
