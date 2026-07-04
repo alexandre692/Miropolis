@@ -60,6 +60,16 @@
   #prog{width:190px;accent-color:#aeb9d6}
   #tip{position:fixed;z-index:20;background:#0f1118F2;border:1px solid var(--line);border-radius:8px;
     padding:8px 10px;font-size:12px;pointer-events:none;display:none;max-width:240px}
+  /* verdict plein écran après le vote */
+  #overlay{left:50%;top:44%;transform:translate(-50%,-50%);text-align:center;display:none;
+    background:rgba(15,17,24,.92);border:1px solid var(--line);border-radius:18px;padding:26px 44px}
+  #overlay .big{font-size:34px;font-weight:700;letter-spacing:.5px}
+  #overlay .big.ok{color:#57d18b} #overlay .big.ko{color:#e06a6a}
+  #overlay .cmp{margin-top:10px;font-size:15px;color:var(--ink2)}
+  #overlay .cmp b{color:var(--ink)}
+  #overlay .nums{margin-top:12px;font-size:13px;color:var(--ink2);display:flex;gap:22px;justify-content:center}
+  #overlay .nums .v{color:var(--ink);font-weight:600;font-size:16px}
+  #overlay .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
   #tip .n{font-weight:600}
   #tip .d{color:var(--ink2)}
   #drop{bottom:16px;right:16px;font-size:11.5px;color:var(--ink2)}
@@ -92,6 +102,7 @@
 <div class="hud" id="feed"><h2>Débat en séance</h2><div class="scroll" id="feed-scroll"></div></div>
 
 <div class="hud" id="legend"></div>
+<div class="hud" id="overlay"></div>
 
 <div class="hud" id="controls">
   <button id="b-prev">⏮</button>
@@ -287,7 +298,10 @@ const $=id=>document.getElementById(id);
 function legend(run){
   const present=new Set(run.deputes.map(d=>d.groupe));
   $('legend').innerHTML=GROUP_ORDER.filter(g=>present.has(g)).map(g=>
-    `<span class="g"><span class="chip" style="background:${GROUP_COLOR[g]}"></span>${g}</span>`).join('');
+    `<span class="g"><span class="chip" style="background:${GROUP_COLOR[g]}"></span>${g}</span>`).join('')
+    +'<div style="margin-top:5px;font-size:10.5px;color:var(--ink2)">arcs : '
+    +'<span style="color:#57d18b">vert = attire</span> · '
+    +'<span style="color:#e06a6a">rouge = repousse</span> (affinités mesurées)</div>';
 }
 function tallyRows(run, current){
   const max=Math.max(run.reel.pour+run.reel.contre+run.reel.abstention, 1);
@@ -392,15 +406,60 @@ function showEvent(i){
   tallyRows(RUN, opinionAt((i+1)/events.length));
   if(i>=events.length-1) finish();
 }
+/* ---------- séquence de vote finale ----------
+   Pendant le vote, l'encodage bascule : la couleur du siège = son VOTE
+   (statut pour/contre/abstention), plus le groupe. L'overlay l'annonce. */
+const VOTE_COLOR={pour:0x3fbf7f, contre:0xd95c5c, abstention:0x8a8f9c};
+let voteAnim=null;
+function resetColors(){
+  if(!torsoIM) return;
+  const c=new THREE.Color();
+  seatData.forEach((s,k)=>{
+    c.set(GROUP_COLOR[s.d.groupe]||'#666');
+    torsoIM.setColorAt(k,c);
+    headIM.setColorAt(k,c.clone().lerp(new THREE.Color('#e8d6c0'),.55));
+  });
+  torsoIM.instanceColor.needsUpdate=true; headIM.instanceColor.needsUpdate=true;
+}
+function voteSequence(){
+  // vague de gauche à droite : chaque député prend la couleur de son vote
+  const order=[...seatData.keys()].sort((a,b)=>seatData[a].x-seatData[b].x);
+  let ptr=0; const c=new THREE.Color();
+  if(voteAnim) clearInterval(voteAnim);
+  voteAnim=setInterval(()=>{
+    for(let n=0;n<10 && ptr<order.length;n++,ptr++){
+      const k=order[ptr], d=seatData[k].d;
+      const pos=['pour','contre','abstention'].reduce((a,b)=>d.opinion[a]>=d.opinion[b]?a:b);
+      c.set(VOTE_COLOR[pos]); torsoIM.setColorAt(k,c); headIM.setColorAt(k,c);
+    }
+    torsoIM.instanceColor.needsUpdate=true; headIM.instanceColor.needsUpdate=true;
+    if(ptr>=order.length){clearInterval(voteAnim); voteAnim=null; verdictOverlay();}
+  },40);
+}
+function verdictOverlay(){
+  const pred=RUN.tally.pour>RUN.tally.contre?'ADOPTÉ':'REJETÉ';
+  const reel=(RUN.scrutin?.sort||'?').toUpperCase();
+  const ok=(pred==='ADOPTÉ')===reel.includes('ADOPT');
+  const o=$('overlay'); o.style.display='block';
+  o.innerHTML=`<div class="big ${ok?'ok':'ko'}">${pred} ${ok?'✅':'❌'}</div>
+    <div class="cmp">prédit par la simulation · sort réel : <b>${reel}</b></div>
+    <div class="nums">
+      <span><span class="dot" style="background:#3fbf7f"></span>pour <span class="v">${RUN.tally.pour.toFixed(0)}</span> <span style="font-size:11px">/ ${RUN.reel.pour} réel</span></span>
+      <span><span class="dot" style="background:#d95c5c"></span>contre <span class="v">${RUN.tally.contre.toFixed(0)}</span> <span style="font-size:11px">/ ${RUN.reel.contre} réel</span></span>
+      <span><span class="dot" style="background:#8a8f9c"></span>abst. <span class="v">${RUN.tally.abstention.toFixed(0)}</span> <span style="font-size:11px">/ ${RUN.reel.abstention} réel</span></span>
+    </div>`;
+}
 function finish(){
   playing=false; $('b-play').textContent='↺ Rejouer';
   if(lastIdx>=0){setSeatVisible(lastIdx,true); lastIdx=-1;}
   standing.visible=false; spot.visible=false; clearArcs();
+  pTorso.material.emissiveIntensity=.05;
   tallyRows(RUN, RUN.tally);
   const v=$('verdict'); v.style.display='block';
   const pred=RUN.tally.pour>RUN.tally.contre?'adopté':'rejeté';
   const ok=(pred==='adopté')===((RUN.scrutin?.sort||'').includes('adopt'));
   v.innerHTML=`Sort prédit : <b>${pred}</b> · réel : <b>${RUN.scrutin?.sort}</b> ${ok?'✅':'❌'}`;
+  voteSequence();
 }
 function tick(){
   if(playing){
@@ -427,7 +486,8 @@ function rebuildFeed(upto){
   $('feed-scroll').scrollTop=$('feed-scroll').scrollHeight;
 }
 $('b-play').onclick=()=>{
-  if(idx>=events.length-1){idx=-1;$('verdict').style.display='none';$('feed-scroll').innerHTML='';}
+  if(idx>=events.length-1){idx=-1;$('verdict').style.display='none';
+    $('feed-scroll').innerHTML=''; $('overlay').style.display='none'; resetColors();}
   playing=!playing; $('b-play').textContent=playing?'⏸ Pause':'▶ Lancer la séance';
   if(playing) tick();
 };
@@ -464,6 +524,8 @@ function loop(t){
   requestAnimationFrame(loop);
   if(standing.visible){standing.children[0].material.emissiveIntensity=.45+.3*Math.sin(t*.006);
     standing.position.y=seatData[lastIdx]?.y+.06*Math.max(0,Math.sin(t*.004)); }
+  // rotation cinématique quand la scène est idle (avant séance / après verdict)
+  if(!playing && !drag && (idx<0 || idx>=events.length-1)){az+=.0006; placeCam();}
   if((frame++&3)===0) hover();
   renderer.render(scene,cam);
 }
