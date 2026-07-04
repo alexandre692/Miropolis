@@ -190,9 +190,15 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
 
     tally = {p: round(sum(a.opinion[p] for a in agents), 1) for p in POSITIONS}
     deplace = round(sum(abs(tally[p] - tally_avant[p]) for p in POSITIONS) / 2, 1)
+    deputes = [{"acteur": a.acteur, "nom": a.nom, "groupe": a.groupe,
+                "loyaute": a.loyaute,
+                "opinion0": {p: round(v, 3) for p, v in (a.opinion0 or {}).items()},
+                "opinion": {p: round(v, 3) for p, v in (a.opinion or {}).items()}}
+               for a in agents]
     return {"group_probs": group_probs, "transcript": transcript,
             "tally_avant_debat": tally_avant, "tally": tally,
-            "voix_deplacees_par_le_debat": deplace}
+            "voix_deplacees_par_le_debat": deplace,
+            "deputes": deputes, "affinites": affinites}
 
 
 def main():
