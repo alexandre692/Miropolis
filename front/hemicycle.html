@@ -87,7 +87,7 @@
 <div class="hud" id="tally">
   <h2>Scrutin — tally</h2>
   <div id="rows"></div>
-  <div class="foot">barre = prédit (évolue avec le débat) · trait blanc = réel<br>
+  <div class="foot">barre = prédit (évolue avec le débat) · le réel est révélé au vote<br>
     <span id="deplace"></span></div>
   <div id="verdict"></div>
 </div>
@@ -299,13 +299,17 @@ function legend(run){
     +'<span style="color:#57d18b">vert = attire</span> · '
     +'<span style="color:#e06a6a">rouge = repousse</span> (affinités mesurées)</div>';
 }
-function tallyRows(run, current){
+function tallyRows(run, current, reveal){
+  // le réel (chiffre + trait blanc) reste caché tant que le vote n'a pas eu
+  // lieu — sinon la "prédiction" affichée pendant tout le débat n'en est
+  // plus une, on voit juste la réponse à côté du curseur qui bouge un peu.
   const max=Math.max(run.reel.pour+run.reel.contre+run.reel.abstention, 1);
   $('rows').innerHTML=['pour','contre','abstention'].map(p=>{
     const v=current[p]??run.tally_avant_debat[p], r=run.reel[p];
-    return `<div class="trow"><div class="lab"><span>${p}</span><b>${v.toFixed(0)} <span style="color:var(--ink2)">/ ${r} réel</span></b></div>
-      <div class="bar"><div class="fill" style="width:${100*v/max}%"></div>
-      <div class="real" style="left:${100*r/max}%"></div></div></div>`;}).join('');
+    const reel=reveal?` <span style="color:var(--ink2)">/ ${r} réel</span>`:'';
+    const trait=reveal?`<div class="real" style="left:${100*r/max}%"></div>`:'';
+    return `<div class="trow"><div class="lab"><span>${p}</span><b>${v.toFixed(0)}${reel}</b></div>
+      <div class="bar"><div class="fill" style="width:${100*v/max}%"></div>${trait}</div></div>`;}).join('');
 }
 
 /* ---------- replay ---------- */
@@ -451,7 +455,7 @@ function finish(){
   if(lastIdx>=0){setSeatVisible(lastIdx,true); lastIdx=-1;}
   standing.visible=false; spot.visible=false; clearArcs();
   pTorso.material.emissiveIntensity=.05;
-  tallyRows(RUN, RUN.tally);
+  tallyRows(RUN, RUN.tally, true);
   const v=$('verdict'); v.style.display='block';
   const pred=RUN.tally.pour>RUN.tally.contre?'adopté':'rejeté';
   const ok=(pred==='adopté')===((RUN.scrutin?.sort||'').includes('adopt'));
@@ -484,7 +488,8 @@ function rebuildFeed(upto){
 }
 $('b-play').onclick=()=>{
   if(idx>=events.length-1){idx=-1;$('verdict').style.display='none';
-    $('feed-scroll').innerHTML=''; $('overlay').style.display='none'; resetColors();}
+    $('feed-scroll').innerHTML=''; $('overlay').style.display='none'; resetColors();
+    tallyRows(RUN, RUN.tally_avant_debat);}
   playing=!playing; $('b-play').textContent=playing?'⏸ Pause':'▶ Lancer la séance';
   if(playing) tick();
 };
