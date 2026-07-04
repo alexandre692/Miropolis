@@ -172,7 +172,8 @@ fait faire plus notre nos votre vos nous vous ils elles tout tous toute toutes
 mais donc ainsi article amendement projet proposition loi lecture première
 nouvelle ensemble suivant identique numéro monsieur madame après avant relative
 relatif visant portant contre entre comme aussi alors même très bien deux
-trois lors""".split())
+trois lors république constitutionnelle constitutionnel constitution
+gouvernement assemblée nationale président présidente""".split())
 
 
 def _tokens(text):
@@ -289,6 +290,49 @@ def ambient_cursors(agent, last_speakers, affinites):
     return extra
 
 
+def real_first_speaker(scrutin):
+    """Le VRAI premier orateur du débat sur ce dossier — pour que la séance
+    simulée OUVRE avec la même personne que dans la réalité (typiquement le
+    rapporteur ou le ministre qui présente le texte).
+
+    Une "séance" (compte rendu) couvre plusieurs sujets dans la même
+    journée : filtrer par seance seule ramène parfois une intervention sans
+    rapport (une question d'actualité avant le débat). On croise donc :
+      1. odj_par_seance.json (RUANR...) : quelles séances ont traité CE
+         dossier (scrutin["dossier"], déjà résolu par load_scrutin) ;
+      2. cr_seanceref.json : crosswalk RUANR... <-> CRSANR... (le format des
+         comptes rendus dans data/discours_par_depute.jsonl.gz) ;
+      3. dans ces séances, l'intervention la plus ANCIENNE dont le texte a
+         un fort recouvrement lexical avec le TITRE du texte (comme le
+         casting) — approxime le début du débat, pas une question annexe.
+    Retourne l'acteurRef, ou None si les données manquent / rien trouvé."""
+    import gzip
+    ref = scrutin.get("dossier")
+    odj_p = os.path.join("data", "odj_par_seance.json")
+    cr_p = os.path.join("data", "cr_seanceref.json")
+    disc_p = os.path.join("data", "discours_par_depute.jsonl.gz")
+    if not ref or not (os.path.exists(odj_p) and os.path.exists(cr_p) and os.path.exists(disc_p)):
+        return None
+    odj = json.load(open(odj_p, encoding="utf-8"))
+    ru2cr = {v: k for k, v in json.load(open(cr_p, encoding="utf-8")).items()}
+    seances_cr = {ru2cr[ru] for ru, dossiers in odj.items() if ref in dossiers and ru in ru2cr}
+    kw = _tokens(scrutin.get("titre", ""))
+    if not seances_cr or not kw:
+        return None
+    best = None  # (date, index_fichier) le plus petit -> le plus ancien
+    with gzip.open(disc_p, "rt", encoding="utf-8") as f:
+        for i, line in enumerate(f):
+            r = json.loads(line)
+            if r.get("seance") not in seances_cr:
+                continue
+            if sum(r["texte"].lower().count(k) for k in kw) < 2:
+                continue
+            key = (r.get("date", ""), i)
+            if best is None or key < best[0]:
+                best = (key, r["acteur"])
+    return best[1] if best else None
+
+
 def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=True,
              casting_reel=False):
     groups = sorted({a.groupe for a in agents})
@@ -321,6 +365,15 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
         orateurs_reels.get(a.acteur, 0) * 1000
         + speaker_score(a, scrutin.get("theme", "autre"), propension)
     ), reverse=True)
+    # le VRAI premier orateur du débat (rapporteur/ministre qui présente le
+    # texte, en général) ouvre aussi la séance simulée — tri stable : bascule
+    # cette personne en tête sans changer l'ordre relatif des autres.
+    premier_reel = real_first_speaker(scrutin)
+    if premier_reel and any(a.acteur == premier_reel for a in ranked):
+        ranked.sort(key=lambda a: a.acteur != premier_reel)
+        if verbose:
+            nom = next(a.nom for a in ranked if a.acteur == premier_reel)
+            print(f"premier orateur (réel, dossier) : {nom}\n")
     deja_parle = set()
     per_round = max(1, speakers_per_group) * len(groups)
     for r in range(rounds):
