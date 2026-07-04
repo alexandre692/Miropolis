@@ -90,10 +90,87 @@
   #recap .who{margin-top:4px;font-size:15px;font-weight:600}
   #recap .txt{margin-top:12px;font-size:14.5px;line-height:1.65;color:#dfe3ec}
   #recap .hint{margin-top:16px;font-size:11px;color:var(--ink2);text-align:center}
+  /* ---------- page d'accueil ----------
+     Recouvre tout au chargement ; l'hémicycle 3D tourne lentement DERRIÈRE
+     (caméra idle) → profondeur gratuite. Le HUD reste caché tant que la
+     page d'accueil est là, puis fond en entrée au lancement. */
+  body.landing .hud{opacity:0;pointer-events:none}
+  .hud{transition:opacity .9s .3s}
+  #landing{position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:24px;text-align:center;padding:24px;
+    background:radial-gradient(1100px 720px at 50% 36%, rgba(27,31,46,.88), rgba(15,17,25,.97));
+    transition:opacity .8s}
+  #landing.gone{opacity:0;pointer-events:none}
+  #landing .an{display:flex;align-items:center;gap:14px;color:var(--ink2);
+    font-size:11.5px;text-transform:uppercase;letter-spacing:2.4px;text-align:left;line-height:1.7}
+  #landing .an svg{height:56px;width:auto;flex:none}
+  #landing .an b{color:var(--ink);font-weight:600}
+  #landing .mark svg{height:118px}
+  #landing .wordmark{margin:8px 0 0;font-size:42px;font-weight:700;letter-spacing:11px;text-indent:11px;line-height:1}
+  #landing .tagline{margin:10px auto 0;color:var(--ink2);font-size:14px;max-width:520px;line-height:1.6}
+  #dz{width:min(520px,86vw);border:1.5px dashed #39415a;border-radius:14px;padding:24px 22px;
+    color:var(--ink2);cursor:pointer;background:rgba(24,27,38,.55);
+    transition:border-color .2s,background .2s}
+  #dz:hover,#dz.over{border-color:#aeb9d6;background:rgba(32,36,52,.75)}
+  #dz.ok{border-style:solid;border-color:#57d18b}
+  #dz .big{font-size:15px;color:var(--ink);font-weight:600}
+  #dz .small{font-size:12px;margin-top:5px}
+  #dz .okline{display:none;margin-top:9px;font-size:13px;color:#57d18b;font-weight:600}
+  #dz input{display:none}
+  #go{background:#dfe4f2;color:#14161f;border:0;border-radius:999px;padding:13px 36px;
+    font-size:15.5px;font-weight:700;letter-spacing:.3px;cursor:pointer;
+    box-shadow:0 10px 34px rgba(120,140,200,.22);transition:transform .15s,box-shadow .15s}
+  #go:hover{transform:translateY(-2px);box-shadow:0 14px 42px rgba(120,140,200,.34)}
+  #landing .credits{position:absolute;bottom:16px;left:0;right:0;font-size:11px;color:#5d667c}
 </style>
 </head>
-<body>
+<body class="landing">
 <canvas id="scene"></canvas>
+
+<!-- ---------- page d'accueil ---------- -->
+<div id="landing">
+  <div class="an">
+    <!-- logo Assemblée nationale (fronton + 9 colonnes, redessiné en SVG) -->
+    <svg viewBox="0 0 1200 1000" aria-label="Assemblée nationale">
+      <polygon fill="#E6E9F0" points="20,262 628,118 1170,282 1170,320 628,202 20,380"/>
+      <g>
+        <path d="M155 410 Q195 650 155 890 Q115 650 155 410 Z" fill="#E6E9F0"/>
+        <path d="M268.5 410 Q308.5 650 268.5 890 Q228.5 650 268.5 410 Z" fill="#E6E9F0"/>
+        <path d="M382 410 Q422 650 382 890 Q342 650 382 410 Z" fill="#E6E9F0"/>
+        <path d="M495.5 410 Q535.5 650 495.5 890 Q455.5 650 495.5 410 Z" fill="#E1000F"/>
+        <path d="M609 410 Q649 650 609 890 Q569 650 609 410 Z" fill="#E1000F"/>
+        <path d="M722.5 410 Q762.5 650 722.5 890 Q682.5 650 722.5 410 Z" fill="#E1000F"/>
+        <path d="M836 410 Q876 650 836 890 Q796 650 836 410 Z" fill="#E6E9F0"/>
+        <path d="M949.5 410 Q989.5 650 949.5 890 Q909.5 650 949.5 410 Z" fill="#E6E9F0"/>
+        <path d="M1063 410 Q1103 650 1063 890 Q1023 650 1063 410 Z" fill="#E6E9F0"/>
+      </g>
+    </svg>
+    <span><b>Assemblée nationale</b><br>hackathon « le parcours de la loi » · 2026</span>
+  </div>
+
+  <div class="mark">
+    <!-- logo Miropolis : hémicycle de points aux couleurs des groupes -->
+    <svg viewBox="14 8 192 102" aria-label="Miropolis">
+      <circle cx="64.0" cy="100.0" r="4.6" fill="#E5446D"/><circle cx="66.3" cy="85.8" r="4.6" fill="#C43131"/><circle cx="72.8" cy="73.0" r="4.6" fill="#CC6E8C"/><circle cx="83.0" cy="62.8" r="4.6" fill="#2FA45C"/><circle cx="95.8" cy="56.3" r="4.6" fill="#9C79CC"/><circle cx="110.0" cy="54.0" r="4.6" fill="#CC7226"/><circle cx="124.2" cy="56.3" r="4.6" fill="#C29B1F"/><circle cx="137.0" cy="62.8" r="4.6" fill="#2BA3B5"/><circle cx="147.2" cy="73.0" r="4.6" fill="#4A72DE"/><circle cx="153.7" cy="85.8" r="4.6" fill="#B57A33"/><circle cx="156.0" cy="100.0" r="4.6" fill="#3D5FCC"/>
+      <circle cx="46.0" cy="100.0" r="4.6" fill="#E5446D"/><circle cx="47.6" cy="85.8" r="4.6" fill="#E5446D"/><circle cx="52.3" cy="72.2" r="4.6" fill="#C43131"/><circle cx="60.0" cy="60.1" r="4.6" fill="#CC6E8C"/><circle cx="70.1" cy="50.0" r="4.6" fill="#2FA45C"/><circle cx="82.2" cy="42.3" r="4.6" fill="#2FA45C"/><circle cx="95.8" cy="37.6" r="4.6" fill="#9C79CC"/><circle cx="110.0" cy="36.0" r="4.6" fill="#CC7226"/><circle cx="124.2" cy="37.6" r="4.6" fill="#C29B1F"/><circle cx="137.8" cy="42.3" r="4.6" fill="#2BA3B5"/><circle cx="149.9" cy="50.0" r="4.6" fill="#2BA3B5"/><circle cx="160.0" cy="60.1" r="4.6" fill="#4A72DE"/><circle cx="167.7" cy="72.2" r="4.6" fill="#B57A33"/><circle cx="172.4" cy="85.8" r="4.6" fill="#3D5FCC"/><circle cx="174.0" cy="100.0" r="4.6" fill="#3D5FCC"/>
+      <circle cx="28.0" cy="100.0" r="4.6" fill="#E5446D"/><circle cx="29.2" cy="85.8" r="4.6" fill="#E5446D"/><circle cx="32.9" cy="72.0" r="4.6" fill="#C43131"/><circle cx="39.0" cy="59.0" r="4.6" fill="#C43131"/><circle cx="47.2" cy="47.3" r="4.6" fill="#CC6E8C"/><circle cx="57.3" cy="37.2" r="4.6" fill="#2FA45C"/><circle cx="69.0" cy="29.0" r="4.6" fill="#2FA45C"/><circle cx="82.0" cy="22.9" r="4.6" fill="#9C79CC"/><circle cx="95.8" cy="19.2" r="4.6" fill="#9C79CC"/><circle cx="110.0" cy="18.0" r="4.6" fill="#CC7226"/><circle cx="124.2" cy="19.2" r="4.6" fill="#C29B1F"/><circle cx="138.0" cy="22.9" r="4.6" fill="#C29B1F"/><circle cx="151.0" cy="29.0" r="4.6" fill="#2BA3B5"/><circle cx="162.7" cy="37.2" r="4.6" fill="#2BA3B5"/><circle cx="172.8" cy="47.3" r="4.6" fill="#4A72DE"/><circle cx="181.0" cy="59.0" r="4.6" fill="#B57A33"/><circle cx="187.1" cy="72.0" r="4.6" fill="#B57A33"/><circle cx="190.8" cy="85.8" r="4.6" fill="#3D5FCC"/><circle cx="192.0" cy="100.0" r="4.6" fill="#3D5FCC"/>
+    </svg>
+    <div class="wordmark">MIROPOLIS</div>
+    <div class="tagline">La séance avant la séance — simulation projective de l'hémicycle.
+      Chaque député est un agent calibré sur ses votes et ses interventions réelles.</div>
+  </div>
+
+  <div id="dz">
+    <input type="file" id="dz-file" accept=".pdf,.txt,.md,.doc,.docx,.json">
+    <div class="big">Déposez votre projet de loi</div>
+    <div class="small">PDF ou texte — ou un run Miropolis (.json) · vous pouvez aussi cliquer</div>
+    <div class="okline" id="dz-ok"></div>
+  </div>
+
+  <button id="go">Lancer la simulation</button>
+
+  <div class="credits">Open data Assemblée nationale (Licence Ouverte) · XVIIᵉ législature · 71 500 interventions réelles</div>
+</div>
 
 <div class="hud" id="titlebar"><div class="k">Texte en débat</div>
   <h1 id="t-titre">Miropolis</h1>
@@ -578,6 +655,50 @@ $('file').onchange=e=>{
   const f=e.target.files[0]; if(!f)return;
   const r=new FileReader(); r.onload=()=>{RUN=JSON.parse(r.result); idx=-1; prepare(RUN);};
   r.readAsText(f);
+};
+
+/* ---------- page d'accueil ---------- */
+const dz=$('dz'), dzFile=$('dz-file');
+function dzDone(msg){
+  dz.classList.add('ok');
+  const ok=$('dz-ok'); ok.style.display='block'; ok.textContent=msg;
+}
+function acceptFile(f){
+  if(!f) return;
+  if(f.name.toLowerCase().endsWith('.json')){
+    const r=new FileReader();
+    r.onload=()=>{
+      try{
+        const run=JSON.parse(r.result);
+        if(run.deputes && run.transcript){
+          RUN=run; idx=-1; prepare(RUN);
+          dzDone('✓ Run chargé : '+(run.scrutin?.titre||f.name)); return;
+        }
+      }catch(e){}
+      dzDone('✓ Fichier chargé : '+f.name);
+    };
+    r.readAsText(f);
+  } else {
+    // projet de loi déposé (PDF/texte) → bascule sur le run "texte fictif —
+    // prédiction pure" embarqué : c'est le scénario "votre texte, simulé".
+    const fict=RUNS.find(r=>!r.reel);
+    if(fict){RUN=fict; idx=-1; prepare(RUN);}
+    dzDone('✓ Projet de loi chargé : '+f.name);
+  }
+}
+dz.onclick=()=>dzFile.click();
+dzFile.onchange=e=>acceptFile(e.target.files[0]);
+dz.ondragover=e=>{e.preventDefault(); dz.classList.add('over');};
+dz.ondragleave=()=>dz.classList.remove('over');
+dz.ondrop=e=>{e.preventDefault(); dz.classList.remove('over'); acceptFile(e.dataTransfer.files[0]);};
+// un drop raté (hors zone) ne doit pas naviguer vers le fichier
+addEventListener('dragover',e=>e.preventDefault());
+addEventListener('drop',e=>e.preventDefault());
+$('go').onclick=()=>{
+  const l=$('landing'); l.classList.add('gone');
+  document.body.classList.remove('landing');            // le HUD fond en entrée
+  setTimeout(()=>{l.style.display='none';}, 850);
+  setTimeout(()=>{if(!playing && idx<0) $('b-play').click();}, 1200); // la séance démarre seule
 };
 
 /* tooltip 3D — raycast throttlé (perf) */
