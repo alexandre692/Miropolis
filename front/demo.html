@@ -679,10 +679,20 @@ function acceptFile(f){
     };
     r.readAsText(f);
   } else {
-    // projet de loi déposé (PDF/texte) → bascule sur le run "texte fictif —
-    // prédiction pure" embarqué : c'est le scénario "votre texte, simulé".
-    const fict=RUNS.find(r=>!r.reel);
-    if(fict){RUN=fict; idx=-1; prepare(RUN);}
+    // projet de loi déposé (PDF/texte) : si le NOM du fichier recoupe le titre
+    // d'un run embarqué (ex: "corse.pdf" → projet de loi Corse), on lance
+    // CE run ; sinon → run "texte fictif — prédiction pure".
+    const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+    const words=norm(f.name.replace(/\.[^.]+$/,'')).split(/[^a-z0-9]+/)
+      .filter(w=>w.length>=4 && !['projet','proposition','texte'].includes(w));
+    let best=null, bestN=0;
+    for(const r of RUNS){
+      const titre=norm(r.scrutin?.titre||'');
+      const n=words.filter(w=>titre.includes(w)).length;
+      if(n>bestN){best=r; bestN=n;}
+    }
+    const pick=best||RUNS.find(r=>!r.reel);
+    if(pick){RUN=pick; idx=-1; prepare(RUN);}
     dzDone('✓ Projet de loi chargé : '+f.name);
   }
 }
