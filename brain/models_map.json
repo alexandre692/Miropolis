@@ -3,7 +3,7 @@
     "orchestrateur": "anthropic/claude-sonnet-4.5",
     "depute_default": "mistralai/mistral-small-3.2-24b-instruct"
   },
-  "_note": "groupe -> pool de modèles OpenRouter. Un député pioche dedans de façon stable (hash de son acteurRef). Taille du pool pondérée par le poids réel du groupe à l'Assemblée (data/deputes_profils.json, 640 profils). Seuls des modèles de qualité correcte (>=12B effectifs) sont retenus : les tiers nano/lite/micro/1-9B ont été retirés car ils paraphrasaient l'orateur précédent au lieu d'argumenter (écho observé en prod). Diversité de familles conservée (Anthropic, DeepSeek, Google, Mistral, NVIDIA, OpenAI, Meta, Qwen, Microsoft). Vérifier les ids sur openrouter.ai/models avant le run.",
+  "_note": "groupe -> pool de modèles OpenRouter. Un député pioche dedans de façon stable (hash de son acteurRef). Taille du pool pondérée par le poids réel du groupe à l'Assemblée (data/deputes_profils.json, 640 profils). UNIQUEMENT des modèles instruct classiques (>=12B effectifs) : ni tier nano/lite/micro (paraphrasaient l'orateur précédent), ni modèles 'raisonneurs' (gpt-oss, nemotron-nano — observés à fuiter leur raisonnement interne en anglais ou refuser silencieusement). Diversité de familles conservée (Anthropic, DeepSeek, Google, Mistral, Meta, Qwen, Microsoft). Vérifier les ids sur openrouter.ai/models avant le run.",
   "_poids_sieges": {
     "RN": "20.2%",
     "EPR": "17.8%",
@@ -36,67 +36,67 @@
     "mistralai/mistral-small-24b-instruct-2501",
     "mistralai/mistral-small-3.2-24b-instruct",
     "mistralai/mistral-small-2603",
-    "nvidia/nemotron-3-nano-30b-a3b",
-    "openai/gpt-oss-20b"
+    "meta-llama/llama-3.3-70b-instruct",
+    "meta-llama/llama-4-scout"
   ],
   "LFI-NFP": [
-    "openai/gpt-oss-120b",
-    "meta-llama/llama-3.3-70b-instruct",
+    "qwen/qwen3-14b",
+    "qwen/qwen3-235b-a22b-2507",
+    "qwen/qwen3-30b-a3b-instruct-2507",
+    "qwen/qwen3-32b",
+    "qwen/qwen3-next-80b-a3b-instruct",
+    "anthropic/claude-haiku-4.5"
+  ],
+  "SOC": [
+    "deepseek/deepseek-chat-v3.1",
+    "deepseek/deepseek-v4-flash",
+    "deepseek/deepseek-chat",
+    "google/gemini-2.5-flash",
+    "google/gemini-2.5-flash-lite",
+    "google/gemma-3-12b-it"
+  ],
+  "DR": [
+    "google/gemma-3-27b-it",
+    "google/gemma-4-31b-it",
+    "google/gemma-4-26b-a4b-it",
+    "microsoft/phi-4",
+    "mistralai/mistral-nemo"
+  ],
+  "HOR": [
+    "mistralai/mistral-small-24b-instruct-2501",
+    "mistralai/mistral-small-3.2-24b-instruct",
+    "mistralai/mistral-small-2603",
+    "meta-llama/llama-3.3-70b-instruct"
+  ],
+  "Dem": [
     "meta-llama/llama-4-scout",
     "qwen/qwen3-14b",
     "qwen/qwen3-235b-a22b-2507",
     "qwen/qwen3-30b-a3b-instruct-2507"
   ],
-  "SOC": [
-    "qwen/qwen3-32b",
-    "qwen/qwen3-next-80b-a3b-instruct",
-    "anthropic/claude-haiku-4.5",
-    "deepseek/deepseek-chat-v3.1",
-    "deepseek/deepseek-v4-flash",
-    "deepseek/deepseek-chat"
-  ],
-  "DR": [
-    "google/gemini-2.5-flash",
-    "google/gemini-2.5-flash-lite",
-    "google/gemma-3-12b-it",
-    "google/gemma-3-27b-it",
-    "google/gemma-4-31b-it"
-  ],
-  "HOR": [
-    "google/gemma-4-26b-a4b-it",
-    "microsoft/phi-4",
-    "mistralai/mistral-nemo",
-    "mistralai/mistral-small-24b-instruct-2501"
-  ],
-  "Dem": [
-    "mistralai/mistral-small-3.2-24b-instruct",
-    "mistralai/mistral-small-2603",
-    "nvidia/nemotron-3-nano-30b-a3b",
-    "openai/gpt-oss-20b"
-  ],
   "EcoS": [
-    "openai/gpt-oss-120b",
-    "meta-llama/llama-3.3-70b-instruct",
-    "meta-llama/llama-4-scout",
-    "qwen/qwen3-14b"
-  ],
-  "LIOT": [
-    "qwen/qwen3-235b-a22b-2507",
-    "qwen/qwen3-30b-a3b-instruct-2507",
-    "qwen/qwen3-32b"
-  ],
-  "GDR": [
+    "qwen/qwen3-32b",
     "qwen/qwen3-next-80b-a3b-instruct",
     "anthropic/claude-haiku-4.5",
     "deepseek/deepseek-chat-v3.1"
   ],
-  "UDR": [
+  "LIOT": [
     "deepseek/deepseek-v4-flash",
     "deepseek/deepseek-chat",
     "google/gemini-2.5-flash"
   ],
-  "NI": [
+  "GDR": [
     "google/gemini-2.5-flash-lite",
-    "google/gemma-3-12b-it"
+    "google/gemma-3-12b-it",
+    "google/gemma-3-27b-it"
+  ],
+  "UDR": [
+    "google/gemma-4-31b-it",
+    "google/gemma-4-26b-a4b-it",
+    "microsoft/phi-4"
+  ],
+  "NI": [
+    "mistralai/mistral-nemo",
+    "mistralai/mistral-small-24b-instruct-2501"
   ]
 }
