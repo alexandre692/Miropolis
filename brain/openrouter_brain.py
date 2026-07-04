@@ -42,11 +42,25 @@ DEFAULTS = {
 POSITIONS = ("pour", "contre", "abstention")
 
 
+def _get_key():
+    """Clé : env OPENROUTER_API_KEY, sinon fichier local .openrouter_key
+    (racine du repo ou home) — JAMAIS commité (.gitignore)."""
+    key = os.environ.get("OPENROUTER_API_KEY")
+    if key:
+        return key.strip()
+    for p in (os.path.join(os.path.dirname(__file__), "..", ".openrouter_key"),
+              os.path.join(os.path.expanduser("~"), ".openrouter_key")):
+        if os.path.exists(p):
+            return open(p, encoding="utf-8").read().strip()
+    return None
+
+
 def _call(model, messages, temperature=0.7, max_tokens=400, json_mode=False,
           retries=3):
-    key = os.environ.get("OPENROUTER_API_KEY")
+    key = _get_key()
     if not key:
-        raise RuntimeError("OPENROUTER_API_KEY manquante dans l'environnement")
+        raise RuntimeError("Clé OpenRouter introuvable : définir OPENROUTER_API_KEY "
+                           "ou créer un fichier .openrouter_key (racine repo ou home)")
     payload = {"model": model, "messages": messages,
                "temperature": temperature, "max_tokens": max_tokens}
     if json_mode:

@@ -14,31 +14,29 @@
     font:14px/1.45 "Segoe UI",system-ui,sans-serif;overflow:hidden}
   #scene{position:fixed;inset:0}
   .hud{position:fixed;z-index:10}
-  #titlebar{top:0;left:0;right:0;padding:12px 20px;background:linear-gradient(#14161fF2,#14161f00);}
-  #titlebar h1{margin:0;font-size:16px;font-weight:600;letter-spacing:.2px;white-space:nowrap;
-    overflow:hidden;text-overflow:ellipsis}
-  #titlebar .sub{color:var(--ink2);font-size:12px;margin-top:2px}
-  #texte{top:76px;left:16px;width:270px;background:var(--panel);border:1px solid var(--line);
-    border-radius:12px;padding:12px 14px;max-height:52vh;overflow-y:auto}
-  #texte h2{margin:0 0 6px;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--ink2)}
-  #texte .t{font-size:13px;color:#cfd5e3}
-  #texte .meta{margin-top:8px;font-size:11.5px;color:var(--ink2);border-top:1px solid var(--line);padding-top:6px}
-  /* fil du débat : les interventions DÉROULENT à droite, sous le tally */
-  #feed{right:16px;top:315px;bottom:64px;width:300px;background:var(--panel);
-    border:1px solid var(--line);border-radius:12px;padding:10px 0 10px 12px;
+  /* l'AMENDEMENT DISCUTÉ au-dessus, en travers de l'écran */
+  #titlebar{top:0;left:0;right:240px;padding:10px 20px 14px;
+    background:linear-gradient(#14161fF8,#14161f00)}
+  #titlebar .k{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:var(--ink2)}
+  #titlebar h1{margin:2px 0 0;font-size:15.5px;font-weight:600;letter-spacing:.2px;line-height:1.3;
+    max-height:2.6em;overflow:hidden}
+  #titlebar .sub{color:var(--ink2);font-size:11.5px;margin-top:3px}
+  /* fil du débat : PLEINE HAUTEUR à gauche — l'assemblée occupe la droite */
+  #feed{left:16px;top:84px;bottom:64px;width:430px;background:var(--panel);
+    border:1px solid var(--line);border-radius:12px;padding:12px 0 12px 14px;
     display:flex;flex-direction:column}
   #feed h2{margin:0 0 6px;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--ink2)}
   #feed .scroll{overflow-y:auto;flex:1;padding-right:10px}
-  .msg{margin:0 0 10px;padding:8px 10px;background:#20242f;border-radius:10px;font-size:12.5px}
-  .msg .who{font-weight:600;font-size:12.5px;display:flex;align-items:center;gap:6px}
+  .msg{margin:0 0 10px;padding:9px 11px;background:#20242f;border-radius:10px;font-size:13.5px;line-height:1.5}
+  .msg .who{font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:6px}
   .msg .chip{display:inline-block;width:9px;height:9px;border-radius:3px;flex:none}
   .msg .grp{color:var(--ink2);font-size:11px;font-weight:400}
   .msg .txt{margin-top:4px;color:#cdd3e0}
   .msg.interj{background:#2b2027;font-style:italic}
   .msg.pres{background:#242a3d}
   .msg.pres .txt{color:var(--ink2)}
-  #tally{top:76px;right:16px;width:225px;background:var(--panel);border:1px solid var(--line);
-    border-radius:12px;padding:12px 14px}
+  #tally{top:10px;right:16px;width:205px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:9px 12px}
   #tally h2{margin:0 0 8px;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--ink2)}
   .trow{margin:7px 0}
   .trow .lab{display:flex;justify-content:space-between;font-size:12px;color:var(--ink2)}
@@ -48,11 +46,11 @@
   .bar .real{position:absolute;top:-3px;width:2px;height:13px;background:#fff;border-radius:1px}
   #tally .foot{margin-top:10px;font-size:11px;color:var(--ink2);border-top:1px solid var(--line);padding-top:8px}
   #verdict{margin-top:8px;font-size:12.5px;display:none}
-  #legend{left:16px;bottom:16px;background:var(--panel);border:1px solid var(--line);
-    border-radius:12px;padding:9px 11px;max-width:200px}
+  #legend{right:16px;bottom:64px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:9px 11px;max-width:230px}
   #legend .g{display:inline-flex;align-items:center;gap:5px;margin:2px 7px 2px 0;font-size:11px;color:var(--ink2)}
   #legend .chip{width:9px;height:9px;border-radius:3px;display:inline-block}
-  #controls{left:50%;transform:translateX(-50%);bottom:16px;display:flex;align-items:center;gap:10px;
+  #controls{left:calc(50% + 215px);transform:translateX(-50%);bottom:16px;display:flex;align-items:center;gap:10px;
     background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 14px}
   #controls button{background:#262b3c;color:var(--ink);border:1px solid var(--line);border-radius:8px;
     padding:5px 12px;font-size:13px;cursor:pointer}
@@ -60,6 +58,16 @@
   #prog{width:190px;accent-color:#aeb9d6}
   #tip{position:fixed;z-index:20;background:#0f1118F2;border:1px solid var(--line);border-radius:8px;
     padding:8px 10px;font-size:12px;pointer-events:none;display:none;max-width:240px}
+  /* verdict plein écran après le vote */
+  #overlay{left:calc(50% + 215px);top:44%;transform:translate(-50%,-50%);text-align:center;display:none;
+    background:rgba(15,17,24,.92);border:1px solid var(--line);border-radius:18px;padding:26px 44px}
+  #overlay .big{font-size:34px;font-weight:700;letter-spacing:.5px}
+  #overlay .big.ok{color:#57d18b} #overlay .big.ko{color:#e06a6a}
+  #overlay .cmp{margin-top:10px;font-size:15px;color:var(--ink2)}
+  #overlay .cmp b{color:var(--ink)}
+  #overlay .nums{margin-top:12px;font-size:13px;color:var(--ink2);display:flex;gap:22px;justify-content:center}
+  #overlay .nums .v{color:var(--ink);font-weight:600;font-size:16px}
+  #overlay .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
   #tip .n{font-weight:600}
   #tip .d{color:var(--ink2)}
   #drop{bottom:16px;right:16px;font-size:11.5px;color:var(--ink2)}
@@ -70,14 +78,9 @@
 <body>
 <canvas id="scene"></canvas>
 
-<div class="hud" id="titlebar"><h1 id="t-titre">Miropolis</h1>
+<div class="hud" id="titlebar"><div class="k">Texte en débat</div>
+  <h1 id="t-titre">Miropolis</h1>
   <div class="sub" id="t-sub">simulation projective de séance — Assemblée nationale</div></div>
-
-<div class="hud" id="texte">
-  <h2>Texte en débat</h2>
-  <div class="t" id="x-titre"></div>
-  <div class="meta" id="x-meta"></div>
-</div>
 
 <div class="hud" id="drop"><label>charger un autre run (runs/*.json)<input type="file" id="file" accept=".json"></label></div>
 
@@ -92,6 +95,7 @@
 <div class="hud" id="feed"><h2>Débat en séance</h2><div class="scroll" id="feed-scroll"></div></div>
 
 <div class="hud" id="legend"></div>
+<div class="hud" id="overlay"></div>
 
 <div class="hud" id="controls">
   <button id="b-prev">⏮</button>
@@ -130,8 +134,9 @@ scene.fog = new THREE.Fog(0x14161f, 70, 150);
 const cam = new THREE.PerspectiveCamera(48, 1, .1, 400);
 
 /* caméra côté perchoir : on regarde l'hémicycle DE FACE (vue de la présidence),
-   avec du recul — l'amphithéâtre monte en hauteur */
-let az=Math.PI, el=.34, dist=52, target=new THREE.Vector3(0,2.6,11);
+   avec du recul — l'amphithéâtre monte en hauteur.
+   azTarget = cap visé ; az s'en approche à CHAQUE frame → mouvements fluides. */
+let az=Math.PI, azTarget=Math.PI, el=.34, dist=52, target=new THREE.Vector3(0,2.6,11);
 function placeCam(){
   cam.position.set(target.x+dist*Math.cos(el)*Math.sin(az),
                    target.y+dist*Math.sin(el),
@@ -143,7 +148,8 @@ const mouse=new THREE.Vector2(-2,-2);
 canvas.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY};});
 addEventListener('pointerup',()=>drag=null);
 addEventListener('pointermove',e=>{
-  if(drag){az-=(e.clientX-drag.x)*.005; el=Math.min(1.35,Math.max(.12,el+(e.clientY-drag.y)*.004));
+  if(drag){az-=(e.clientX-drag.x)*.005; azTarget=az;
+    el=Math.min(1.35,Math.max(.12,el+(e.clientY-drag.y)*.004));
     drag={x:e.clientX,y:e.clientY}; placeCam();}
   mouse.x=(e.clientX/innerWidth)*2-1; mouse.y=-(e.clientY/innerHeight)*2+1;
 });
@@ -175,7 +181,7 @@ presidente.position.set(0,1.1,-2.2); presidente.rotation.y=0; scene.add(presiden
 const ROWS=8, R0=10, DR=2.3, A0=Math.PI-0.18, A1=0.18;
 let seatData=[];               // {d, x,y,z, rotY}
 let torsoIM=null, headIM=null; // InstancedMesh (2 draw calls pour tous)
-let standing=null, standingHead=null, lastIdx=-1;
+let standing=null, standingHead=null, lastIdx=-1, standT0=0;
 const arcsGroup=new THREE.Group(); scene.add(arcsGroup);
 const rowsGroup=new THREE.Group(); scene.add(rowsGroup);
 const bodiesGroup=new THREE.Group(); scene.add(bodiesGroup);
@@ -277,7 +283,8 @@ function influenceArcs(seat, run){
     const curve=new THREE.QuadraticBezierCurve3(from, mid, to.clone().setY(to.y+.8));
     const geo=new THREE.TubeGeometry(curve, 20, .05+.10*Math.abs(w), 5, false);
     const mat=new THREE.MeshBasicMaterial({
-      color:w>0?0x57d18b:0xe06a6a, transparent:true, opacity:.12+.5*Math.abs(w)});
+      color:w>0?0x57d18b:0xe06a6a, transparent:true, opacity:0});
+    mat.userData.target=.12+.5*Math.abs(w);   // fondu d'apparition dans loop()
     arcsGroup.add(new THREE.Mesh(geo,mat));
   }
 }
@@ -287,7 +294,10 @@ const $=id=>document.getElementById(id);
 function legend(run){
   const present=new Set(run.deputes.map(d=>d.groupe));
   $('legend').innerHTML=GROUP_ORDER.filter(g=>present.has(g)).map(g=>
-    `<span class="g"><span class="chip" style="background:${GROUP_COLOR[g]}"></span>${g}</span>`).join('');
+    `<span class="g"><span class="chip" style="background:${GROUP_COLOR[g]}"></span>${g}</span>`).join('')
+    +'<div style="margin-top:5px;font-size:10.5px;color:var(--ink2)">arcs : '
+    +'<span style="color:#57d18b">vert = attire</span> · '
+    +'<span style="color:#e06a6a">rouge = repousse</span> (affinités mesurées)</div>';
 }
 function tallyRows(run, current){
   const max=Math.max(run.reel.pour+run.reel.contre+run.reel.abstention, 1);
@@ -323,10 +333,10 @@ function prepare(run){
   events=buildEvents(run);
   $('feed-scroll').innerHTML='';
   $('prog').max=Math.max(events.length-1,1);
-  $('t-titre').textContent='Miropolis — scrutin '+(run.scrutin?.uid||'');
-  $('t-sub').textContent=`${run.deputes.length} députés · ${events.length} prises de parole · thème ${run.scrutin?.theme||'?'}`;
-  $('x-titre').textContent=(run.scrutin?.titre||'').charAt(0).toUpperCase()+(run.scrutin?.titre||'').slice(1);
-  $('x-meta').innerHTML=`thème : ${run.scrutin?.theme||'?'}<br>sort réel : <b>${run.scrutin?.sort||'?'}</b> (révélé en fin de séance simulée)`;
+  const titre=(run.scrutin?.titre||'');
+  $('t-titre').textContent=titre.charAt(0).toUpperCase()+titre.slice(1);
+  $('t-sub').textContent=`Miropolis · scrutin ${run.scrutin?.uid||''} · ${run.deputes.length} députés · `
+    +`${events.length} prises de parole · thème ${run.scrutin?.theme||'?'} · sort réel révélé au vote`;
   $('deplace').textContent=`voix déplacées par la séance : ${run.voix_deplacees_par_le_debat??'—'}`;
   legend(run); tallyRows(run, run.tally_avant_debat);
   buildHemicycle(run); placeCam();
@@ -365,7 +375,7 @@ function showEvent(i){
     pTorso.material.emissiveIntensity=.5;
     spot.visible=true; spot.position.set(0,14,2);
     spot.target.position.set(0,1.5,-2.2); spot.intensity=250;
-    az+=(Math.PI-az)*.4; placeCam();
+    azTarget=Math.PI;
   } else {
     pTorso.material.emissiveIntensity=.05;
     const k=seatData.findIndex(s=>s.d.nom===ev.nom);
@@ -384,7 +394,8 @@ function showEvent(i){
       spot.target.position.set(s.x,1,s.z); spot.intensity=300;
       influenceArcs(s, RUN);
       const lean=Math.max(-.35,Math.min(.35,Math.atan2(s.x,26)));
-      az+=((Math.PI-lean)-az)*.35; placeCam();
+      azTarget=Math.PI-lean;
+      standT0=performance.now();          // anime le lever
       lastIdx=k;
     }
   }
@@ -392,15 +403,60 @@ function showEvent(i){
   tallyRows(RUN, opinionAt((i+1)/events.length));
   if(i>=events.length-1) finish();
 }
+/* ---------- séquence de vote finale ----------
+   Pendant le vote, l'encodage bascule : la couleur du siège = son VOTE
+   (statut pour/contre/abstention), plus le groupe. L'overlay l'annonce. */
+const VOTE_COLOR={pour:0x3fbf7f, contre:0xd95c5c, abstention:0x8a8f9c};
+let voteAnim=null;
+function resetColors(){
+  if(!torsoIM) return;
+  const c=new THREE.Color();
+  seatData.forEach((s,k)=>{
+    c.set(GROUP_COLOR[s.d.groupe]||'#666');
+    torsoIM.setColorAt(k,c);
+    headIM.setColorAt(k,c.clone().lerp(new THREE.Color('#e8d6c0'),.55));
+  });
+  torsoIM.instanceColor.needsUpdate=true; headIM.instanceColor.needsUpdate=true;
+}
+function voteSequence(){
+  // vague de gauche à droite : chaque député prend la couleur de son vote
+  const order=[...seatData.keys()].sort((a,b)=>seatData[a].x-seatData[b].x);
+  let ptr=0; const c=new THREE.Color();
+  if(voteAnim) clearInterval(voteAnim);
+  voteAnim=setInterval(()=>{
+    for(let n=0;n<10 && ptr<order.length;n++,ptr++){
+      const k=order[ptr], d=seatData[k].d;
+      const pos=['pour','contre','abstention'].reduce((a,b)=>d.opinion[a]>=d.opinion[b]?a:b);
+      c.set(VOTE_COLOR[pos]); torsoIM.setColorAt(k,c); headIM.setColorAt(k,c);
+    }
+    torsoIM.instanceColor.needsUpdate=true; headIM.instanceColor.needsUpdate=true;
+    if(ptr>=order.length){clearInterval(voteAnim); voteAnim=null; verdictOverlay();}
+  },40);
+}
+function verdictOverlay(){
+  const pred=RUN.tally.pour>RUN.tally.contre?'ADOPTÉ':'REJETÉ';
+  const reel=(RUN.scrutin?.sort||'?').toUpperCase();
+  const ok=(pred==='ADOPTÉ')===reel.includes('ADOPT');
+  const o=$('overlay'); o.style.display='block';
+  o.innerHTML=`<div class="big ${ok?'ok':'ko'}">${pred} ${ok?'✅':'❌'}</div>
+    <div class="cmp">prédit par la simulation · sort réel : <b>${reel}</b></div>
+    <div class="nums">
+      <span><span class="dot" style="background:#3fbf7f"></span>pour <span class="v">${RUN.tally.pour.toFixed(0)}</span> <span style="font-size:11px">/ ${RUN.reel.pour} réel</span></span>
+      <span><span class="dot" style="background:#d95c5c"></span>contre <span class="v">${RUN.tally.contre.toFixed(0)}</span> <span style="font-size:11px">/ ${RUN.reel.contre} réel</span></span>
+      <span><span class="dot" style="background:#8a8f9c"></span>abst. <span class="v">${RUN.tally.abstention.toFixed(0)}</span> <span style="font-size:11px">/ ${RUN.reel.abstention} réel</span></span>
+    </div>`;
+}
 function finish(){
   playing=false; $('b-play').textContent='↺ Rejouer';
   if(lastIdx>=0){setSeatVisible(lastIdx,true); lastIdx=-1;}
   standing.visible=false; spot.visible=false; clearArcs();
+  pTorso.material.emissiveIntensity=.05;
   tallyRows(RUN, RUN.tally);
   const v=$('verdict'); v.style.display='block';
   const pred=RUN.tally.pour>RUN.tally.contre?'adopté':'rejeté';
   const ok=(pred==='adopté')===((RUN.scrutin?.sort||'').includes('adopt'));
   v.innerHTML=`Sort prédit : <b>${pred}</b> · réel : <b>${RUN.scrutin?.sort}</b> ${ok?'✅':'❌'}`;
+  voteSequence();
 }
 function tick(){
   if(playing){
@@ -427,7 +483,8 @@ function rebuildFeed(upto){
   $('feed-scroll').scrollTop=$('feed-scroll').scrollHeight;
 }
 $('b-play').onclick=()=>{
-  if(idx>=events.length-1){idx=-1;$('verdict').style.display='none';$('feed-scroll').innerHTML='';}
+  if(idx>=events.length-1){idx=-1;$('verdict').style.display='none';
+    $('feed-scroll').innerHTML=''; $('overlay').style.display='none'; resetColors();}
   playing=!playing; $('b-play').textContent=playing?'⏸ Pause':'▶ Lancer la séance';
   if(playing) tick();
 };
@@ -458,12 +515,29 @@ function hover(){
 }
 
 /* boucle */
-function resize(){renderer.setSize(innerWidth,innerHeight);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();}
+function resize(){
+  renderer.setSize(innerWidth,innerHeight);
+  cam.aspect=innerWidth/innerHeight;
+  // le fil occupe ~460px à gauche → on décale la scène 3D vers la DROITE
+  cam.setViewOffset(innerWidth,innerHeight,-230,0,innerWidth,innerHeight);
+  cam.updateProjectionMatrix();
+}
 addEventListener('resize',resize); resize();
 function loop(t){
   requestAnimationFrame(loop);
-  if(standing.visible){standing.children[0].material.emissiveIntensity=.45+.3*Math.sin(t*.006);
-    standing.position.y=seatData[lastIdx]?.y+.06*Math.max(0,Math.sin(t*.004)); }
+  if(standing.visible){
+    standing.children[0].material.emissiveIntensity=.45+.3*Math.sin(t*.006);
+    // lever animé : il se déplie en ~350 ms, puis balancement léger
+    const k=Math.min(1,(performance.now()-standT0)/350), e=1-(1-k)*(1-k);
+    standing.scale.set(1,.35+.65*e,1);
+    standing.position.y=(seatData[lastIdx]?.y??0)+.06*e*Math.max(0,Math.sin(t*.004));
+  }
+  // fondu d'apparition des arcs d'influence
+  arcsGroup.children.forEach(a=>{a.material.opacity+=(a.material.userData.target-a.material.opacity)*.07;});
+  // rotation cinématique quand la scène est idle (avant séance / après verdict)
+  if(!playing && !drag && (idx<0 || idx>=events.length-1)) azTarget+=.0006;
+  // caméra LISSÉE à chaque frame → plus de mouvements saccadés
+  if(Math.abs(azTarget-az)>1e-4){az+=(azTarget-az)*.045; placeCam();}
   if((frame++&3)===0) hover();
   renderer.render(scene,cam);
 }

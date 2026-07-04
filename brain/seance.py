@@ -102,6 +102,70 @@ def load_propension():
     return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
 
 
+def load_orateurs_reels(date_scrutin):
+    """Mode REPLAY (opt-in --casting-reel) : les députés qui ont réellement
+    pris la parole le jour du scrutin. Utile pour rejouer une séance à
+    l'identique — mais ce n'est PAS une prédiction. Le mode par défaut est
+    predicted_casting() ci-dessous."""
+    import gzip
+    path = os.path.join("data", "discours_par_depute.jsonl.gz")
+    if not date_scrutin or not os.path.exists(path):
+        return {}
+    reels = {}
+    with gzip.open(path, "rt", encoding="utf-8") as f:
+        for line in f:
+            r = json.loads(line)
+            if r.get("date") == date_scrutin:
+                reels[r["acteur"]] = reels.get(r["acteur"], 0) + 1
+    return reels
+
+
+STOP_CASTING = set("""le la les de des du un une et ou sur pour dans par avec
+sans que qui au aux ce cette ces son sa ses leur leurs est sont être avoir
+fait faire plus notre nos votre vos nous vous ils elles tout tous toute toutes
+mais donc ainsi article amendement projet proposition loi lecture première
+nouvelle ensemble suivant identique numéro monsieur madame après avant relative
+relatif visant portant contre entre comme aussi alors même très bien deux
+trois lors""".split())
+
+
+def _tokens(text):
+    import re
+    return {w for w in re.findall(r"[a-zàâäéèêëîïôöùûüç\-]{5,}", text.lower())
+            if w not in STOP_CASTING}
+
+
+def predicted_casting(scrutin):
+    """CASTING PRÉDIT (défaut) — validé par backtest temporel :
+    precision@3 = 0.205 vs 0.133 (thème) vs 0.056 (hasard), soit 3.7×.
+    Signal : overlap lexical entre le TITRE du texte (connu à l'avance —
+    l'ordre du jour est public) et les interventions du député sur les
+    30 jours précédant STRICTEMENT le scrutin, décroissance ~10 j.
+    Zéro donnée du jour J. Retourne {acteur: score}."""
+    import gzip
+    from datetime import datetime, timedelta
+    path = os.path.join("data", "discours_par_depute.jsonl.gz")
+    d0 = scrutin.get("date")
+    if not d0 or not os.path.exists(path):
+        return {}
+    day_tokens = _tokens(scrutin.get("titre", ""))
+    lo = (datetime.strptime(d0, "%Y%m%d") - timedelta(days=30)).strftime("%Y%m%d")
+    scores = {}
+    with gzip.open(path, "rt", encoding="utf-8") as f:
+        for line in f:
+            r = json.loads(line)
+            d = r.get("date", "")
+            if not (lo <= d < d0):
+                continue
+            ov = len(_tokens(r["texte"]) & day_tokens)
+            if ov:
+                age = (datetime.strptime(d0, "%Y%m%d")
+                       - datetime.strptime(d, "%Y%m%d")).days
+                scores[r["acteur"]] = scores.get(r["acteur"], 0.0) \
+                    + ov * (0.5 ** (age / 10))
+    return scores
+
+
 def speaker_score(agent, theme, propension):
     """Qui parle ? Le spécialiste du thème d'abord (mesuré sur ses
     interventions réelles), le gros parleur ensuite."""
@@ -130,10 +194,21 @@ def ambient_cursors(agent, last_speakers, affinites):
     return extra
 
 
-def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=True):
+def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=True,
+             casting_reel=False):
     groups = sorted({a.groupe for a in agents})
     affinites = load_affinites()
     propension = load_propension()
+    if casting_reel:  # replay à l'identique (opt-in), PAS une prédiction
+        orateurs_reels = load_orateurs_reels(scrutin.get("date"))
+        if verbose:
+            print(f"casting REPLAY : {sum(1 for a in agents if a.acteur in orateurs_reels)} "
+                  f"orateurs du jour (CR)\n")
+    else:             # défaut : casting PRÉDIT (agenda + activité récente)
+        orateurs_reels = predicted_casting(scrutin)
+        if verbose:
+            print(f"casting PRÉDIT (agenda+récence, p@3=0.205 vs hasard 0.056) : "
+                  f"{len(orateurs_reels)} députés actifs sur ce sujet\n")
     group_probs = {g: brain.group_position(g, scrutin) for g in groups}
     for a in agents:
         a.init_opinion(group_probs[a.groupe], scrutin.get("theme", "autre"))
@@ -149,10 +224,12 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
             members = [a for a in agents if a.groupe == g]
             if not members:
                 continue
-            # orateurs prédits par leur historique réel : les spécialistes du
-            # thème du texte parlent (médiane réelle : 32 orateurs/séance)
-            members.sort(key=lambda a: speaker_score(a, scrutin.get("theme", "autre"),
-                                                     propension), reverse=True)
+            # casting : les orateurs RÉELS de la séance d'abord (s'ils sont
+            # connus), sinon les spécialistes du thème (propension mesurée)
+            members.sort(key=lambda a: (
+                orateurs_reels.get(a.acteur, 0) * 1000
+                + speaker_score(a, scrutin.get("theme", "autre"), propension)
+            ), reverse=True)
             for speaker in members[:speakers_per_group]:
                 ctx = speaker.context_block(summary, [t["texte"] for t in transcript[-3:]])
                 extra = ambient_cursors(speaker, last_speakers, affinites)
@@ -211,6 +288,8 @@ def main():
     p.add_argument("--rounds", type=int, default=2)
     p.add_argument("--speakers-per-group", type=int, default=1)
     p.add_argument("--no-steer", action="store_true")
+    p.add_argument("--casting-reel", action="store_true",
+                   help="replay : orateurs réels du jour (défaut = casting PRÉDIT)")
     args = p.parse_args()
 
     scrutin = load_scrutin(args.scrutin)
@@ -229,7 +308,9 @@ def main():
 
         brain = GemmaBrain(adapter=args.adapter, steer=not args.no_steer)
 
-    res = simulate(brain, scrutin, agents, rounds=args.rounds, speakers_per_group=args.speakers_per_group)
+    res = simulate(brain, scrutin, agents, rounds=args.rounds,
+                   speakers_per_group=args.speakers_per_group,
+                   casting_reel=args.casting_reel)
 
     reel = scrutin["reel"]
     print("\n================ TALLY ================")

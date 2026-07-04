@@ -7,3 +7,5 @@ training/out/gemma-deputes-lora/checkpoint-*/
 data_cr/
 runs/
 .env
+.openrouter_key
+.env
