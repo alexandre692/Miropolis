@@ -90,16 +90,20 @@ def _call(model, messages, temperature=0.7, max_tokens=400, json_mode=False,
 def _extract_intervention(raw):
     """Isole le texte dans <intervention>...</intervention> et retire toute
     balise résiduelle. Tolérant à la troncature par max_tokens (balise
-    ouverte jamais refermée) et au markdown autour des balises (**<...>**).
+    ouverte jamais refermée) et au markdown que le modèle colle parfois
+    autour ou À L'INTÉRIEUR des chevrons (**<...>**, <**...>**...).
     Si la réflexion elle-même est tronquée (jamais fermée), on garde son
     contenu plutôt que de renvoyer du vide — dégradé vaut mieux que blanc."""
-    m = re.search(r"<intervention>(.*?)(?:</intervention>|$)", raw, re.S)
+    # normalise d'abord : tout markdown collé à un chevron disparaît, pour
+    # que les regex de balises ci-dessous matchent <intervention>/<reflexion>
+    # sous leur forme propre quelle que soit la fantaisie du modèle.
+    clean = re.sub(r"\*+(?=[<>])|(?<=[<>])\*+", "", raw)
+    m = re.search(r"<intervention>(.*?)(?:</intervention>|$)", clean, re.S)
     if m:
         text = m.group(1)
     else:
-        text = re.sub(r"<reflexion>.*?</reflexion>", "", raw, flags=re.S)
-    return re.sub(r"\*{0,2}</?(?:intervention|reflexion)>\*{0,2}", "", text,
-                  flags=re.I).strip()
+        text = re.sub(r"<reflexion>.*?</reflexion>", "", clean, flags=re.S)
+    return re.sub(r"</?(?:intervention|reflexion)>", "", text, flags=re.I).strip()
 
 
 def _parse_probs(text):
