@@ -39,6 +39,7 @@ def load_scrutin(uid):
         "uid": uid,
         "titre": titre,
         "date": date_scrutin,
+        "dossier": ((scr.get("objet") or {}).get("dossierLegislatif") or {}).get("dossierRef"),
         "typeVote": scr.get("typeVote", {}).get("libelleTypeVote", "scrutin public ordinaire"),
         "theme": "autre",
         "salience": "moyenne",
@@ -136,13 +137,15 @@ def _tokens(text):
 
 
 def predicted_casting(scrutin):
-    """CASTING PRÉDIT (défaut) — validé par backtest temporel :
-    precision@3 = 0.205 vs 0.133 (thème) vs 0.056 (hasard), soit 3.7×.
-    Signal : overlap lexical entre le TITRE du texte (connu à l'avance —
-    l'ordre du jour est public) et les interventions du député sur les
-    30 jours précédant STRICTEMENT le scrutin, décroissance ~10 j.
-    Zéro donnée du jour J. Retourne {acteur: score}."""
+    """CASTING PRÉDIT (défaut) — validé par backtest temporel (v3) :
+    precision@3 = 0.308 vs 0.205 (agenda seul) vs 0.056 (hasard) = 5.5×.
+    Signaux, tous STRICTEMENT antérieurs au jour J :
+      - rapporteurs du dossier (nomination datée)      [+25]
+      - amendements déposés sur le dossier             [6·ln(1+auteur) + 1.5·ln(1+cosign)]
+      - activité lexicale récente sur le titre (30 j, demi-vie 10 j)
+    Retourne {acteur: score}."""
     import gzip
+    import math
     from datetime import datetime, timedelta
     path = os.path.join("data", "discours_par_depute.jsonl.gz")
     d0 = scrutin.get("date")
@@ -163,6 +166,19 @@ def predicted_casting(scrutin):
                        - datetime.strptime(d, "%Y%m%d")).days
                 scores[r["acteur"]] = scores.get(r["acteur"], 0.0) \
                     + ov * (0.5 ** (age / 10))
+    # rapporteurs + amendeurs du dossier (pare-feu : datés < J)
+    sig_path = os.path.join("data", "casting_signals.json")
+    ref = scrutin.get("dossier")
+    if ref and os.path.exists(sig_path):
+        sig = json.load(open(sig_path, encoding="utf-8")).get(ref)
+        if sig:
+            for r in sig["rapporteurs"]:
+                if (r["date"] or "0") < d0:
+                    scores[r["acteur"]] = scores.get(r["acteur"], 0.0) + 25.0
+            for a, e in sig["amendeurs"].items():
+                if e["d0"] < d0:
+                    scores[a] = scores.get(a, 0.0) \
+                        + 6.0 * math.log1p(e["na"]) + 1.5 * math.log1p(e["nc"])
     return scores
 
 
@@ -207,8 +223,8 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
     else:             # défaut : casting PRÉDIT (agenda + activité récente)
         orateurs_reels = predicted_casting(scrutin)
         if verbose:
-            print(f"casting PRÉDIT (agenda+récence, p@3=0.205 vs hasard 0.056) : "
-                  f"{len(orateurs_reels)} députés actifs sur ce sujet\n")
+            print(f"casting PRÉDIT (rapporteurs+amendeurs+agenda, p@3=0.308 "
+                  f"vs hasard 0.056) : {len(orateurs_reels)} députés scorés\n")
     group_probs = {g: brain.group_position(g, scrutin) for g in groups}
     for a in agents:
         a.init_opinion(group_probs[a.groupe], scrutin.get("theme", "autre"))
