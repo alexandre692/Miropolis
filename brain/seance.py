@@ -102,6 +102,25 @@ def load_propension():
     return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
 
 
+def load_orateurs_reels(date_scrutin):
+    """CASTING RÉEL : les députés qui ont réellement pris la parole le jour du
+    scrutin (comptes rendus). Le réalisme du casting n'est plus une prédiction
+    fragile — ce que le modèle prédit, c'est le CONTENU des interventions et
+    le VOTE, pas la liste des inscrits (publique dans le CR de la séance).
+    Retourne {acteur: nb_interventions_ce_jour}."""
+    import gzip
+    path = os.path.join("data", "discours_par_depute.jsonl.gz")
+    if not date_scrutin or not os.path.exists(path):
+        return {}
+    reels = {}
+    with gzip.open(path, "rt", encoding="utf-8") as f:
+        for line in f:
+            r = json.loads(line)
+            if r.get("date") == date_scrutin:
+                reels[r["acteur"]] = reels.get(r["acteur"], 0) + 1
+    return reels
+
+
 def speaker_score(agent, theme, propension):
     """Qui parle ? Le spécialiste du thème d'abord (mesuré sur ses
     interventions réelles), le gros parleur ensuite."""
@@ -130,10 +149,15 @@ def ambient_cursors(agent, last_speakers, affinites):
     return extra
 
 
-def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=True):
+def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=True,
+             casting_reel=True):
     groups = sorted({a.groupe for a in agents})
     affinites = load_affinites()
     propension = load_propension()
+    orateurs_reels = load_orateurs_reels(scrutin.get("date")) if casting_reel else {}
+    if orateurs_reels and verbose:
+        n_present = sum(1 for a in agents if a.acteur in orateurs_reels)
+        print(f"casting réel : {n_present} orateurs du jour retrouvés dans les CR\n")
     group_probs = {g: brain.group_position(g, scrutin) for g in groups}
     for a in agents:
         a.init_opinion(group_probs[a.groupe], scrutin.get("theme", "autre"))
@@ -149,10 +173,12 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
             members = [a for a in agents if a.groupe == g]
             if not members:
                 continue
-            # orateurs prédits par leur historique réel : les spécialistes du
-            # thème du texte parlent (médiane réelle : 32 orateurs/séance)
-            members.sort(key=lambda a: speaker_score(a, scrutin.get("theme", "autre"),
-                                                     propension), reverse=True)
+            # casting : les orateurs RÉELS de la séance d'abord (s'ils sont
+            # connus), sinon les spécialistes du thème (propension mesurée)
+            members.sort(key=lambda a: (
+                orateurs_reels.get(a.acteur, 0) * 1000
+                + speaker_score(a, scrutin.get("theme", "autre"), propension)
+            ), reverse=True)
             for speaker in members[:speakers_per_group]:
                 ctx = speaker.context_block(summary, [t["texte"] for t in transcript[-3:]])
                 extra = ambient_cursors(speaker, last_speakers, affinites)
