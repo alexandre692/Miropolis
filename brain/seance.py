@@ -414,6 +414,15 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
             g = speaker.groupe
             if True:
                 ctx = speaker.context_block(summary, [t["texte"] for t in transcript[-3:]])
+                # cohérence discours/vote : quand l'ancre est connue (mode
+                # calibré = vote réel), l'orateur DÉFEND sa position au lieu
+                # de céder au réflexe critique du prompt anti-consensus —
+                # un rapporteur ne démolit pas son propre texte.
+                if calibre and scrutin.get("votes_reels", {}).get(speaker.acteur):
+                    pos = scrutin["votes_reels"][speaker.acteur]
+                    ctx += (f"\nTa position est ARRÊTÉE : tu voteras {pos.upper()}. "
+                            f"Ton intervention défend clairement cette position "
+                            f"({'soutiens le texte' if pos == 'pour' else 'combats le texte' if pos == 'contre' else 'explique ton abstention'}).")
                 extra = ambient_cursors(speaker, last_speakers, affinites)
                 texte = brain.intervention(speaker, scrutin, ctx, extra_cursors=extra)
                 speaker.remember(r, texte)
