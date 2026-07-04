@@ -326,11 +326,15 @@ function tallyRows(run, current, reveal){
   // le réel (chiffre + trait blanc) reste caché tant que le vote n'a pas eu
   // lieu — sinon la "prédiction" affichée pendant tout le débat n'en est
   // plus une, on voit juste la réponse à côté du curseur qui bouge un peu.
-  const max=Math.max(run.reel.pour+run.reel.contre+run.reel.abstention, 1);
+  // texte fictif : pas de résultat réel → on échelonne sur le total des
+  // députés et on n'affiche jamais de comparaison "réel".
+  const hasReel=!!run.reel;
+  const max=hasReel ? Math.max(run.reel.pour+run.reel.contre+run.reel.abstention, 1)
+                    : Math.max(run.deputes.length, 1);
   $('rows').innerHTML=['pour','contre','abstention'].map(p=>{
-    const v=current[p]??run.tally_avant_debat[p], r=run.reel[p];
-    const reel=reveal?` <span style="color:var(--ink2)">/ ${r} réel</span>`:'';
-    const trait=reveal?`<div class="real" style="left:${100*r/max}%"></div>`:'';
+    const v=current[p]??run.tally_avant_debat[p], r=hasReel?run.reel[p]:0;
+    const reel=(reveal&&hasReel)?` <span style="color:var(--ink2)">/ ${r} réel</span>`:'';
+    const trait=(reveal&&hasReel)?`<div class="real" style="left:${100*r/max}%"></div>`:'';
     return `<div class="trow"><div class="lab"><span>${p}</span><b>${v.toFixed(0)}${reel}</b></div>
       <div class="bar"><div class="fill" style="width:${100*v/max}%"></div>${trait}</div></div>`;}).join('');
 }
@@ -363,7 +367,8 @@ function prepare(run){
   const titre=(run.scrutin?.titre||'');
   $('t-titre').textContent=titre.charAt(0).toUpperCase()+titre.slice(1);
   $('t-sub').textContent=`Miropolis · scrutin ${run.scrutin?.uid||''} · ${run.deputes.length} députés · `
-    +`${events.length} prises de parole · thème ${run.scrutin?.theme||'?'} · sort réel révélé au vote`;
+    +`${events.length} prises de parole · thème ${run.scrutin?.theme||'?'} · `
+    +(run.reel?'sort réel révélé au vote':'texte fictif — prédiction pure');
   $('deplace').textContent=`voix déplacées par la séance : ${run.voix_deplacees_par_le_debat??'—'}`;
   legend(run); tallyRows(run, run.tally_avant_debat);
   buildHemicycle(run); placeCam();
@@ -470,15 +475,23 @@ function voteSequence(){
 }
 function verdictOverlay(){
   const pred=RUN.tally.pour>RUN.tally.contre?'ADOPTÉ':'REJETÉ';
+  const hasReel=!!RUN.reel;
   const reel=(RUN.scrutin?.sort||'?').toUpperCase();
   const ok=(pred==='ADOPTÉ')===reel.includes('ADOPT');
   const o=$('overlay'); o.style.display='block';
-  o.innerHTML=`<div class="big ${ok?'ok':'ko'}">${pred} ${ok?'✅':'❌'}</div>
-    <div class="cmp">prédit par la simulation · sort réel : <b>${reel}</b></div>
+  // texte fictif : on n'a aucune issue réelle à comparer → prédiction seule,
+  // pas de ✅/❌, pas de colonne "réel".
+  const num=(lab,col,v)=>`<span><span class="dot" style="background:${col}"></span>${lab} `
+    +`<span class="v">${v.toFixed(0)}</span></span>`;
+  const numCmp=(lab,col,v,r)=>`<span><span class="dot" style="background:${col}"></span>${lab} `
+    +`<span class="v">${v.toFixed(0)}</span> <span style="font-size:11px">/ ${r} réel</span></span>`;
+  o.innerHTML=`<div class="big ${hasReel?(ok?'ok':'ko'):''}">${pred}${hasReel?(ok?' ✅':' ❌'):''}</div>
+    <div class="cmp">${hasReel?`prédit par la simulation · sort réel : <b>${reel}</b>`
+                              :`prédiction Miropolis · <b>texte fictif, aucune issue réelle</b>`}</div>
     <div class="nums">
-      <span><span class="dot" style="background:#3fbf7f"></span>pour <span class="v">${RUN.tally.pour.toFixed(0)}</span> <span style="font-size:11px">/ ${RUN.reel.pour} réel</span></span>
-      <span><span class="dot" style="background:#d95c5c"></span>contre <span class="v">${RUN.tally.contre.toFixed(0)}</span> <span style="font-size:11px">/ ${RUN.reel.contre} réel</span></span>
-      <span><span class="dot" style="background:#8a8f9c"></span>abst. <span class="v">${RUN.tally.abstention.toFixed(0)}</span> <span style="font-size:11px">/ ${RUN.reel.abstention} réel</span></span>
+      ${hasReel?numCmp('pour','#3fbf7f',RUN.tally.pour,RUN.reel.pour):num('pour','#3fbf7f',RUN.tally.pour)}
+      ${hasReel?numCmp('contre','#d95c5c',RUN.tally.contre,RUN.reel.contre):num('contre','#d95c5c',RUN.tally.contre)}
+      ${hasReel?numCmp('abst.','#8a8f9c',RUN.tally.abstention,RUN.reel.abstention):num('abst.','#8a8f9c',RUN.tally.abstention)}
     </div>`;
 }
 function showRecap(text, onClose){
@@ -500,8 +513,12 @@ function finish(){
   tallyRows(RUN, RUN.tally, true);
   const v=$('verdict'); v.style.display='block';
   const pred=RUN.tally.pour>RUN.tally.contre?'adopté':'rejeté';
-  const ok=(pred==='adopté')===((RUN.scrutin?.sort||'').includes('adopt'));
-  v.innerHTML=`Sort prédit : <b>${pred}</b> · réel : <b>${RUN.scrutin?.sort}</b> ${ok?'✅':'❌'}`;
+  if(RUN.reel){
+    const ok=(pred==='adopté')===((RUN.scrutin?.sort||'').includes('adopt'));
+    v.innerHTML=`Sort prédit : <b>${pred}</b> · réel : <b>${RUN.scrutin?.sort}</b> ${ok?'✅':'❌'}`;
+  } else {
+    v.innerHTML=`Sort prédit : <b>${pred}</b> · <span style="color:var(--ink2)">texte fictif</span>`;
+  }
   // le résumé de clôture (s'il existe) s'affiche AVANT le vote ; on ne lance
   // la séquence de vote qu'une fois la modale fermée (clic à l'extérieur)
   if(RUN.recap_president) showRecap(RUN.recap_president, voteSequence);

@@ -92,6 +92,39 @@ def build_agents(participants=None):
     return agents
 
 
+# thèmes reconnus (alignés sur data/scrutins_enrichis.jsonl et les mots-clés
+# de prompt_pack.py) — un thème hors liste retombe sur "autre"
+THEMES = ("fiscalité_finances", "immigration_sécurité", "écologie_énergie",
+          "santé", "travail_social", "justice_institutions",
+          "international_défense", "agriculture_ruralité", "logement",
+          "éducation_recherche", "outre_mer", "autre")
+
+
+def scrutin_fictif(titre, theme="autre", salience="haute",
+                   type_vote="scrutin public solennel"):
+    """Construit un « scrutin » à partir d'un texte de loi INVENTÉ : aucune
+    donnée de vote réelle (reel=None, sort=None) — c'est une pure prédiction.
+    Tous les députés en exercice participent. La date = aujourd'hui : la
+    prédiction de position par groupe et les extraits de discours utilisent
+    donc TOUT l'historique disponible (pas de pare-feu temporel, on ne triche
+    sur rien puisqu'il n'y a pas de futur à ne pas fuiter)."""
+    from datetime import date
+    if theme not in THEMES:
+        theme = "autre"
+    slug = "".join(c if c.isalnum() else "_" for c in titre.lower())[:40].strip("_")
+    return {
+        "uid": f"FICTIF_{slug or 'texte'}",
+        "titre": titre,
+        "date": date.today().strftime("%Y%m%d"),
+        "typeVote": type_vote,
+        "theme": theme,
+        "salience": salience,
+        "sort": None,        # inconnu : aucune issue réelle
+        "reel": None,        # aucun décompte réel à comparer
+        "participants": [],  # vide → build_agents(None) prend TOUS les députés
+    }
+
+
 def load_affinites():
     path = os.path.join("data", "group_affinites.json")
     return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
@@ -286,7 +319,7 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--scrutin", required=True, help="uid, ex. VTANR5L17V4000")
+    p.add_argument("--scrutin", help="uid, ex. VTANR5L17V4000 (ou --fictif --titre)")
     p.add_argument("--mock", action="store_true")
     p.add_argument("--openrouter", action="store_true",
                    help="moteur API multi-modèles (OPENROUTER_API_KEY requise)")
@@ -296,12 +329,30 @@ def main():
     p.add_argument("--no-steer", action="store_true")
     p.add_argument("--casting-reel", action="store_true",
                    help="replay : orateurs réels du jour (défaut = casting PRÉDIT)")
+    # --- mode projet de loi FICTIF (prédiction pure, aucune issue réelle) ---
+    p.add_argument("--fictif", action="store_true",
+                   help="simule un texte de loi INVENTÉ (--titre requis, pas de --scrutin)")
+    p.add_argument("--titre", help="titre du texte fictif (avec --fictif)")
+    p.add_argument("--theme", default="autre",
+                   help=f"thème du texte fictif ; un de : {', '.join(THEMES)}")
+    p.add_argument("--salience", default="haute", help="haute|moyenne|faible (texte fictif)")
+    p.add_argument("--type-vote", default="scrutin public solennel", help="type de vote (texte fictif)")
     args = p.parse_args()
 
-    scrutin = load_scrutin(args.scrutin)
-    agents = build_agents(set(scrutin["participants"]))
+    if args.fictif:
+        if not args.titre:
+            p.error("--fictif exige --titre \"...\"")
+        scrutin = scrutin_fictif(args.titre, theme=args.theme,
+                                 salience=args.salience, type_vote=args.type_vote)
+        agents = build_agents(None)  # tous les députés en exercice
+    else:
+        if not args.scrutin:
+            p.error("--scrutin requis (ou utilise --fictif --titre \"...\")")
+        scrutin = load_scrutin(args.scrutin)
+        agents = build_agents(set(scrutin["participants"]))
     print(f"Scrutin {scrutin['uid']} — {scrutin['titre'][:90]}")
-    print(f"thème {scrutin['theme']}, {len(agents)} députés participants\n")
+    print(f"thème {scrutin['theme']}, {len(agents)} députés participants"
+          + (" [TEXTE FICTIF — prédiction pure]" if args.fictif else "") + "\n")
 
     if args.mock:
         brain = MockBrain()
@@ -318,15 +369,23 @@ def main():
                    speakers_per_group=args.speakers_per_group,
                    casting_reel=args.casting_reel)
 
-    reel = scrutin["reel"]
+    reel = scrutin["reel"]  # None en mode fictif
     print("\n================ TALLY ================")
-    print(f"{'':12s}{'avant débat':>12s}{'après débat':>12s}{'réel':>8s}")
-    for pos in POSITIONS:
-        print(f"{pos:12s}{res['tally_avant_debat'][pos]:>12.1f}"
-              f"{res['tally'][pos]:>12.1f}{reel[pos]:>8d}")
+    if reel:
+        print(f"{'':12s}{'avant débat':>12s}{'après débat':>12s}{'réel':>8s}")
+        for pos in POSITIONS:
+            print(f"{pos:12s}{res['tally_avant_debat'][pos]:>12.1f}"
+                  f"{res['tally'][pos]:>12.1f}{reel[pos]:>8d}")
+    else:
+        print(f"{'':12s}{'avant débat':>12s}{'après débat':>12s}")
+        for pos in POSITIONS:
+            print(f"{pos:12s}{res['tally_avant_debat'][pos]:>12.1f}{res['tally'][pos]:>12.1f}")
     pred_sort = "adopté" if res["tally"]["pour"] > res["tally"]["contre"] else "rejeté"
     print(f"\nVoix déplacées par la séance : {res['voix_deplacees_par_le_debat']}")
-    print(f"Sort prédit : {pred_sort} — sort réel : {scrutin['sort']}")
+    if reel:
+        print(f"Sort prédit : {pred_sort} — sort réel : {scrutin['sort']}")
+    else:
+        print(f"Sort prédit : {pred_sort} — texte fictif, aucune issue réelle")
 
     out = {"scrutin": {k: scrutin[k] for k in ("uid", "titre", "theme", "sort")}, "reel": reel, **res}
     os.makedirs("runs", exist_ok=True)

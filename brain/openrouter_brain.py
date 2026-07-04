@@ -151,11 +151,18 @@ class OpenRouterBrain:
 
     # ---------- ORCHESTRATEUR ----------
 
+    # part du prior historique conservée dans la position finale d'un groupe.
+    # Léger filet de sécurité : dampe les erreurs confiantes de l'orchestrateur
+    # sans écraser ses prédictions justes. Le vrai levier est le prompt
+    # (raisonnement sur le camp politique) ; ce mélange ne fait qu'amortir.
+    PRIOR_BLEND = 0.25
+
     def group_position(self, groupe, scrutin):
         prior = self.priors.group_position(groupe, scrutin) if self.priors else None
-        prior_txt = (f"Prior historique du groupe sur ce thème : "
-                     f"{json.dumps(prior, ensure_ascii=False)}. Écarte-t'en "
-                     f"UNIQUEMENT si le contenu du texte le justifie."
+        prior_txt = (f"Ligne de vote HISTORIQUE MESURÉE du groupe {groupe} sur ce "
+                     f"thème : {json.dumps(prior, ensure_ascii=False)}. C'est ton "
+                     f"point d'ancrage : ne t'en écarte que si le texte le justifie "
+                     f"clairement, et de façon mesurée."
                      if prior else "")
         messages = [{"role": "user", "content": (
             "Tu es un politologue expert de l'Assemblée nationale française "
@@ -164,7 +171,14 @@ class OpenRouterBrain:
             f"Type : {scrutin.get('typeVote', '?')} — thème {scrutin.get('theme', '?')} "
             f"— saillance {scrutin.get('salience', '?')}\n"
             f"Titre : {scrutin.get('titre', '')}\n"
-            f"{scrutin.get('texte_contexte', '')}\n{prior_txt}\n"
+            f"{scrutin.get('texte_contexte', '')}\n{prior_txt}\n\n"
+            "RAISONNE D'ABORD SUR LE CAMP POLITIQUE : à quel bord ce texte "
+            "appartient-il (qui le porte, qui en tire crédit) ? Un groupe vote "
+            "presque toujours CONTRE un texte porté par un camp adverse, MÊME "
+            "si le thème lui est cher — la logique partisane l'emporte sur le "
+            "sujet. Ne te laisse pas piéger par un intitulé sympathique "
+            "('plus juste', 'pour tous') : demande-toi qui l'a écrit. En cas "
+            "de doute, colle au prior historique.\n"
             'Réponds en JSON strict : {"pour": p, "contre": p, "abstention": p, '
             '"raison": "une phrase"} avec p sommant à 1.')}]
         try:
@@ -172,11 +186,17 @@ class OpenRouterBrain:
                                        temperature=0.2, json_mode=True))
         except RuntimeError:
             probs = None
-        if probs:
+        if not probs:
+            return prior or {"pour": 1 / 3, "contre": 1 / 3, "abstention": 1 / 3}
+        if not prior:
             return probs
-        if prior:  # repli déterministe : la démo ne meurt jamais sur un appel raté
-            return prior
-        return {"pour": 1 / 3, "contre": 1 / 3, "abstention": 1 / 3}
+        # ancrage : mélange prior mesuré + estimation orchestrateur, pour que
+        # ce dernier ne puisse pas faire basculer un groupe contre son histoire
+        # sur un raisonnement fragile.
+        a = self.PRIOR_BLEND
+        blended = {p: a * prior.get(p, 0.0) + (1 - a) * probs.get(p, 0.0) for p in POSITIONS}
+        tot = sum(blended.values()) or 1.0
+        return {p: v / tot for p, v in blended.items()}
 
     def summarize(self, transcript_tail, previous_summary=""):
         """Résumé roulant du débat — le contexte récurrent qui garde le fil."""
