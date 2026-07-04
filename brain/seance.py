@@ -243,9 +243,11 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
                     print(f"  [{r}] {speaker.nom} ({g}) : {texte[:110]}")
                 # spontanéité : le groupe le plus opposé peut interjecter
                 # (proba ∝ hostilité mesurée ; déterministe via hash → rejouable)
+                # — volontairement rare : une interjection ponctue le débat,
+                # elle ne doit pas suivre chaque prise de parole.
                 opp = min(groups, key=lambda x: affinites.get(g, {}).get(x, 0.0))
                 hostilite = -affinites.get(g, {}).get(opp, 0.0)
-                if hostilite > 0.3 and hash((scrutin["uid"], r, speaker.acteur)) % 10 < int(hostilite * 6):
+                if hostilite > 0.4 and hash((scrutin["uid"], r, speaker.acteur)) % 20 < int(hostilite * 3):
                     heckler = next((a for a in sorted(
                         (x for x in agents if x.groupe == opp),
                         key=lambda x: speaker_score(x, scrutin.get("theme", "autre"),
