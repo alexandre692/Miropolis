@@ -194,7 +194,7 @@ class OpenRouterBrain:
             '"raison": "une phrase"} avec p sommant à 1.')}]
         try:
             probs = _parse_probs(_call(self.orch_model, messages,
-                                       temperature=0.2, json_mode=True))
+                                       temperature=0.0, json_mode=True))
         except RuntimeError as e:
             import sys
             print(f"  [orchestrateur KO sur {groupe} -> repli prior] {e}", file=sys.stderr)
