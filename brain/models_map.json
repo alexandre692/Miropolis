@@ -3,7 +3,7 @@
     "orchestrateur": "anthropic/claude-sonnet-4.5",
     "depute_default": "mistralai/mistral-small-3.2-24b-instruct"
   },
-  "_note": "groupe -> pool de modèles OpenRouter. Un député pioche dedans de façon stable (hash de son acteurRef — toujours le même modèle pour le même député d'un run à l'autre, pas un tirage aléatoire). Taille du pool pondérée par le poids réel du groupe à l'Assemblée (comptage sur data/deputes_profils.json, 640 profils). Diversité maximale voulue : on couvre volontairement beaucoup de familles de modèles différentes (Meta, Mistral, Google, Qwen, DeepSeek, Amazon, Cohere, IBM, Microsoft, NVIDIA, Anthropic) — choix d'ingénierie pour varier les voix, pas un claim scientifique. Vérifier les ids sur openrouter.ai/models avant le run (le catalogue change souvent).",
+  "_note": "groupe -> pool de modèles OpenRouter. Un député pioche dedans de façon stable (hash de son acteurRef). Taille du pool pondérée par le poids réel du groupe à l'Assemblée (data/deputes_profils.json, 640 profils). Seuls des modèles de qualité correcte (>=12B effectifs) sont retenus : les tiers nano/lite/micro/1-9B ont été retirés car ils paraphrasaient l'orateur précédent au lieu d'argumenter (écho observé en prod). Diversité de familles conservée (Anthropic, DeepSeek, Google, Mistral, NVIDIA, OpenAI, Meta, Qwen, Microsoft). Vérifier les ids sur openrouter.ai/models avant le run.",
   "_poids_sieges": {
     "RN": "20.2%",
     "EPR": "17.8%",
@@ -19,84 +19,84 @@
     "NI": "1.4%"
   },
   "RN": [
-    "meta-llama/llama-3.1-8b-instruct",
-    "mistralai/mistral-nemo",
-    "openai/gpt-oss-20b",
-    "amazon/nova-micro-v1",
-    "cohere/command-r7b-12-2024",
-    "qwen/qwen-2.5-7b-instruct",
-    "qwen/qwen3-30b-a3b-instruct-2507",
-    "mistralai/mistral-small-24b-instruct-2501",
-    "google/gemma-3-4b-it"
+    "anthropic/claude-haiku-4.5",
+    "deepseek/deepseek-chat-v3.1",
+    "deepseek/deepseek-v4-flash",
+    "deepseek/deepseek-chat",
+    "google/gemini-2.5-flash",
+    "google/gemini-2.5-flash-lite",
+    "google/gemma-3-12b-it",
+    "google/gemma-3-27b-it",
+    "google/gemma-4-31b-it"
   ],
   "EPR": [
-    "ibm-granite/granite-4.1-8b",
-    "google/gemma-3-12b-it",
-    "nvidia/nemotron-3-nano-30b-a3b",
-    "meta-llama/llama-3.2-3b-instruct",
-    "google/gemma-3n-e4b-it",
-    "amazon/nova-lite-v1",
+    "google/gemma-4-26b-a4b-it",
     "microsoft/phi-4",
-    "mistralai/mistral-small-3.2-24b-instruct"
+    "mistralai/mistral-nemo",
+    "mistralai/mistral-small-24b-instruct-2501",
+    "mistralai/mistral-small-3.2-24b-instruct",
+    "mistralai/mistral-small-2603",
+    "nvidia/nemotron-3-nano-30b-a3b",
+    "openai/gpt-oss-20b"
   ],
   "LFI-NFP": [
-    "google/gemma-3-27b-it",
-    "qwen/qwen3-32b",
-    "deepseek/deepseek-v4-flash",
+    "openai/gpt-oss-120b",
+    "meta-llama/llama-3.3-70b-instruct",
+    "meta-llama/llama-4-scout",
+    "qwen/qwen3-14b",
     "qwen/qwen3-235b-a22b-2507",
-    "qwen/qwen3-next-80b-a3b-instruct",
-    "mistralai/ministral-3b-2512"
+    "qwen/qwen3-30b-a3b-instruct-2507"
   ],
   "SOC": [
-    "qwen/qwen3.5-9b",
-    "qwen/qwen3-14b",
-    "meta-llama/llama-3.3-70b-instruct",
-    "google/gemini-2.5-flash-lite",
-    "google/gemini-2.5-flash",
-    "anthropic/claude-haiku-4.5"
+    "qwen/qwen3-32b",
+    "qwen/qwen3-next-80b-a3b-instruct",
+    "anthropic/claude-haiku-4.5",
+    "deepseek/deepseek-chat-v3.1",
+    "deepseek/deepseek-v4-flash",
+    "deepseek/deepseek-chat"
   ],
   "DR": [
-    "deepseek/deepseek-chat-v3.1",
-    "meta-llama/llama-3.1-8b-instruct",
-    "mistralai/mistral-nemo",
-    "openai/gpt-oss-20b",
-    "amazon/nova-micro-v1"
+    "google/gemini-2.5-flash",
+    "google/gemini-2.5-flash-lite",
+    "google/gemma-3-12b-it",
+    "google/gemma-3-27b-it",
+    "google/gemma-4-31b-it"
   ],
   "HOR": [
-    "cohere/command-r7b-12-2024",
-    "qwen/qwen-2.5-7b-instruct",
-    "qwen/qwen3-30b-a3b-instruct-2507",
+    "google/gemma-4-26b-a4b-it",
+    "microsoft/phi-4",
+    "mistralai/mistral-nemo",
     "mistralai/mistral-small-24b-instruct-2501"
   ],
   "Dem": [
-    "google/gemma-3-4b-it",
-    "ibm-granite/granite-4.1-8b",
-    "google/gemma-3-12b-it",
-    "nvidia/nemotron-3-nano-30b-a3b"
+    "mistralai/mistral-small-3.2-24b-instruct",
+    "mistralai/mistral-small-2603",
+    "nvidia/nemotron-3-nano-30b-a3b",
+    "openai/gpt-oss-20b"
   ],
   "EcoS": [
-    "meta-llama/llama-3.2-3b-instruct",
-    "google/gemma-3n-e4b-it",
-    "amazon/nova-lite-v1",
-    "microsoft/phi-4"
+    "openai/gpt-oss-120b",
+    "meta-llama/llama-3.3-70b-instruct",
+    "meta-llama/llama-4-scout",
+    "qwen/qwen3-14b"
   ],
   "LIOT": [
-    "mistralai/mistral-small-3.2-24b-instruct",
-    "google/gemma-3-27b-it",
+    "qwen/qwen3-235b-a22b-2507",
+    "qwen/qwen3-30b-a3b-instruct-2507",
     "qwen/qwen3-32b"
   ],
   "GDR": [
-    "deepseek/deepseek-v4-flash",
-    "qwen/qwen3-235b-a22b-2507",
-    "qwen/qwen3-next-80b-a3b-instruct"
+    "qwen/qwen3-next-80b-a3b-instruct",
+    "anthropic/claude-haiku-4.5",
+    "deepseek/deepseek-chat-v3.1"
   ],
   "UDR": [
-    "mistralai/ministral-3b-2512",
-    "qwen/qwen3.5-9b",
-    "qwen/qwen3-14b"
+    "deepseek/deepseek-v4-flash",
+    "deepseek/deepseek-chat",
+    "google/gemini-2.5-flash"
   ],
   "NI": [
-    "meta-llama/llama-3.3-70b-instruct",
-    "google/gemini-2.5-flash-lite"
+    "google/gemini-2.5-flash-lite",
+    "google/gemma-3-12b-it"
   ]
 }
