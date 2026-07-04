@@ -179,6 +179,26 @@ def predicted_casting(scrutin):
                 if e["d0"] < d0:
                     scores[a] = scores.get(a, 0.0) \
                         + 6.0 * math.log1p(e["na"]) + 1.5 * math.log1p(e["nc"])
+    # v4 : commission au fond (mandat actif à J) + présences en commission
+    # sur CE dossier (réunions datées < J) → p@3 = 0.322 au backtest
+    if ref:
+        dc_p = os.path.join("data", "dossier_commissions.json")
+        cm_p = os.path.join("data", "comper_membership.json")
+        pr_p = os.path.join("data", "presences_commission.json")
+        if os.path.exists(dc_p) and os.path.exists(cm_p):
+            coms = json.load(open(dc_p, encoding="utf-8")).get(ref, [])
+            if coms:
+                cm = json.load(open(cm_p, encoding="utf-8"))
+                for a, rows_m in cm.items():
+                    if any(org in coms and deb < d0 <= fin
+                           for org, deb, fin in rows_m):
+                        scores[a] = scores.get(a, 0.0) + 3.0
+        if os.path.exists(pr_p):
+            pr = json.load(open(pr_p, encoding="utf-8")).get(ref, {})
+            for a, dates_p in pr.items():
+                n = sum(1 for dd in dates_p if dd < d0)
+                if n:
+                    scores[a] = scores.get(a, 0.0) + 4.0 * math.log1p(n)
     return scores
 
 
