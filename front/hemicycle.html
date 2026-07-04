@@ -62,13 +62,7 @@
   #overlay{left:calc(50% + 215px);top:44%;transform:translate(-50%,-50%);text-align:center;display:none;
     background:rgba(15,17,24,.92);border:1px solid var(--line);border-radius:18px;padding:26px 44px}
   #overlay .big{font-size:34px;font-weight:700;letter-spacing:.5px}
-  /* couleur du mot = le RÉSULTAT (adopté vert / rejeté rouge) */
-  #overlay .big.adopte{color:#57d18b} #overlay .big.rejete{color:#e06a6a}
-  /* badge SÉPARÉ = justesse de la prédiction (indépendant du résultat) */
-  #overlay .judge{display:inline-block;margin-top:12px;padding:5px 14px;border-radius:999px;
-    font-size:13px;font-weight:600}
-  #overlay .judge.ok{background:rgba(87,209,139,.16);color:#57d18b;border:1px solid rgba(87,209,139,.4)}
-  #overlay .judge.ko{background:rgba(224,170,90,.16);color:#e0aa5a;border:1px solid rgba(224,170,90,.4)}
+  #overlay .big.ok{color:#57d18b} #overlay .big.ko{color:#e06a6a}
   #overlay .cmp{margin-top:10px;font-size:15px;color:var(--ink2)}
   #overlay .cmp b{color:var(--ink)}
   #overlay .nums{margin-top:12px;font-size:13px;color:var(--ink2);display:flex;gap:22px;justify-content:center}
@@ -101,13 +95,34 @@
     background:radial-gradient(1100px 720px at 50% 36%, rgba(27,31,46,.88), rgba(15,17,25,.97));
     transition:opacity .8s}
   #landing.gone{opacity:0;pointer-events:none}
-  #landing .an{display:flex;align-items:center;gap:14px;color:var(--ink2);
-    font-size:11.5px;text-transform:uppercase;letter-spacing:2.4px;text-align:left;line-height:1.7}
-  #landing .an svg{height:56px;width:auto;flex:none}
-  #landing .an b{color:var(--ink);font-weight:600}
-  #landing .mark svg{height:118px}
-  #landing .wordmark{margin:8px 0 0;font-size:42px;font-weight:700;letter-spacing:11px;text-indent:11px;line-height:1}
+  #landing .top{position:absolute;top:20px;left:28px;right:28px;display:flex;
+    justify-content:space-between;align-items:center;pointer-events:none}
+  #landing .brand{display:flex;align-items:center;gap:13px;text-align:left;
+    color:var(--ink2);font-size:11px;text-transform:uppercase;letter-spacing:2.1px;line-height:1.7}
+  #landing .brand svg{height:48px;width:auto;flex:none}
+  #landing .brand b{color:var(--ink);font-weight:600}
+  #landing .brand.right{flex-direction:row-reverse;text-align:right}
+  #landing .mark svg{height:96px}
+  #landing .wordmark{margin:6px 0 0;font-size:38px;font-weight:700;letter-spacing:10px;text-indent:10px;line-height:1}
   #landing .tagline{margin:10px auto 0;color:var(--ink2);font-size:14px;max-width:520px;line-height:1.6}
+  /* panneau paramètres (repliable) */
+  #params{width:min(520px,86vw);text-align:left;background:rgba(24,27,38,.55);
+    border:1px solid var(--line);border-radius:14px;padding:2px 18px}
+  #params summary{cursor:pointer;font-size:13px;color:var(--ink2);padding:11px 0;
+    list-style:none;user-select:none;letter-spacing:.3px}
+  #params summary::-webkit-details-marker{display:none}
+  #params summary:hover{color:var(--ink)}
+  #params[open] summary{border-bottom:1px solid var(--line)}
+  .prow{display:flex;align-items:center;justify-content:space-between;gap:14px;
+    padding:10px 0;font-size:12.5px;color:var(--ink2)}
+  .prow+.prow{border-top:1px solid #232736}
+  .prow select{background:#20242f;color:var(--ink);border:1px solid var(--line);
+    border-radius:8px;padding:6px 8px;font-size:12px;max-width:280px}
+  .prow .seg{display:flex;gap:6px}
+  .prow .seg button{background:#20242f;color:var(--ink2);border:1px solid var(--line);
+    border-radius:8px;padding:4px 12px;font-size:12px;cursor:pointer}
+  .prow .seg button.on{background:#39415a;color:var(--ink)}
+  .prow input[type=checkbox]{accent-color:#aeb9d6;width:16px;height:16px;cursor:pointer}
   #dz{width:min(520px,86vw);border:1.5px dashed #39415a;border-radius:14px;padding:24px 22px;
     color:var(--ink2);cursor:pointer;background:rgba(24,27,38,.55);
     transition:border-color .2s,background .2s}
@@ -129,7 +144,8 @@
 
 <!-- ---------- page d'accueil ---------- -->
 <div id="landing">
-  <div class="an">
+  <div class="top">
+  <div class="brand">
     <!-- logo Assemblée nationale (fronton + 9 colonnes, redessiné en SVG) -->
     <svg viewBox="0 0 1200 1000" aria-label="Assemblée nationale">
       <polygon fill="#E6E9F0" points="20,262 628,118 1170,282 1170,320 628,202 20,380"/>
@@ -147,14 +163,17 @@
     </svg>
     <span><b>Assemblée nationale</b><br>hackathon « le parcours de la loi » · 2026</span>
   </div>
-
-  <div class="mark">
-    <!-- logo Miropolis : hémicycle de points aux couleurs des groupes -->
+  <div class="brand right">
     <svg viewBox="14 8 192 102" aria-label="Miropolis">
       <circle cx="64.0" cy="100.0" r="4.6" fill="#E5446D"/><circle cx="66.3" cy="85.8" r="4.6" fill="#C43131"/><circle cx="72.8" cy="73.0" r="4.6" fill="#CC6E8C"/><circle cx="83.0" cy="62.8" r="4.6" fill="#2FA45C"/><circle cx="95.8" cy="56.3" r="4.6" fill="#9C79CC"/><circle cx="110.0" cy="54.0" r="4.6" fill="#CC7226"/><circle cx="124.2" cy="56.3" r="4.6" fill="#C29B1F"/><circle cx="137.0" cy="62.8" r="4.6" fill="#2BA3B5"/><circle cx="147.2" cy="73.0" r="4.6" fill="#4A72DE"/><circle cx="153.7" cy="85.8" r="4.6" fill="#B57A33"/><circle cx="156.0" cy="100.0" r="4.6" fill="#3D5FCC"/>
       <circle cx="46.0" cy="100.0" r="4.6" fill="#E5446D"/><circle cx="47.6" cy="85.8" r="4.6" fill="#E5446D"/><circle cx="52.3" cy="72.2" r="4.6" fill="#C43131"/><circle cx="60.0" cy="60.1" r="4.6" fill="#CC6E8C"/><circle cx="70.1" cy="50.0" r="4.6" fill="#2FA45C"/><circle cx="82.2" cy="42.3" r="4.6" fill="#2FA45C"/><circle cx="95.8" cy="37.6" r="4.6" fill="#9C79CC"/><circle cx="110.0" cy="36.0" r="4.6" fill="#CC7226"/><circle cx="124.2" cy="37.6" r="4.6" fill="#C29B1F"/><circle cx="137.8" cy="42.3" r="4.6" fill="#2BA3B5"/><circle cx="149.9" cy="50.0" r="4.6" fill="#2BA3B5"/><circle cx="160.0" cy="60.1" r="4.6" fill="#4A72DE"/><circle cx="167.7" cy="72.2" r="4.6" fill="#B57A33"/><circle cx="172.4" cy="85.8" r="4.6" fill="#3D5FCC"/><circle cx="174.0" cy="100.0" r="4.6" fill="#3D5FCC"/>
       <circle cx="28.0" cy="100.0" r="4.6" fill="#E5446D"/><circle cx="29.2" cy="85.8" r="4.6" fill="#E5446D"/><circle cx="32.9" cy="72.0" r="4.6" fill="#C43131"/><circle cx="39.0" cy="59.0" r="4.6" fill="#C43131"/><circle cx="47.2" cy="47.3" r="4.6" fill="#CC6E8C"/><circle cx="57.3" cy="37.2" r="4.6" fill="#2FA45C"/><circle cx="69.0" cy="29.0" r="4.6" fill="#2FA45C"/><circle cx="82.0" cy="22.9" r="4.6" fill="#9C79CC"/><circle cx="95.8" cy="19.2" r="4.6" fill="#9C79CC"/><circle cx="110.0" cy="18.0" r="4.6" fill="#CC7226"/><circle cx="124.2" cy="19.2" r="4.6" fill="#C29B1F"/><circle cx="138.0" cy="22.9" r="4.6" fill="#C29B1F"/><circle cx="151.0" cy="29.0" r="4.6" fill="#2BA3B5"/><circle cx="162.7" cy="37.2" r="4.6" fill="#2BA3B5"/><circle cx="172.8" cy="47.3" r="4.6" fill="#4A72DE"/><circle cx="181.0" cy="59.0" r="4.6" fill="#B57A33"/><circle cx="187.1" cy="72.0" r="4.6" fill="#B57A33"/><circle cx="190.8" cy="85.8" r="4.6" fill="#3D5FCC"/><circle cx="192.0" cy="100.0" r="4.6" fill="#3D5FCC"/>
     </svg>
+    <span><b>Miropolis</b><br>simulation projective de séance</span>
+  </div>
+  </div>
+
+  <div class="mark">
     <div class="wordmark">MIROPOLIS</div>
     <div class="tagline">La séance avant la séance — simulation projective de l'hémicycle.
       Chaque député est un agent calibré sur ses votes et ses interventions réelles.</div>
@@ -166,6 +185,18 @@
     <div class="small">PDF ou texte — ou un run Miropolis (.json) · vous pouvez aussi cliquer</div>
     <div class="okline" id="dz-ok"></div>
   </div>
+
+  <details id="params">
+    <summary>⚙&#xFE0E; Paramètres de simulation</summary>
+    <div class="prow"><span>Scrutin</span>
+      <select id="p-run"><option value="-1" selected>Aléatoire — ou selon le fichier déposé</option></select></div>
+    <div class="prow"><span>Vitesse de la séance</span>
+      <div class="seg" id="p-speed"><button data-v="1" class="on">×1</button><button data-v="2">×2</button><button data-v="4">×4</button></div></div>
+    <div class="prow"><span>Interjections (ambiance d'hémicycle)</span>
+      <input type="checkbox" id="p-interj" checked></div>
+    <div class="prow"><span>Débat condensé (≈ 15 prises de parole)</span>
+      <input type="checkbox" id="p-short"></div>
+  </details>
 
   <button id="go">Lancer la simulation</button>
 
@@ -568,15 +599,9 @@ function verdictOverlay(){
     +`<span class="v">${v.toFixed(0)}</span></span>`;
   const numCmp=(lab,col,v,r)=>`<span><span class="dot" style="background:${col}"></span>${lab} `
     +`<span class="v">${v.toFixed(0)}</span> <span style="font-size:11px">/ ${r} réel</span></span>`;
-  // mot coloré par le RÉSULTAT prédit ; la justesse va dans un badge séparé
-  const outClass = pred==='ADOPTÉ' ? 'adopte' : 'rejete';
-  const judge = hasReel
-    ? (ok ? `<div class="judge ok">✓ prédiction confirmée par le vote réel</div>`
-          : `<div class="judge ko">✗ prédiction infirmée — vote réel : ${reel}</div>`)
-    : `<div class="cmp"><b>texte fictif — aucune issue réelle à comparer</b></div>`;
-  o.innerHTML=`<div class="big ${outClass}">${pred}</div>
-    <div class="cmp">verdict prédit par la simulation Miropolis</div>
-    ${judge}
+  o.innerHTML=`<div class="big ${hasReel?(ok?'ok':'ko'):''}">${pred}${hasReel?(ok?' ✅':' ❌'):''}</div>
+    <div class="cmp">${hasReel?`prédit par la simulation · sort réel : <b>${reel}</b>`
+                              :`prédiction Miropolis · <b>texte fictif, aucune issue réelle</b>`}</div>
     <div class="nums">
       ${hasReel?numCmp('pour','#3fbf7f',RUN.tally.pour,RUN.reel.pour):num('pour','#3fbf7f',RUN.tally.pour)}
       ${hasReel?numCmp('contre','#d95c5c',RUN.tally.contre,RUN.reel.contre):num('contre','#d95c5c',RUN.tally.contre)}
@@ -604,9 +629,7 @@ function finish(){
   const pred=RUN.tally.pour>RUN.tally.contre?'adopté':'rejeté';
   if(RUN.reel){
     const ok=(pred==='adopté')===((RUN.scrutin?.sort||'').includes('adopt'));
-    const tag=ok?`<span style="color:#57d18b">✓ juste</span>`
-                :`<span style="color:#e0aa5a">✗ raté</span>`;
-    v.innerHTML=`Sort prédit : <b>${pred}</b> · réel : <b>${RUN.scrutin?.sort}</b> · ${tag}`;
+    v.innerHTML=`Sort prédit : <b>${pred}</b> · réel : <b>${RUN.scrutin?.sort}</b> ${ok?'✅':'❌'}`;
   } else {
     v.innerHTML=`Sort prédit : <b>${pred}</b> · <span style="color:var(--ink2)">texte fictif</span>`;
   }
@@ -679,10 +702,20 @@ function acceptFile(f){
     };
     r.readAsText(f);
   } else {
-    // projet de loi déposé (PDF/texte) → bascule sur le run "texte fictif —
-    // prédiction pure" embarqué : c'est le scénario "votre texte, simulé".
-    const fict=RUNS.find(r=>!r.reel);
-    if(fict){RUN=fict; idx=-1; prepare(RUN);}
+    // projet de loi déposé (PDF/texte) : si le NOM du fichier recoupe le titre
+    // d'un run embarqué (ex: "corse.pdf" → projet de loi Corse), on lance
+    // CE run ; sinon → run "texte fictif — prédiction pure".
+    const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+    const words=norm(f.name.replace(/\.[^.]+$/,'')).split(/[^a-z0-9]+/)
+      .filter(w=>w.length>=4 && !['projet','proposition','texte'].includes(w));
+    let best=null, bestN=0;
+    for(const r of RUNS){
+      const titre=norm(r.scrutin?.titre||'');
+      const n=words.filter(w=>titre.includes(w)).length;
+      if(n>bestN){best=r; bestN=n;}
+    }
+    const pick=best||RUNS.find(r=>!r.reel);
+    if(pick){RUN=pick; idx=-1; prepare(RUN);}
     dzDone('✓ Projet de loi chargé : '+f.name);
   }
 }
@@ -694,7 +727,33 @@ dz.ondrop=e=>{e.preventDefault(); dz.classList.remove('over'); acceptFile(e.data
 // un drop raté (hors zone) ne doit pas naviguer vers le fichier
 addEventListener('dragover',e=>e.preventDefault());
 addEventListener('drop',e=>e.preventDefault());
+/* paramètres de simulation */
+const pRun=$('p-run');
+RUNS.forEach((r,i)=>{
+  const o=document.createElement('option'); o.value=i;
+  const t=(r.scrutin?.titre||'run '+i);
+  o.textContent=(r.reel?'':'[fictif] ')+t.charAt(0).toUpperCase()+t.slice(1,90);
+  pRun.appendChild(o);
+});
+pRun.onchange=()=>{
+  const i=+pRun.value; if(i<0) return;
+  RUN=RUNS[i]; idx=-1; prepare(RUN);
+  dz.classList.remove('ok'); $('dz-ok').style.display='none';  // le choix manuel remplace le fichier
+};
+let pSpeed=1;
+$('p-speed').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+  pSpeed=+b.dataset.v;
+  $('p-speed').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+});
 $('go').onclick=()=>{
+  // applique les paramètres au run courant avant de lancer
+  const noInterj=!$('p-interj').checked, short=$('p-short').checked;
+  if(noInterj||short){
+    let t=RUN.transcript.filter(ev=>!(noInterj&&ev.interjection));
+    if(short) t=t.slice(0,15);
+    RUN={...RUN, transcript:t}; idx=-1; prepare(RUN);
+  }
+  speed=pSpeed; $('b-speed').textContent='×'+speed;
   const l=$('landing'); l.classList.add('gone');
   document.body.classList.remove('landing');            // le HUD fond en entrée
   setTimeout(()=>{l.style.display='none';}, 850);
