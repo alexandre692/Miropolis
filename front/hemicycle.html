@@ -114,8 +114,12 @@
 import * as THREE from 'three';
 
 /* ---------- données ---------- */
+// build_demo.py embarque toujours un TABLEAU de runs (1 ou plusieurs) : on
+// en tire un au hasard à chaque chargement, pour ne pas montrer toujours
+// le même scrutin. "charger un autre run" (plus bas) reste possible en plus.
 const embedded = JSON.parse(document.getElementById('run-data').textContent.replace('/*__RUN_DATA__*/',''));
-let RUN = embedded;
+const RUNS = Array.isArray(embedded) ? embedded : [embedded];
+let RUN = RUNS[Math.floor(Math.random()*RUNS.length)];
 
 const GROUP_ORDER = ["LFI-NFP","GDR","EcoS","SOC","LIOT","Dem","EPR","HOR","DR","UDR","RN","NI"];
 const GROUP_COLOR = {
@@ -348,6 +352,14 @@ function prepare(run){
 function opinionAt(frac){
   const t={pour:0,contre:0,abstention:0};
   RUN.deputes.forEach(d=>{for(const p in t){t[p]+=d.opinion0[p]+(d.opinion[p]-d.opinion0[p])*frac;}});
+  // léger frémissement pendant le débat (une séance réelle n'a jamais un
+  // compteur parfaitement figé) : une bosse nulle en frac=0 et frac=1, donc
+  // le début et le verdict final restent exacts, seul le milieu du débat
+  // vacille un peu. Amplitude volontairement faible et déterministe (pas de
+  // Math.random ici) pour ne pas clignoter n'importe comment à chaque frame.
+  const n=RUN.deputes.length, bump=Math.sin(frac*Math.PI)*Math.max(2,n*0.01);
+  const dPour=bump*Math.sin(frac*11+n*0.7), dContre=bump*Math.sin(frac*13+n*1.3+1);
+  t.pour+=dPour; t.contre+=dContre; t.abstention-=dPour+dContre; // somme conservée
   return t;
 }
 let typer=null;

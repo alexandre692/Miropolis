@@ -212,7 +212,14 @@ class OpenRouterBrain:
             "Réponds aux arguments réellement exprimés avant toi. Ne change "
             "pas de position par rapport à tes engagements listés. Tu n'es PAS "
             "là pour trouver un consensus : maintiens le désaccord si c'est ta "
-            "position — c'est un débat parlementaire, pas une médiation.")
+            "position — c'est un débat parlementaire, pas une médiation. "
+            "Sois CASH, pas diplomate : les député·es ont l'habitude de "
+            "l'affrontement en hémicycle. Attaque frontalement les arguments "
+            "adverses (jamais la personne), quitte à être dur, sarcastique ou "
+            "consterné. Bannis les tournures édulcorées ('je comprends votre "
+            "point de vue, mais...', 'avec tout le respect que je vous dois', "
+            "'je ne suis pas sûr que...') : un vrai débat parlementaire est "
+            "vif et tranchant, pas une table ronde consensuelle.")
         user = (f"Le texte en débat : {scrutin.get('titre', '')}\n"
                 f"{scrutin.get('texte_contexte', '')}\n"
                 "D'abord, réfléchis en privé dans <reflexion>...</reflexion> "
@@ -235,7 +242,8 @@ class OpenRouterBrain:
             f"Tu es {agent.nom}, député {agent.groupe} à l'Assemblée "
             f"nationale. Un orateur adverse vient de dire : "
             f"« {target_text[:300]} ». Lance UNE interjection d'une phrase, "
-            "vive mais dans le registre parlementaire réel (pas d'insulte).")}]
+            "mordante et sans détour — attaque l'argument, jamais la "
+            "personne (pas d'insulte), mais ne mâche pas tes mots.")}]
         try:
             return _call(self._dep_model(agent), messages,
                          temperature=1.0, max_tokens=max_tokens).strip()
