@@ -62,7 +62,13 @@
   #overlay{left:calc(50% + 215px);top:44%;transform:translate(-50%,-50%);text-align:center;display:none;
     background:rgba(15,17,24,.92);border:1px solid var(--line);border-radius:18px;padding:26px 44px}
   #overlay .big{font-size:34px;font-weight:700;letter-spacing:.5px}
-  #overlay .big.ok{color:#57d18b} #overlay .big.ko{color:#e06a6a}
+  /* couleur du mot = le RÉSULTAT (adopté vert / rejeté rouge) */
+  #overlay .big.adopte{color:#57d18b} #overlay .big.rejete{color:#e06a6a}
+  /* badge SÉPARÉ = justesse de la prédiction (indépendant du résultat) */
+  #overlay .judge{display:inline-block;margin-top:12px;padding:5px 14px;border-radius:999px;
+    font-size:13px;font-weight:600}
+  #overlay .judge.ok{background:rgba(87,209,139,.16);color:#57d18b;border:1px solid rgba(87,209,139,.4)}
+  #overlay .judge.ko{background:rgba(224,170,90,.16);color:#e0aa5a;border:1px solid rgba(224,170,90,.4)}
   #overlay .cmp{margin-top:10px;font-size:15px;color:var(--ink2)}
   #overlay .cmp b{color:var(--ink)}
   #overlay .nums{margin-top:12px;font-size:13px;color:var(--ink2);display:flex;gap:22px;justify-content:center}
@@ -485,9 +491,15 @@ function verdictOverlay(){
     +`<span class="v">${v.toFixed(0)}</span></span>`;
   const numCmp=(lab,col,v,r)=>`<span><span class="dot" style="background:${col}"></span>${lab} `
     +`<span class="v">${v.toFixed(0)}</span> <span style="font-size:11px">/ ${r} réel</span></span>`;
-  o.innerHTML=`<div class="big ${hasReel?(ok?'ok':'ko'):''}">${pred}${hasReel?(ok?' ✅':' ❌'):''}</div>
-    <div class="cmp">${hasReel?`prédit par la simulation · sort réel : <b>${reel}</b>`
-                              :`prédiction Miropolis · <b>texte fictif, aucune issue réelle</b>`}</div>
+  // mot coloré par le RÉSULTAT prédit ; la justesse va dans un badge séparé
+  const outClass = pred==='ADOPTÉ' ? 'adopte' : 'rejete';
+  const judge = hasReel
+    ? (ok ? `<div class="judge ok">✓ prédiction confirmée par le vote réel</div>`
+          : `<div class="judge ko">✗ prédiction infirmée — vote réel : ${reel}</div>`)
+    : `<div class="cmp"><b>texte fictif — aucune issue réelle à comparer</b></div>`;
+  o.innerHTML=`<div class="big ${outClass}">${pred}</div>
+    <div class="cmp">verdict prédit par la simulation Miropolis</div>
+    ${judge}
     <div class="nums">
       ${hasReel?numCmp('pour','#3fbf7f',RUN.tally.pour,RUN.reel.pour):num('pour','#3fbf7f',RUN.tally.pour)}
       ${hasReel?numCmp('contre','#d95c5c',RUN.tally.contre,RUN.reel.contre):num('contre','#d95c5c',RUN.tally.contre)}
@@ -515,7 +527,9 @@ function finish(){
   const pred=RUN.tally.pour>RUN.tally.contre?'adopté':'rejeté';
   if(RUN.reel){
     const ok=(pred==='adopté')===((RUN.scrutin?.sort||'').includes('adopt'));
-    v.innerHTML=`Sort prédit : <b>${pred}</b> · réel : <b>${RUN.scrutin?.sort}</b> ${ok?'✅':'❌'}`;
+    const tag=ok?`<span style="color:#57d18b">✓ juste</span>`
+                :`<span style="color:#e0aa5a">✗ raté</span>`;
+    v.innerHTML=`Sort prédit : <b>${pred}</b> · réel : <b>${RUN.scrutin?.sort}</b> · ${tag}`;
   } else {
     v.innerHTML=`Sort prédit : <b>${pred}</b> · <span style="color:var(--ink2)">texte fictif</span>`;
   }

@@ -56,7 +56,7 @@ def _get_key():
 
 
 def _call(model, messages, temperature=0.7, max_tokens=400, json_mode=False,
-          retries=3):
+          retries=5):
     key = _get_key()
     if not key:
         raise RuntimeError("Clé OpenRouter introuvable : définir OPENROUTER_API_KEY "
@@ -81,7 +81,10 @@ def _call(model, messages, temperature=0.7, max_tokens=400, json_mode=False,
             if content is None:  # refus/filtre du modèle : contenu vide renvoyé tel quel
                 raise RuntimeError(f"contenu vide renvoyé par {model} (refus/filtre probable)")
             return content
-        except Exception as e:  # réseau/quota/contenu vide : backoff simple
+        except urllib.error.HTTPError as e:  # 429 (rate limit) surtout : backoff long
+            last_err = e
+            time.sleep(min(3 * (attempt + 1), 15))
+        except Exception as e:  # réseau/parse/contenu vide : backoff plus court
             last_err = e
             time.sleep(2 * (attempt + 1))
     raise RuntimeError(f"OpenRouter KO après {retries} essais : {last_err}")
@@ -172,19 +175,29 @@ class OpenRouterBrain:
             f"— saillance {scrutin.get('salience', '?')}\n"
             f"Titre : {scrutin.get('titre', '')}\n"
             f"{scrutin.get('texte_contexte', '')}\n{prior_txt}\n\n"
-            "RAISONNE D'ABORD SUR LE CAMP POLITIQUE : à quel bord ce texte "
-            "appartient-il (qui le porte, qui en tire crédit) ? Un groupe vote "
-            "presque toujours CONTRE un texte porté par un camp adverse, MÊME "
-            "si le thème lui est cher — la logique partisane l'emporte sur le "
-            "sujet. Ne te laisse pas piéger par un intitulé sympathique "
-            "('plus juste', 'pour tous') : demande-toi qui l'a écrit. En cas "
-            "de doute, colle au prior historique.\n"
+            "RAISONNE EN DEUX TEMPS.\n"
+            "1) Le texte est-il CLIVANT (idéologique, porté par un camp — "
+            "retraites, immigration, fiscalité...) ou plutôt TECHNIQUE / "
+            "CONSENSUEL (simplification, ratification, sujet local ou "
+            "d'intendance) ? Un texte technique est souvent adopté LARGEMENT, "
+            "au-delà des clivages : dans ce cas la majorité des groupes vote "
+            "POUR (ou s'abstient), l'opposition frontale est rare.\n"
+            "2) Si le texte est CLIVANT : à quel bord appartient-il (qui le "
+            "porte, qui en tire crédit) ? Un groupe vote alors presque toujours "
+            "CONTRE un texte d'un camp adverse, MÊME si le thème lui est cher — "
+            "la logique partisane l'emporte. Ne te fais pas piéger par un "
+            "intitulé sympathique ('plus juste', 'pour tous') : regarde qui "
+            "l'a écrit. Souviens-toi aussi que le groupe de la majorité "
+            "présidentielle (EPR) et ses alliés soutiennent les textes du "
+            "gouvernement. En cas de doute, colle au prior historique.\n"
             'Réponds en JSON strict : {"pour": p, "contre": p, "abstention": p, '
             '"raison": "une phrase"} avec p sommant à 1.')}]
         try:
             probs = _parse_probs(_call(self.orch_model, messages,
                                        temperature=0.2, json_mode=True))
-        except RuntimeError:
+        except RuntimeError as e:
+            import sys
+            print(f"  [orchestrateur KO sur {groupe} -> repli prior] {e}", file=sys.stderr)
             probs = None
         if not probs:
             return prior or {"pour": 1 / 3, "contre": 1 / 3, "abstention": 1 / 3}
