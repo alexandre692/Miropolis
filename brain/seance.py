@@ -212,6 +212,20 @@ def predicted_casting(scrutin):
                 if e["d0"] < d0:
                     scores[a] = scores.get(a, 0.0) \
                         + 6.0 * math.log1p(e["na"]) + 1.5 * math.log1p(e["nc"])
+    # v7 : qui a DÉJÀ parlé en séance sur CE dossier (ODJ exact par séance,
+    # jours antérieurs, demi-vie 21 j) — le signal dominant sur les textes
+    # débattus en plusieurs séances. p@3 global = 0.399 (58 % du plafond
+    # théorique 0.683), recall@40 = 0.482.
+    if ref:
+        sp_p = os.path.join("data", "spoke_on_dossier.json")
+        if os.path.exists(sp_p):
+            sp = json.load(open(sp_p, encoding="utf-8")).get(ref, {})
+            for a, dates_s in sp.items():
+                for dd in dates_s:
+                    if dd < d0:
+                        age = (datetime.strptime(d0, "%Y%m%d")
+                               - datetime.strptime(dd, "%Y%m%d")).days
+                        scores[a] = scores.get(a, 0.0) + 3.0 * (0.5 ** (age / 21))
     # v4 : commission au fond (mandat actif à J) + présences en commission
     # sur CE dossier (réunions datées < J) → p@3 = 0.322 au backtest
     if ref:
@@ -276,7 +290,7 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
     else:             # défaut : casting PRÉDIT (agenda + activité récente)
         orateurs_reels = predicted_casting(scrutin)
         if verbose:
-            print(f"casting PRÉDIT (rapporteurs+amendeurs+agenda, p@3=0.308 "
+            print(f"casting PRÉDIT (rapporteurs+amendeurs+commissions+historique dossier, p@3=0.399 "
                   f"vs hasard 0.056) : {len(orateurs_reels)} députés scorés\n")
     group_probs = {g: brain.group_position(g, scrutin) for g in groups}
     for a in agents:
