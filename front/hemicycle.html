@@ -73,6 +73,17 @@
   #drop{bottom:16px;right:16px;font-size:11.5px;color:var(--ink2)}
   #drop input{display:none}
   #drop label{cursor:pointer;text-decoration:underline dotted}
+  /* résumé de clôture (présidente de séance) : modale — laisse de l'espace
+     autour, ne couvre jamais tout l'écran ; clic à l'extérieur pour fermer */
+  #recap-backdrop{position:fixed;inset:0;background:rgba(10,11,18,.55);display:none;z-index:15}
+  #recap{position:fixed;z-index:16;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:min(78vw,560px);max-height:72vh;overflow-y:auto;display:none;
+    background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    padding:22px 26px;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+  #recap .k{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--ink2)}
+  #recap .who{margin-top:4px;font-size:15px;font-weight:600}
+  #recap .txt{margin-top:12px;font-size:14.5px;line-height:1.65;color:#dfe3ec}
+  #recap .hint{margin-top:16px;font-size:11px;color:var(--ink2);text-align:center}
 </style>
 </head>
 <body>
@@ -96,6 +107,14 @@
 
 <div class="hud" id="legend"></div>
 <div class="hud" id="overlay"></div>
+
+<div id="recap-backdrop"></div>
+<div class="hud" id="recap">
+  <div class="k">Résumé de clôture</div>
+  <div class="who">Yaël Braun-Pivet, présidente de séance</div>
+  <div class="txt" id="recap-txt"></div>
+  <div class="hint">cliquer à l'extérieur pour fermer et passer au vote</div>
+</div>
 
 <div class="hud" id="controls">
   <button id="b-prev">⏮</button>
@@ -462,6 +481,17 @@ function verdictOverlay(){
       <span><span class="dot" style="background:#8a8f9c"></span>abst. <span class="v">${RUN.tally.abstention.toFixed(0)}</span> <span style="font-size:11px">/ ${RUN.reel.abstention} réel</span></span>
     </div>`;
 }
+function showRecap(text, onClose){
+  $('recap-txt').textContent=text;
+  $('recap').style.display='block';
+  $('recap-backdrop').style.display='block';
+  const close=()=>{
+    $('recap').style.display='none'; $('recap-backdrop').style.display='none';
+    $('recap-backdrop').removeEventListener('click', close);
+    onClose();
+  };
+  $('recap-backdrop').addEventListener('click', close);
+}
 function finish(){
   playing=false; $('b-play').textContent='↺ Rejouer';
   if(lastIdx>=0){setSeatVisible(lastIdx,true); lastIdx=-1;}
@@ -472,7 +502,10 @@ function finish(){
   const pred=RUN.tally.pour>RUN.tally.contre?'adopté':'rejeté';
   const ok=(pred==='adopté')===((RUN.scrutin?.sort||'').includes('adopt'));
   v.innerHTML=`Sort prédit : <b>${pred}</b> · réel : <b>${RUN.scrutin?.sort}</b> ${ok?'✅':'❌'}`;
-  voteSequence();
+  // le résumé de clôture (s'il existe) s'affiche AVANT le vote ; on ne lance
+  // la séquence de vote qu'une fois la modale fermée (clic à l'extérieur)
+  if(RUN.recap_president) showRecap(RUN.recap_president, voteSequence);
+  else voteSequence();
 }
 function tick(){
   if(playing){
@@ -501,6 +534,7 @@ function rebuildFeed(upto){
 $('b-play').onclick=()=>{
   if(idx>=events.length-1){idx=-1;$('verdict').style.display='none';
     $('feed-scroll').innerHTML=''; $('overlay').style.display='none'; resetColors();
+    $('recap').style.display='none'; $('recap-backdrop').style.display='none';
     tallyRows(RUN, RUN.tally_avant_debat);}
   playing=!playing; $('b-play').textContent=playing?'⏸ Pause':'▶ Lancer la séance';
   if(playing) tick();

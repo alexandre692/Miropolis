@@ -272,10 +272,14 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
                 "opinion0": {p: round(v, 3) for p, v in (a.opinion0 or {}).items()},
                 "opinion": {p: round(v, 3) for p, v in (a.opinion or {}).items()}}
                for a in agents]
+    # résumé de clôture par la présidente de séance, avant la mise aux voix
+    # (le fil défile vite, ça permet au public de raccrocher les wagons)
+    recap = brain.recap_final(transcript, scrutin, summary) if hasattr(brain, "recap_final") else None
     return {"group_probs": group_probs, "transcript": transcript,
             "tally_avant_debat": tally_avant, "tally": tally,
             "voix_deplacees_par_le_debat": deplace,
-            "deputes": deputes, "affinites": affinites}
+            "deputes": deputes, "affinites": affinites,
+            "recap_president": recap}
 
 
 def main():

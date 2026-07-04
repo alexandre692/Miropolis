@@ -194,6 +194,28 @@ class OpenRouterBrain:
         except RuntimeError:
             return previous_summary
 
+    def recap_final(self, transcript, scrutin, previous_summary=""):
+        """Résumé de clôture dans la voix de la présidente de séance, donné
+        juste avant la mise aux voix — le fil du débat défile vite, ce
+        récapitulatif permet au public de raccrocher les wagons."""
+        tours = "\n".join(f"- {t['nom']} ({t['groupe']}) : {t['texte']}"
+                          for t in transcript if not t.get("interjection"))
+        messages = [{"role": "user", "content": (
+            "Tu es Yaël Braun-Pivet, présidente de l'Assemblée nationale. Le "
+            f"débat sur « {scrutin.get('titre', '')} » vient de se clore. "
+            "Fais, à la première personne, un résumé de clôture en 4 à 6 "
+            "phrases avant la mise aux voix : rappelle l'objet du texte, puis "
+            "les grandes lignes de clivage entre groupes (qui soutient, qui "
+            "s'oppose, et pourquoi, en une phrase chacun) — sans trancher "
+            "toi-même. Registre solennel de présidence de séance.\n"
+            f"Résumé roulant du débat : {previous_summary or '(aucun)'}\n"
+            f"Interventions :\n{tours}")}]
+        try:
+            return _call(self.orch_model, messages, temperature=0.3,
+                         max_tokens=500).strip()
+        except RuntimeError:
+            return previous_summary
+
     # ---------- DÉPUTÉS ----------
 
     def intervention(self, agent, scrutin, context, extra_cursors=None,
