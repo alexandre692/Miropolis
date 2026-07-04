@@ -712,7 +712,7 @@ function hover(){
     tip.style.display='block';
     tip.style.left=(innerWidth*(mouse.x+1)/2+14)+'px';
     tip.style.top=(innerHeight*(1-(mouse.y+1)/2)+10)+'px';
-    tip.innerHTML=`<div class="n">${d.nom}</div><div class="d">${d.groupe} · loyauté ${(d.loyaute*100).toFixed(0)}%<br>
+    tip.innerHTML=`<div class="n">${d.nom}</div><div class="d">${d.groupe}<br>
       P(pour) ${(d.opinion0.pour*100).toFixed(0)}% → ${(d.opinion.pour*100).toFixed(0)}%</div>`;
   } else tip.style.display='none';
 }
