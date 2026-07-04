@@ -550,7 +550,9 @@ function prepare(run){
   $('t-titre').textContent=titre.charAt(0).toUpperCase()+titre.slice(1);
   $('t-sub').textContent=`Miropolis · scrutin ${run.scrutin?.uid||''} · ${run.deputes.length} députés · `
     +`${events.length} prises de parole · thème ${run.scrutin?.theme||'?'} · `
-    +(run.reel?'sort réel révélé au vote':'texte fictif — prédiction pure');
+    +(run.reel?'sort réel révélé au vote'
+      :run.marge_erreur?`prédiction Miropolis · marge d'erreur ${run.marge_erreur}%`
+      :'texte fictif — prédiction pure');
   $('deplace').textContent=`voix déplacées par la séance : ${run.voix_deplacees_par_le_debat??'—'}`;
   legend(run); tallyRows(run, run.tally_avant_debat);
   buildHemicycle(run); placeCam();
@@ -672,7 +674,9 @@ function verdictOverlay(){
   const judge = hasReel
     ? (ok ? `<div class="judge ok">✓ prédiction confirmée par le vote réel</div>`
           : `<div class="judge ko">✗ prédiction infirmée — vote réel : ${reel}</div>`)
-    : `<div class="cmp"><b>texte fictif — aucune issue réelle à comparer</b></div>`;
+    : RUN.marge_erreur
+      ? `<div class="cmp">marge d'erreur du modèle : <b>${RUN.marge_erreur}%</b></div>`
+      : `<div class="cmp"><b>texte fictif — aucune issue réelle à comparer</b></div>`;
   o.innerHTML=`<div class="big ${outClass}">${pred}</div>
     <div class="cmp">verdict prédit par la simulation Miropolis</div>
     ${judge}
@@ -707,7 +711,8 @@ function finish(){
                 :`<span style="color:#e0aa5a">✗ raté</span>`;
     v.innerHTML=`Sort prédit : <b>${pred}</b> · réel : <b>${RUN.scrutin?.sort}</b> · ${tag}`;
   } else {
-    v.innerHTML=`Sort prédit : <b>${pred}</b> · <span style="color:var(--ink2)">texte fictif</span>`;
+    const info=RUN.marge_erreur?`marge d'erreur ${RUN.marge_erreur}%`:'texte fictif';
+    v.innerHTML=`Sort prédit : <b>${pred}</b> · <span style="color:var(--ink2)">${info}</span>`;
   }
   // le résumé de clôture (s'il existe) s'affiche AVANT le vote ; on ne lance
   // la séquence de vote qu'une fois la modale fermée (clic à l'extérieur)

@@ -1,0 +1,9015 @@
+{
+ "scrutin": {
+  "uid": "CORSE-DEMO",
+  "titre": "l'ensemble du projet de loi constitutionnelle pour une Corse autonome au sein de la République (première lecture).",
+  "theme": "justice_institutions",
+  "sort": null
+ },
+ "reel": null,
+ "group_probs": {
+  "DR": {
+   "pour": 0.45161290322580644,
+   "contre": 0.5096774193548387,
+   "abstention": 0.03870967741935484
+  },
+  "Dem": {
+   "pour": 0.5938461538461538,
+   "contre": 0.3723076923076923,
+   "abstention": 0.033846153846153845
+  },
+  "EPR": {
+   "pour": 0.8276073619631901,
+   "contre": 0.12875766871165642,
+   "abstention": 0.04363496932515337
+  },
+  "EcoS": {
+   "pour": 0.32456140350877194,
+   "contre": 0.6081871345029239,
+   "abstention": 0.06725146198830409
+  },
+  "GDR": {
+   "pour": 0.33962264150943394,
+   "contre": 0.5943396226415094,
+   "abstention": 0.0660377358490566
+  },
+  "HOR": {
+   "pour": 0.8073076923076924,
+   "contre": 0.13365384615384618,
+   "abstention": 0.05903846153846154
+  },
+  "LFI-NFP": {
+   "pour": 0.34017595307917886,
+   "contre": 0.6275659824046921,
+   "abstention": 0.03225806451612903
+  },
+  "LIOT": {
+   "pour": 0.43018867924528303,
+   "contre": 0.5320754716981132,
+   "abstention": 0.03773584905660377
+  },
+  "NI": {
+   "pour": 0.5028571428571429,
+   "contre": 0.4685714285714286,
+   "abstention": 0.02857142857142857
+  },
+  "RN": {
+   "pour": 0.774112426035503,
+   "contre": 0.17063609467455623,
+   "abstention": 0.055251479289940834
+  },
+  "SOC": {
+   "pour": 0.6566176470588235,
+   "contre": 0.2566176470588235,
+   "abstention": 0.08676470588235295
+  },
+  "UDR": {
+   "pour": 0.3710691823899371,
+   "contre": 0.5786163522012578,
+   "abstention": 0.050314465408805034
+  }
+ },
+ "transcript": [
+  {
+   "round": 0,
+   "nom": "Florent Boudié",
+   "groupe": "EPR",
+   "texte": "Madame la Présidente, mes chers collègues, on nous présente ce texte comme une avancée historique, mais à quel prix ? Celui d’une Constitution transformée en catalogue de mesures particularistes, sans la rigueur qu’impose une loi organique. Vous invoquez la singularité de la Corse ? Très bien. Mais la Polynésie l’est tout autant, et pourtant, son autonomie relève de l’article 74 *et* d’une loi organique – pas d’un ajout direct dans la Constitution, qui fige des dispositions sans la souplesse nécessaire aux adaptations futures.\n\nHier encore, certains ici s’indignaient qu’on modifie un alinéa à la lettre près. Aujourd’hui, on vous voit prêts à graver dans le texte suprême des termes qui, demains, pourraient se retourner contre l’unité républicaine. La parole donnée, madame la Présidente, c’est aussi celle de la République à ses territoires : une autonomie, oui, mais dans le cadre qui préserve l’indivisibilité. Pas dans un coup de force constitutionnel."
+  },
+  {
+   "round": 0,
+   "nom": "Ugo Bernalicis",
+   "groupe": "LFI-NFP",
+   "texte": "Madame la Présidente, ce projet mérite une question frontale : comment concilier l'autonomie législative qu'on propose à la Corse avec l'article 1er de notre Constitution, qui affirme l'indivisibilité de la République ? On ne peut pas traiter cette question en la contournant par des promesses rhétoriques sur « l'autonomie dans la République ». Il faut dire clairement : les compétences qu'on transfère, elles restent subordonnées à quelles normes constitutionnelles ? Parce que si la Corse vote une loi qui heurte frontalement un principe fondamental — l'égalité, la laïcité, les libertés publiques — qui tranche ? Le Conseil constitutionnel, bien sûr, mais alors c'est lui qui aura le dernier mot, pas l'assemblée corse. Donc avant de célébrer une autonomie, disons aux Corses la vérité : c'est une autonomie encadrée, limitée, surveillée. C'est honnête. Mais c'est aussi moins séduisant que le discours qu'on leur tient."
+  },
+  {
+   "round": 0,
+   "nom": "Sandra Regol",
+   "groupe": "EcoS",
+   "texte": "Madame la Présidente, on nous vend cette autonomie comme un progrès démocratique, mais où sont les garde-fous contre le communautarisme ? Cette constitution transfigurée permettrait à une collectivité de déroger aux normes républicaines, sous prétexte d’identité – or, l’article 1er de notre Constitution n’est pas négociable. Ce que vous appelez « innovation institutionnelle », d’autres l’ont déjà tenté sous d’autres cieux : ça s’appelle la fragmentation du droit, et ça finit toujours par l’érosion des libertés. Je le dis clairement : on ne bâtit pas l’égalité en instaurant des droits d’exception. Et si demain, une autre région invoquait des « spécificités » pour restreindre les droits des femmes ou des mineurs, seriez-vous prêts à suivre le même raisonnement ?"
+  },
+  {
+   "round": 0,
+   "nom": "Éric Coquerel",
+   "groupe": "LFI-NFP",
+   "texte": "Madame la Présidente, ce projet revient à ouvrir la boîte de Pandore sans nous donner les clés pour la refermer. On nous dit que l'autonomie législative coexistera avec l'unité républicaine, mais le texte ne dit nulle part comment on arbitre quand elles entrent en collision — et elles entreront en collision. Que se passe-t-il si la Corse légifère sur le droit du travail, la protection sociale, les salaires ? La République devient-elle à géométrie variable selon le territoire ? Je ne voterai pas un texte qui sacrifie la cohésion du droit social sur l'autel d'une autonomie mal encadrée. La vraie question n'est pas l'autonomie politique, c'est : qui protège les droits des travailleurs corses ? Ce projet n'y répond pas."
+  },
+  {
+   "round": 0,
+   "nom": "Olivier Fayssat",
+   "groupe": "UDR",
+   "texte": "C'est précisément dans le silence du texte que réside la confiance dans la sagesse des institutions républicaines !",
+   "interjection": true
+  },
+  {
+   "round": 0,
+   "nom": "François-Xavier Ceccoli",
+   "groupe": "DR",
+   "texte": "Madame la Présidente, cette autonomie, aussi louable qu'elle puisse paraître, doit être envisagée avec des garde-fous clairs pour ne pas ouvrir la boîte de Pandore du communautarisme. Si nous accordons un régime dérogatoire si spécifique, ne nous étonnons pas si d'autres territoires, à l'instar de ma fille étudiante à Paris, exigent à leur tour des préférences pour leurs ressortissants. N'oublions pas que la confiance dans la sagesse des institutions républicaines réside aussi dans l'équité de traitement de tous les citoyens et de toutes les régions. En l'absence de réciprocité et de clarté, nous risquons de créer des précédents fâcheux pour la cohésion nationale."
+  },
+  {
+   "round": 0,
+   "nom": "Alexis Corbière",
+   "groupe": "EcoS",
+   "texte": "Madame la Présidente, on nous oppose encore une fois le silence du texte comme s’il constituait une vertu, quand il n’est en réalité qu’un abdication devant les responsabilités. Ce projet d’autonomie, aussi solennel soit-il, ne dit rien de la commande publique, de la transparence des marchés, de la prévention des conflits d’intérêts — autant de failles par où s’engouffreront les dérives. Nous avons un devoir de méfiance institutionnelle quand les pouvoirs s’agrandissent sans contre-pouvoir. Ce n’est pas du centralisme, c’est de la démocratie. Et ce n’est pas en fermant les yeux qu’on bâtira une Corse juste."
+  },
+  {
+   "round": 0,
+   "nom": "Marc Pena",
+   "groupe": "SOC",
+   "texte": "Madame la Présidente, nous réaffirmons notre soutien à l'autonomie normative de la Corse, et l'exclusion des domaines régaliens est un impératif pour garantir la cohérence de notre République. Les adaptations permises par ce texte doivent se conformer, sans ambiguïté, aux dispositions de l'article 73 de la Constitution pour les territoires d'outre-mer. C'est à cette condition que l'autonomie normative sera véritablement légitime et protectrice des droits fondamentaux de tous les citoyens. Toute autre approche risquerait de créer des inégalités que nous ne saurions accepter."
+  },
+  {
+   "round": 0,
+   "nom": "Stéphane Rambaud",
+   "groupe": "RN",
+   "texte": "Madame la Présidente, cette autonomie, aussi louable qu'elle puisse paraître, doit être envisagée avec des garde-fous clairs pour ne pas ouvrir la boî. Nous réaffirmons notre soutien à l'autonomie normative de la Corse, et l'exclusion des domaines régaliens est un impératif pour. Ne nous y trompons pas : vouloir une autonomie sans limites claires, c'est diluer la République, c'est ouvrir la porte à des dérives qui affaibliraient notre souveraineté nationale. C'est pourquoi nous continuerons d'exiger que le régalien demeure hors de toute habilitation."
+  },
+  {
+   "round": 0,
+   "nom": "François Cormier-Bouligeon",
+   "groupe": "EPR",
+   "texte": "Madame la Présidente, on nous présente ce texte comme une avancée, alors qu’il s’agit d’une brèche dans le principe d’égalité républicaine ! L’autonomie normative, soit – mais à condition qu’elle ne serve pas de cheval de Troie à ceux qui, hier encore, réclamaient l’indépendance et qui, demain, exigeront la co-officialité de la langue ou des droits différenciés selon l’origine. Nous l’avons vu avec les Insoumis : leur soutien à ce projet n’est qu’une manœuvre pour capter un électorat communautariste, celui-là même qui rêve d’une Corse réservée à une identité fantasmée.\n\nEt que dire de cette exclusion des domaines régaliens, brandie comme un rempart ? Une ligne rouge tracée sur le sable ! Car une fois franchi le principe d’une autonomie constitutionnalisée, rien n’empêchera demain de grignoter sur l’école, la justice, ou la fiscalité – comme le font déjà les nationalistes en Catalogne ou en Écosse. La République n’est pas un menu à la carte, Madame la Présidente : soit on la défend dans son intégrité, soit on accepte de la démanteler morceau par morceau. (Exclamations sur les bancs du groupe LIOT.) Nous, nous choisissons la première option ! (Applaudissements sur quelques bancs du groupe EPR.)"
+  },
+  {
+   "round": 0,
+   "nom": "Paul-André Colombani",
+   "groupe": "LIOT",
+   "texte": "Madame la Présidente, nous réaffirmons notre soutien à l'autonomie normative de la Corse, et l'exclusion des domaines régaliens est un impératif pour nous. Cette autonomie, aussi louable qu'elle puisse paraître, doit être envisagée avec des garde-fous clairs pour ne pas ouvrir la brèche dans le principe d’égalité républicaine. Sans un cadre stable, nous allons simplement recréer une dépendance procédurale, ce qui est contraire à l'objectif poursuivi. Il y va de la sécurité juridique et de l'efficacité pour l'action."
+  },
+  {
+   "round": 0,
+   "nom": "Laurent Marcangeli",
+   "groupe": "HOR",
+   "texte": "Madame la Présidente, nous avons longuement débattu de cette autonomie, et il est crucial que nous ne perdions pas de vue les principes fondamentaux de notre République. Cette autonomie, pour être viable et juste, doit s'inscrire dans un cadre qui garantit l'égalité de tous les citoyens. Permettre des dérogations trop larges, c'est ouvrir la porte à une fragmentation de la norme républicaine. Le groupe HOR sera vigilant à ce que ce texte ne devienne pas une brèche dans l'égalité républicaine que nous défendons avec force."
+  },
+  {
+   "round": 0,
+   "nom": "Michel Castellani",
+   "groupe": "LIOT",
+   "texte": "Madame la Présidente, ce projet de loi constitutionnelle prétend apporter une solution à la question corse, mais en réalité, il ouvre la voie à des dérives qui pourraient mettre en péril notre édifice républicain. Nous ne pouvons pas, sous prétexte d'autonomie, sacrifier les principes qui fondent notre démocratie. L'exclusion des domaines régaliens est impérative, et il est indispensable que nous nous assurions que cette autonomie ne serve pas de prétexte pour mettre à mal les libertés publiques et la protection de la personne. Nous devons être vigilants et veiller à ce que l'autonomie accordée à la Corse ne soit pas un cheval de Troie pour des ambitions qui pourraient détruire l'unité et la cohésion de notre République. Nous soutiendrons donc les amendements qui visent à circonscrire clairement le périmètre de cette autonomie et à protéger les principes fondamentaux de notre démocratie."
+  },
+  {
+   "round": 1,
+   "nom": "Colette Capdevielle",
+   "groupe": "SOC",
+   "texte": "Madame la Présidente, nous réaffirmons notre soutien à l'autonomie normative de la Corse, car elle peut être un moteur de développement adapté aux spécificités de ce territoire. Cependant, l'exclusion des domaines régaliens est un impératif pour garantir l'unité de la République, et nous exigeons des garde-fous clairs pour éviter toute dérive communautariste. Il est inacceptable que le silence du texte sur les contre-pouvoirs et l'absence de réciprocité entre territoires n'inquiètent pas davantage les bancs qui se drapent habituellement dans le drapeau de la cohésion nationale. Votre proposition est comme votre parti politique : inutile et dangereuse ! (Applaudissements prolongés sur les bancs des groupes SOC, dont les députés se lèvent, et sur les blancs des groupes LFI-NFP et Dem.)"
+  },
+  {
+   "round": 1,
+   "nom": "Elsa Faucillon",
+   "groupe": "GDR",
+   "texte": "Madame la Présidente, ce projet institue une différenciation territoriale qui sape le fondement de notre pacte républicain. Comment pouvons-nous accepter que les droits des citoyens corses et continentaux divergent selon des logiques d'exception ? Ce n'est pas de l'autonomie, c'est la porte ouverte à une fragmentation sociale inacceptable. Les garde-fous évoqués sont illusoires quand le texte lui-même organise la coexistence de normes concurrentes. Nous créons ici des citoyens de seconde zone, et cela, notre groupe le combat résolument."
+  },
+  {
+   "round": 1,
+   "nom": "Pierre Cazeneuve",
+   "groupe": "EPR",
+   "texte": "Madame la Présidente, ce projet fait croire à la Corse qu'elle pourra légiférer librement et au reste de la France qu'une clause générique de compatibilité constitutionnelle la protègera. C'est de la prestidigitation institutionnelle. Vous nous dites « autonomie encadrée », mais le texte ne dit nulle part qui tranche quand la Corse prétendra que son droit social divergent respecte quand même la Constitution — la Cour de cassation ? Le Conseil constitutionnel surchargé ? Vous laissez le conflit germer en silence. L'indivisibilité de la République n'est pas une formule creuse à remplir au cas par cas : c'est le fondement même qui interdit qu'un territoire se dote d'un ordre juridique parallèle. Vous le videz de sens en transférant le pouvoir normatif sans l'assumer."
+  },
+  {
+   "round": 1,
+   "nom": "Élisa Martin",
+   "groupe": "LFI-NFP",
+   "texte": "Madame la Présidente, on me reproche de vider la République de son sens ; c'est l'inverse qui m'inquiète : ce texte vide l'autonomie du sien. Vous parlez de compatibilité avec la Constitution ? Très bien. Mais qui juge en dernier ressort ? Qui arbitre quand Bastia et Paris sont en désaccord ? Le silence du projet sur ces mécanismes n'est pas une prudence, c'est une abdication du legislateur. Vous nous dites que l'indivisibilité serait menacée : non. La Corse peut adapter son droit social à ses réalités sans devenir indépendante, comme d'autres démocraties le font sans se désagréger. Ce qui menace vraiment la République, c'est de promettre une autonomie qu'on refuse ensuite par un coup de crayon du Conseil constitutionnel. Nous exigeons donc que le texte nomme clairement : les domaines autonomes, la procédure de conflit, et surtout, un vrai contre-pouvoir démocratique — pas"
+  },
+  {
+   "round": 1,
+   "nom": "Olivier Fayssat",
+   "groupe": "UDR",
+   "texte": "« C'est justement la primauté du droit républicain qui arbitre, et non vos velléités sécessionnistes ! »",
+   "interjection": true
+  },
+  {
+   "round": 1,
+   "nom": "Philippe Juvin",
+   "groupe": "DR",
+   "texte": "Madame la Présidente, ce projet fait croire à la Corse qu'elle pourra légiférer librement et au reste de la France qu'une clause générique de compatibilité suffira à maintenir l'unité. C'est une illusion dangereuse, et l'idée même d'une \"autonomie encadrée\" sans cadre clair ne vous donne-t-elle pas le vertige ? Où sont les garde-fous concrets contre le communautarisme, si ce n'est dans l'invocation d'une primauté du droit républicain qui ne trouve ici aucune traduction opérationnelle ? Ce texte est moins un \"cheval de Troie\" vers l'indépendance qu'un cheval de Troie vers la fragmentation de notre droit social et de nos libertés, un chemin semé de contentieux et de doutes. La réalité, c'est que certaines des mesures proposées, par leur imprécision, sont parfaitement inopérantes, voire contraires à l'indivisibilité de la République."
+  },
+  {
+   "round": 1,
+   "nom": "Stéphane Peu",
+   "groupe": "GDR",
+   "texte": "Madame la Présidente, on nous présente un texte qui joue sur les mots pour masquer son inconstitutionnalité fondamentale. Prétendre que la simple compatibilité avec la loi suffit à protéger l'indivisibilité républicaine est une tromperie : sans mécanisme d'arbitrage clair, vous ouvrez la voie à une fragmentation du droit national. Ce flou juridique rappelle étrangement les manœuvres dont votre majorité est coutumière avec le Conseil constitutionnel. Soit vous assumez une autonomie dans le cadre républicain avec des garde-fous explicites, soit vous avouez que ce texte est un cheval de Troie pour les indépendantistes."
+  },
+  {
+   "round": 1,
+   "nom": "Paul Molac",
+   "groupe": "LIOT",
+   "texte": "Madame la Présidente, on nous explique qu'il s'agit d'une autonomie législative mais on refuse de faire confiance aux élus de la Corse. Le Conseil constitutionnel, que nous avons déjà vu détourner la volonté du constituant, est encore une fois appelé à la rescousse, comme un rempart face à une soi-disant \"fragmentation du droit social\". Soit nous faisons confiance aux Corses pour légiférer sur leur propre territoire, soit nous ne le faisons pas. Prétendre que la simple compatibilité avec l'indivisibilité républicaine est la seule garantie, c'est se moquer du monde. Ce projet n'est qu'un trompe-l'œil si la primauté du droit républicain doit systématiquement arbitrer, comme si les Corses étaient incapables de discernement. Ce n'est pas un texte d'autonomie, c'est un texte de méfiance !"
+  },
+  {
+   "round": 1,
+   "nom": "Christine Arrighi",
+   "groupe": "EcoS",
+   "texte": "Madame la Présidente, ce projet est une mystification constitutionnelle. On nous vend une autonomie législative, mais le texte lui-même reconnaît implicitement qu'elle sera bridée par la compatibilité avec nos principes constitutionnels — ce qui signifie, dans les faits, que le Conseil constitutionnel fera le tri, comme il l'a toujours fait, et que les Corses découvriront ex post que leurs lois n'étaient pas si autonomes qu'on le leur promettait. C'est exactement le mensonge que nous avons déjà dénoncé : proposer un texte qu'on sait censuré, pour des raisons politiques. Maintenant, je dis aussi ceci : si cette expérience se fait pour la Corse, elle doit s'appliquer à tous les territoires qui le demandent, sans hiérarchie, sans passe-droit — c'est une question d'égalité républicaine. Mais que nous soyons clairs : ce texte, tel qu'il est écrit, ne tient pas debout juridiquement, et c'est malhonnête de le présenter autrement."
+  },
+  {
+   "round": 1,
+   "nom": "Olivier Fayssat",
+   "groupe": "UDR",
+   "texte": "« Autant dire qu'un train autonome qui doit rester sur les rails du droit national n'avance nulle part, Madame la Présidente ! »",
+   "interjection": true
+  },
+  {
+   "round": 1,
+   "nom": "Andy Kerbrat",
+   "groupe": "LFI-NFP",
+   "texte": "Madame la Présidente, on nous vend de l'autonomie avec des chaînes invisibles, c'est commode pour tout le monde sauf pour les Corses. On leur dit : « Vous pouvez légiférer, mais pas vraiment », et pendant ce temps, on refuse de leur donner les outils budgétaires et les moyens pour qu'une loi locale ait du sens. Le droit à la différence sans les ressources, c'est juste de la poudre aux yeux. Et ce qui m'alarme vraiment, c'est qu'on ne parle jamais des domaines où les Corses auraient besoin de décider : le financement des hôpitaux, l'égalité des salaires, la fiscalité locale. Non, on leur propose de légiférer sur des questions secondaires pendant qu'on garde les clés du coffre. C'est une autonomie pour spectateurs, pas pour acteurs. Et ça, les"
+  },
+  {
+   "round": 1,
+   "nom": "Élisabeth de Maistre",
+   "groupe": "DR",
+   "texte": "Madame la Présidente, ce projet ne vaut que par ses garde-fous — et c'est précisément ce qu'il n'a pas. On nous dit que l'autonomie restera dans le cadre constitutionnel : beau programme, mais qui arbitre ? Quand l'Assemblée de Corse aura voté une norme que Bercy ou les juges jugeront inconstitutionnelle, le texte est muet. C'est le même silence gênant sur les conflits d'intérêts, les marchés publics, les mécanismes de transparence que nous avons imposés ailleurs. Une autonomie sans contre-pouvoirs n'est pas une autonomie respectueuse de l'État de droit : c'est un chèque en blanc à un niveau territorial. Je n'accepte pas qu'on nous vende de la rigueur quand on abandonne les outils qui la garantissent."
+  },
+  {
+   "round": 1,
+   "nom": "Marine Le Pen",
+   "groupe": "RN",
+   "texte": "Madame la Présidente, qui mieux que moi, attachée à mon identité française et bretonne, peut comprendre la volonté des Corses d'être eux-mêmes ? Mais cet élan légitime ne doit pas se faire au détriment des principes constitutionnels qui fondent notre nation. On nous présente une autonomie qui, sous couvert de reconnaissance identitaire, ouvre la porte à une fragmentation du droit national. Dans notre État de droit, c'est le Parlement qui doit décider, pas des entités qui pourraient progressivement s'émanciper des règles communes. Si l'autonomie doit exister, qu'elle soit strictement encadrée et qu'on y exclue sans ambiguïté les domaines régaliens qui garantissent l'unité de la France face aux défis du temps."
+  },
+  {
+   "round": 1,
+   "nom": "Jean-Paul Mattei",
+   "groupe": "Dem",
+   "texte": "Madame la Présidente, on nous explique que cette autonomie sera *encadrée* — mais par quoi, exactement ? Des principes flous et des incantations à l’indivisibilité ? J’ai déjà vu ça : quand on vote des exonérations sans délai de conservation, le Conseil constitutionnel nous renvoie le texte à la figure. Quand on instaure une taxe sur les dividendes sans base juridique solide, on finit par rembourser des milliards aux entreprises. Alors aujourd’hui, on nous demande de faire confiance à des garde-fous *implicites* ? **C’est exactement comme ça qu’on fabrique des contentieux à 500 millions d’euros — sauf qu’ici, c’est l’unité de la République qui paiera les pots cassés !**\n\nEt ne me parlez pas de \"réciprocité entre territoires\" : où est-elle, dans ce texte ? Où sont les contreparties pour les départements qui, eux, n’auront droit qu’à des miettes de décentralisation ? On marche sur la tête : soit on assume une autonomie *réelle*, avec ses risques et ses coûts, soit on arrête de jouer aux apprentis sorciers avec la Constitution ! (Applaudissements sur quelques bancs du groupe Dem.)"
+  }
+ ],
+ "tally_avant_debat": {
+  "pour": 201.7,
+  "contre": 269.6,
+  "abstention": 65.7
+ },
+ "tally": {
+  "pour": 200.6,
+  "contre": 269.0,
+  "abstention": 67.4
+ },
+ "voix_deplacees_par_le_debat": 1.7,
+ "deputes": [
+  {
+   "acteur": "PA719372",
+   "nom": "Guillaume Kasbarian",
+   "groupe": "EPR",
+   "loyaute": 0.9667,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.013,
+    "contre": 0.022,
+    "abstention": 0.966
+   }
+  },
+  {
+   "acteur": "PA795884",
+   "nom": "Marc Ferracci",
+   "groupe": "EPR",
+   "loyaute": 0.9825,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.981,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA721024",
+   "nom": "Anne Genetet",
+   "groupe": "EPR",
+   "loyaute": 0.9656,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.964,
+    "contre": 0.022,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA721908",
+   "nom": "Yaël Braun-Pivet",
+   "groupe": "EPR",
+   "loyaute": 0.9891,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.985,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA794906",
+   "nom": "Gabriel Amard",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9939,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA796070",
+   "nom": "Perceval Gaillard",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.993,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA795310",
+   "nom": "Clémence Guetté",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9927,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA610654",
+   "nom": "Jean-Philippe Nilor",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9643,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.975,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA721062",
+   "nom": "Jean-Hugues Ratenon",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9927,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA794870",
+   "nom": "Sylvie Ferrer",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9936,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA793444",
+   "nom": "Manuel Bompard",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9982,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.005,
+    "contre": 0.989,
+    "abstention": 0.005
+   }
+  },
+  {
+   "acteur": "PA793464",
+   "nom": "Sébastien Delogu",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9941,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA793912",
+   "nom": "Sylvain Carrière",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9949,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA793262",
+   "nom": "Laurent Alexandre",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9926,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA795084",
+   "nom": "Rodrigo Arenas",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.993,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA794938",
+   "nom": "Idir Boumertit",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9867,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.984,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA794082",
+   "nom": "Mathilde Hignet",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9944,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA795200",
+   "nom": "Alma Dufour",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.993,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA795844",
+   "nom": "Karen Erodi",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9948,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA841947",
+   "nom": "Zahia Hamdane",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9946,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA841023",
+   "nom": "Pierre-Yves Cadalen",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9945,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA841251",
+   "nom": "Mathilde Feld",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9928,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA791812",
+   "nom": "Sophia Chikirou",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9912,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.986,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA842105",
+   "nom": "Raphaël Arnault",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9979,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.005,
+    "contre": 0.989,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA793736",
+   "nom": "Hadrien Clouet",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9957,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA795596",
+   "nom": "Paul Vannier",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9955,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA841657",
+   "nom": "Anaïs Belouassa-Cherifi",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.996,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA842037",
+   "nom": "Bérenger Cernon",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9909,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.986,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA795318",
+   "nom": "Louis Boyard",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.995,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA842155",
+   "nom": "Aly Diouara",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9954,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA794138",
+   "nom": "Ségolène Amiot",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9883,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.985,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA721202",
+   "nom": "Éric Coquerel",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9575,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.013,
+    "contre": 0.972,
+    "abstention": 0.015
+   }
+  },
+  {
+   "acteur": "PA721960",
+   "nom": "Danièle Obono",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.994,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA795516",
+   "nom": "Maxime Laisney",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9923,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA796090",
+   "nom": "Aymeric Caron",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9897,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.986,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA794130",
+   "nom": "Andy Kerbrat",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9886,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.985,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA817211",
+   "nom": "René Pilato",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9904,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.986,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA795164",
+   "nom": "Aurélie Trouvé",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.985,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.984,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA795672",
+   "nom": "Arnaud Le Gall",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9907,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.986,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA795108",
+   "nom": "Élise Leboucher",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9949,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA793532",
+   "nom": "Murielle Lepvraud",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.994,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA841215",
+   "nom": "Marie Mesmeur",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9933,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA793872",
+   "nom": "Nathalie Oziol",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9971,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.989,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA841191",
+   "nom": "Sandrine Nosbé",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9938,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA841845",
+   "nom": "Arnaud Saint-Martin",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9915,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.986,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA719578",
+   "nom": "Loïc Prud'homme",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9845,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.977,
+    "contre": 0.014,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA796062",
+   "nom": "Thomas Portes",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9929,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA795746",
+   "nom": "Antoine Léaument",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9963,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA791824",
+   "nom": "Sarah Legrain",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.992,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA720846",
+   "nom": "Bastien Lachaud",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.996,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA794166",
+   "nom": "Matthias Tavel",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9885,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.981,
+    "contre": 0.012,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA794106",
+   "nom": "Andrée Taurinya",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.993,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA720430",
+   "nom": "Ugo Bernalicis",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9986,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.005,
+    "contre": 0.989,
+    "abstention": 0.005
+   }
+  },
+  {
+   "acteur": "PA720892",
+   "nom": "Mathilde Panot",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9989,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   }
+  },
+  {
+   "acteur": "PA793744",
+   "nom": "Anne Stambach-Terrenoir",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9981,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.005,
+    "contre": 0.989,
+    "abstention": 0.005
+   }
+  },
+  {
+   "acteur": "PA793772",
+   "nom": "Christophe Bex",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9881,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.985,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA720952",
+   "nom": "Aurélien Taché",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.988,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.985,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA842029",
+   "nom": "Claire Lejeune",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9936,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA342384",
+   "nom": "Élisa Martin",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9936,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.987,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA795482",
+   "nom": "Manon Meunier",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9946,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA795422",
+   "nom": "Damien Maudet",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9949,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA841729",
+   "nom": "Abdelkader Lahmar",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9698,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.977,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA841515",
+   "nom": "Aurélien Le Coq",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9953,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA794686",
+   "nom": "Marianne Maximi",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9951,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.988,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA795616",
+   "nom": "Carlos Martens Bilongo",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9906,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.986,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA331973",
+   "nom": "Pascale Got",
+   "groupe": "SOC",
+   "loyaute": 0.9623,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.029,
+    "abstention": 0.961
+   }
+  },
+  {
+   "acteur": "PA333285",
+   "nom": "Guillaume Garot",
+   "groupe": "SOC",
+   "loyaute": 0.9747,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.981,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA826635",
+   "nom": "Aurélien Rousseau",
+   "groupe": "SOC",
+   "loyaute": 0.9105,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.063,
+    "abstention": 0.921
+   }
+  },
+  {
+   "acteur": "PA1008",
+   "nom": "Alain David",
+   "groupe": "SOC",
+   "loyaute": 0.9158,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.015,
+    "contre": 0.961,
+    "abstention": 0.023
+   }
+  },
+  {
+   "acteur": "PA794854",
+   "nom": "Iñaki Echaniz",
+   "groupe": "SOC",
+   "loyaute": 0.9759,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.982,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA841665",
+   "nom": "Denis Fégné",
+   "groupe": "SOC",
+   "loyaute": 0.9731,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.981,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA840829",
+   "nom": "Fabrice Barusseau",
+   "groupe": "SOC",
+   "loyaute": 0.9768,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.982,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA795430",
+   "nom": "Stéphane Delautrette",
+   "groupe": "SOC",
+   "loyaute": 0.9841,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.985,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA606573",
+   "nom": "Fanny Dombre Coste",
+   "groupe": "SOC",
+   "loyaute": 0.9769,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.97,
+    "contre": 0.02,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA841315",
+   "nom": "Karim Benbrahim",
+   "groupe": "SOC",
+   "loyaute": 0.9708,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.965,
+    "contre": 0.024,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA841633",
+   "nom": "Peio Dufau",
+   "groupe": "SOC",
+   "loyaute": 0.9155,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.961,
+    "abstention": 0.023
+   }
+  },
+  {
+   "acteur": "PA606793",
+   "nom": "Laurent Baumel",
+   "groupe": "SOC",
+   "loyaute": 0.9811,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.984,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA841919",
+   "nom": "Dieynaba Diop",
+   "groupe": "SOC",
+   "loyaute": 0.9761,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.982,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA794094",
+   "nom": "Mickaël Bouloux",
+   "groupe": "SOC",
+   "loyaute": 0.967,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.979,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA342415",
+   "nom": "Marie-Noëlle Battistel",
+   "groupe": "SOC",
+   "loyaute": 0.9552,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.034,
+    "abstention": 0.955
+   }
+  },
+  {
+   "acteur": "PA609332",
+   "nom": "Olivier Faure",
+   "groupe": "SOC",
+   "loyaute": 0.9493,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.973,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA840903",
+   "nom": "Paul Christophle",
+   "groupe": "SOC",
+   "loyaute": 0.9654,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.027,
+    "abstention": 0.963
+   }
+  },
+  {
+   "acteur": "PA841813",
+   "nom": "Florence Herouin-Léautey",
+   "groupe": "SOC",
+   "loyaute": 0.978,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.971,
+    "contre": 0.019,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA608264",
+   "nom": "Colette Capdevielle",
+   "groupe": "SOC",
+   "loyaute": 0.9703,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.98,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA841295",
+   "nom": "Pierrick Courbon",
+   "groupe": "SOC",
+   "loyaute": 0.9601,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.031,
+    "abstention": 0.959
+   }
+  },
+  {
+   "acteur": "PA841471",
+   "nom": "Stéphane Hablot",
+   "groupe": "SOC",
+   "loyaute": 0.9441,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.971,
+    "abstention": 0.017
+   }
+  },
+  {
+   "acteur": "PA795762",
+   "nom": "Elie Califer",
+   "groupe": "SOC",
+   "loyaute": 0.9586,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.976,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA1654",
+   "nom": "François Hollande",
+   "groupe": "SOC",
+   "loyaute": 0.914,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.061,
+    "abstention": 0.924
+   }
+  },
+  {
+   "acteur": "PA840939",
+   "nom": "Océane Godard",
+   "groupe": "SOC",
+   "loyaute": 0.9835,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.984,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA842211",
+   "nom": "Béatrice Bellay",
+   "groupe": "SOC",
+   "loyaute": 0.9512,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.973,
+    "abstention": 0.015
+   }
+  },
+  {
+   "acteur": "PA642764",
+   "nom": "Joël Aviragnet",
+   "groupe": "SOC",
+   "loyaute": 0.9561,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.975,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA793624",
+   "nom": "Philippe Brun",
+   "groupe": "SOC",
+   "loyaute": 0.9591,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.955,
+    "contre": 0.031,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA842263",
+   "nom": "Ayda Hadizadeh",
+   "groupe": "SOC",
+   "loyaute": 0.972,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.981,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA774960",
+   "nom": "Isabelle Santiago",
+   "groupe": "SOC",
+   "loyaute": 0.9355,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.013,
+    "contre": 0.968,
+    "abstention": 0.019
+   }
+  },
+  {
+   "acteur": "PA341981",
+   "nom": "Marie Récalde",
+   "groupe": "SOC",
+   "loyaute": 0.9774,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.02,
+    "abstention": 0.973
+   }
+  },
+  {
+   "acteur": "PA840955",
+   "nom": "Pierre Pribetich",
+   "groupe": "SOC",
+   "loyaute": 0.9638,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.028,
+    "abstention": 0.962
+   }
+  },
+  {
+   "acteur": "PA841893",
+   "nom": "Céline Thiébault-Martinez",
+   "groupe": "SOC",
+   "loyaute": 0.966,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.027,
+    "abstention": 0.964
+   }
+  },
+  {
+   "acteur": "PA719930",
+   "nom": "Boris Vallaud",
+   "groupe": "SOC",
+   "loyaute": 0.9715,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.023,
+    "abstention": 0.968
+   }
+  },
+  {
+   "acteur": "PA841367",
+   "nom": "Christophe Proença",
+   "groupe": "SOC",
+   "loyaute": 0.9574,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.033,
+    "abstention": 0.957
+   }
+  },
+  {
+   "acteur": "PA841243",
+   "nom": "Sébastien Saint-Pasteur",
+   "groupe": "SOC",
+   "loyaute": 0.9761,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.982,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA342196",
+   "nom": "Claudia Rouaux",
+   "groupe": "SOC",
+   "loyaute": 0.9764,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.982,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA335054",
+   "nom": "Marietta Karamanli",
+   "groupe": "SOC",
+   "loyaute": 0.9388,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.013,
+    "contre": 0.969,
+    "abstention": 0.018
+   }
+  },
+  {
+   "acteur": "PA794270",
+   "nom": "Anna Pic",
+   "groupe": "SOC",
+   "loyaute": 0.9769,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.982,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA720992",
+   "nom": "Jiovanny William",
+   "groupe": "SOC",
+   "loyaute": 0.915,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.961,
+    "abstention": 0.023
+   }
+  },
+  {
+   "acteur": "PA840673",
+   "nom": "Valérie Rossi",
+   "groupe": "SOC",
+   "loyaute": 0.9503,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.973,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA608172",
+   "nom": "Christine Pirès Beaune",
+   "groupe": "SOC",
+   "loyaute": 0.9701,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.024,
+    "abstention": 0.967
+   }
+  },
+  {
+   "acteur": "PA841853",
+   "nom": "Céline Hervieu",
+   "groupe": "SOC",
+   "loyaute": 0.9691,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.98,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA841381",
+   "nom": "Sophie Pantel",
+   "groupe": "SOC",
+   "loyaute": 0.9076,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.959,
+    "abstention": 0.025
+   }
+  },
+  {
+   "acteur": "PA841327",
+   "nom": "Fabrice Roussel",
+   "groupe": "SOC",
+   "loyaute": 0.9821,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.984,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA794494",
+   "nom": "Roger Vicot",
+   "groupe": "SOC",
+   "loyaute": 0.9879,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.013,
+    "abstention": 0.981
+   }
+  },
+  {
+   "acteur": "PA643157",
+   "nom": "Philippe Naillet",
+   "groupe": "SOC",
+   "loyaute": 0.9693,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.98,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA841681",
+   "nom": "Thierry Sother",
+   "groupe": "SOC",
+   "loyaute": 0.9667,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.027,
+    "abstention": 0.964
+   }
+  },
+  {
+   "acteur": "PA793816",
+   "nom": "Mélanie Thomin",
+   "groupe": "SOC",
+   "loyaute": 0.9778,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.982,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA793394",
+   "nom": "Arthur Delaporte",
+   "groupe": "SOC",
+   "loyaute": 0.9644,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.978,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA841463",
+   "nom": "Estelle Mercier",
+   "groupe": "SOC",
+   "loyaute": 0.97,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.98,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA340343",
+   "nom": "Hervé Saulignac",
+   "groupe": "SOC",
+   "loyaute": 0.953,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.974,
+    "abstention": 0.015
+   }
+  },
+  {
+   "acteur": "PA643192",
+   "nom": "Chantal Jourdan",
+   "groupe": "SOC",
+   "loyaute": 0.9348,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.013,
+    "contre": 0.968,
+    "abstention": 0.019
+   }
+  },
+  {
+   "acteur": "PA841107",
+   "nom": "Jacques Oberti",
+   "groupe": "SOC",
+   "loyaute": 0.9626,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.977,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA840793",
+   "nom": "Marc Pena",
+   "groupe": "SOC",
+   "loyaute": 0.9324,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.013,
+    "contre": 0.967,
+    "abstention": 0.019
+   }
+  },
+  {
+   "acteur": "PA840765",
+   "nom": "Laurent Lhardit",
+   "groupe": "SOC",
+   "loyaute": 0.9539,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.035,
+    "abstention": 0.954
+   }
+  },
+  {
+   "acteur": "PA607553",
+   "nom": "Dominique Potier",
+   "groupe": "SOC",
+   "loyaute": 0.8086,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.029,
+    "contre": 0.129,
+    "abstention": 0.842
+   }
+  },
+  {
+   "acteur": "PA774958",
+   "nom": "Gérard Leseul",
+   "groupe": "SOC",
+   "loyaute": 0.941,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.043,
+    "abstention": 0.945
+   }
+  },
+  {
+   "acteur": "PA1567",
+   "nom": "Jérôme Guedj",
+   "groupe": "SOC",
+   "loyaute": 0.9684,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.963,
+    "contre": 0.025,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA795156",
+   "nom": "Fatiha Keloua Hachi",
+   "groupe": "SOC",
+   "loyaute": 0.9753,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.982,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA841091",
+   "nom": "Arnaud Simion",
+   "groupe": "SOC",
+   "loyaute": 0.9735,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.022,
+    "abstention": 0.97
+   }
+  },
+  {
+   "acteur": "PA841717",
+   "nom": "Sandrine Runel",
+   "groupe": "SOC",
+   "loyaute": 0.9796,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.018,
+    "abstention": 0.974
+   }
+  },
+  {
+   "acteur": "PA608416",
+   "nom": "Patrick Hetzel",
+   "groupe": "DR",
+   "loyaute": 0.9489,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.958,
+    "contre": 0.018,
+    "abstention": 0.024
+   }
+  },
+  {
+   "acteur": "PA794994",
+   "nom": "Alexandre Portier",
+   "groupe": "DR",
+   "loyaute": 0.9696,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.971,
+    "contre": 0.013,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA643089",
+   "nom": "Jean-Louis Thiériot",
+   "groupe": "DR",
+   "loyaute": 0.9544,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.961,
+    "contre": 0.017,
+    "abstention": 0.022
+   }
+  },
+  {
+   "acteur": "PA335999",
+   "nom": "Delphine Batho",
+   "groupe": "EcoS",
+   "loyaute": 0.895,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.021,
+    "contre": 0.948,
+    "abstention": 0.03
+   }
+  },
+  {
+   "acteur": "PA795010",
+   "nom": "Marie-Charlotte Garin",
+   "groupe": "EcoS",
+   "loyaute": 0.9744,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.98,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA840947",
+   "nom": "Catherine Hervieu",
+   "groupe": "EcoS",
+   "loyaute": 0.9645,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.976,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA842013",
+   "nom": "Steevy Gustave",
+   "groupe": "EcoS",
+   "loyaute": 0.9669,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.977,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA841885",
+   "nom": "Arnaud Bonnet",
+   "groupe": "EcoS",
+   "loyaute": 0.9846,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.984,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA793780",
+   "nom": "Christine Arrighi",
+   "groupe": "EcoS",
+   "loyaute": 0.9854,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.984,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA795808",
+   "nom": "Sabrina Sebaihi",
+   "groupe": "EcoS",
+   "loyaute": 0.9722,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.979,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA588884",
+   "nom": "Clémentine Autain",
+   "groupe": "EcoS",
+   "loyaute": 0.9671,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.024,
+    "abstention": 0.966
+   }
+  },
+  {
+   "acteur": "PA721210",
+   "nom": "Alexis Corbière",
+   "groupe": "EcoS",
+   "loyaute": 0.9467,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.946,
+    "contre": 0.036,
+    "abstention": 0.018
+   }
+  },
+  {
+   "acteur": "PA610968",
+   "nom": "Pouria Amirshahi",
+   "groupe": "EcoS",
+   "loyaute": 0.9776,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.971,
+    "contre": 0.018,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA794008",
+   "nom": "Cyrielle Chatelain",
+   "groupe": "EcoS",
+   "loyaute": 0.9846,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.984,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA841507",
+   "nom": "Nicolas Bonnet",
+   "groupe": "EcoS",
+   "loyaute": 0.9662,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.977,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA794146",
+   "nom": "Julie Laernoes",
+   "groupe": "EcoS",
+   "loyaute": 0.9898,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.986,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA794022",
+   "nom": "Jérémie Iordanoff",
+   "groupe": "EcoS",
+   "loyaute": 0.9527,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.971,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA795362",
+   "nom": "Lisa Belluco",
+   "groupe": "EcoS",
+   "loyaute": 0.9838,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.984,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA841419",
+   "nom": "Damien Girard",
+   "groupe": "EcoS",
+   "loyaute": 0.9789,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.982,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA841351",
+   "nom": "Emmanuel Duplessy",
+   "groupe": "EcoS",
+   "loyaute": 0.9485,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.947,
+    "contre": 0.035,
+    "abstention": 0.017
+   }
+  },
+  {
+   "acteur": "PA793452",
+   "nom": "Hendrik Davi",
+   "groupe": "EcoS",
+   "loyaute": 0.9722,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.979,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA842045",
+   "nom": "Julie Ozenne",
+   "groupe": "EcoS",
+   "loyaute": 0.9759,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.98,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA841713",
+   "nom": "Boris Tavernier",
+   "groupe": "EcoS",
+   "loyaute": 0.9743,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.02,
+    "abstention": 0.971
+   }
+  },
+  {
+   "acteur": "PA795076",
+   "nom": "Sandrine Rousseau",
+   "groupe": "EcoS",
+   "loyaute": 0.9736,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.979,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA796018",
+   "nom": "Danielle Simonnet",
+   "groupe": "EcoS",
+   "loyaute": 0.9787,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.972,
+    "contre": 0.018,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA793980",
+   "nom": "Charles Fournier",
+   "groupe": "EcoS",
+   "loyaute": 0.9852,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.984,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA794154",
+   "nom": "Jean-Claude Raux",
+   "groupe": "EcoS",
+   "loyaute": 0.9758,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.98,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA722142",
+   "nom": "François Ruffin",
+   "groupe": "EcoS",
+   "loyaute": 0.9786,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.981,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA795636",
+   "nom": "Benjamin Lucas-Lundy",
+   "groupe": "EcoS",
+   "loyaute": 0.9735,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.968,
+    "contre": 0.021,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA736201",
+   "nom": "Sophie Taillé-Polian",
+   "groupe": "EcoS",
+   "loyaute": 0.9603,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.028,
+    "abstention": 0.961
+   }
+  },
+  {
+   "acteur": "PA793708",
+   "nom": "Sébastien Peytavie",
+   "groupe": "EcoS",
+   "loyaute": 0.9694,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.978,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA2940",
+   "nom": "Dominique Voynet",
+   "groupe": "EcoS",
+   "loyaute": 0.9296,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.962,
+    "abstention": 0.022
+   }
+  },
+  {
+   "acteur": "PA841223",
+   "nom": "Tristan Lahais",
+   "groupe": "EcoS",
+   "loyaute": 0.9807,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.982,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA794778",
+   "nom": "Sandra Regol",
+   "groupe": "EcoS",
+   "loyaute": 0.9652,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.976,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA795454",
+   "nom": "Karim Ben Cheikh",
+   "groupe": "EcoS",
+   "loyaute": 0.9812,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.016,
+    "abstention": 0.976
+   }
+  },
+  {
+   "acteur": "PA606545",
+   "nom": "Jean-Louis Roumégas",
+   "groupe": "EcoS",
+   "loyaute": 0.9835,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.983,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA793664",
+   "nom": "Marie Pochon",
+   "groupe": "EcoS",
+   "loyaute": 0.9722,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.979,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA793948",
+   "nom": "Nicolas Thierry",
+   "groupe": "EcoS",
+   "loyaute": 0.9865,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.985,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA610002",
+   "nom": "Eva Sas",
+   "groupe": "EcoS",
+   "loyaute": 0.9843,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.984,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA719914",
+   "nom": "Geneviève Darrieussecq",
+   "groupe": "Dem",
+   "loyaute": 0.9592,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.032,
+    "abstention": 0.959
+   }
+  },
+  {
+   "acteur": "PA720480",
+   "nom": "Charlotte Parmentier-Lecocq",
+   "groupe": "HOR",
+   "loyaute": 0.9707,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.976,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA822617",
+   "nom": "Martine Froger",
+   "groupe": "SOC",
+   "loyaute": 0.9364,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.013,
+    "contre": 0.968,
+    "abstention": 0.019
+   }
+  },
+  {
+   "acteur": "PA1592",
+   "nom": "David Habib",
+   "groupe": "LIOT",
+   "loyaute": 0.8319,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.018,
+    "contre": 0.946,
+    "abstention": 0.036
+   }
+  },
+  {
+   "acteur": "PA720960",
+   "nom": "Olivier Serva",
+   "groupe": "LIOT",
+   "loyaute": 0.7321,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.026,
+    "contre": 0.919,
+    "abstention": 0.054
+   }
+  },
+  {
+   "acteur": "PA227089",
+   "nom": "Valérie Létard",
+   "groupe": "LIOT",
+   "loyaute": 0.9265,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.971,
+    "abstention": 0.019
+   }
+  },
+  {
+   "acteur": "PA795868",
+   "nom": "Jean-Victor Castor",
+   "groupe": "GDR",
+   "loyaute": 0.9668,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.974,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA721896",
+   "nom": "Elsa Faucillon",
+   "groupe": "GDR",
+   "loyaute": 0.9809,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.015,
+    "abstention": 0.976
+   }
+  },
+  {
+   "acteur": "PA720838",
+   "nom": "Soumya Bourouaha",
+   "groupe": "GDR",
+   "loyaute": 0.9719,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.968,
+    "contre": 0.019,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA796106",
+   "nom": "Édouard Bénard",
+   "groupe": "GDR",
+   "loyaute": 0.9608,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.959,
+    "contre": 0.025,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA335612",
+   "nom": "Jean-Paul Lecoq",
+   "groupe": "GDR",
+   "loyaute": 0.9842,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.013,
+    "abstention": 0.979
+   }
+  },
+  {
+   "acteur": "PA796010",
+   "nom": "Frédéric Maillot",
+   "groupe": "GDR",
+   "loyaute": 0.9411,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.017,
+    "contre": 0.962,
+    "abstention": 0.021
+   }
+  },
+  {
+   "acteur": "PA721270",
+   "nom": "Stéphane Peu",
+   "groupe": "GDR",
+   "loyaute": 0.9586,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.957,
+    "contre": 0.026,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA774962",
+   "nom": "Karine Lebon",
+   "groupe": "GDR",
+   "loyaute": 0.9773,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.979,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA795998",
+   "nom": "Émeline K/Bidi",
+   "groupe": "GDR",
+   "loyaute": 0.9604,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.013,
+    "contre": 0.971,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA842271",
+   "nom": "Emmanuel Maurel",
+   "groupe": "GDR",
+   "loyaute": 0.9454,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.947,
+    "contre": 0.033,
+    "abstention": 0.02
+   }
+  },
+  {
+   "acteur": "PA795876",
+   "nom": "Davy Rimane",
+   "groupe": "GDR",
+   "loyaute": 0.9739,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.978,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA605745",
+   "nom": "Nicolas Sansu",
+   "groupe": "GDR",
+   "loyaute": 0.9656,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.963,
+    "contre": 0.023,
+    "abstention": 0.015
+   }
+  },
+  {
+   "acteur": "PA793796",
+   "nom": "David Taupiac",
+   "groupe": "LIOT",
+   "loyaute": 0.8518,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.017,
+    "contre": 0.951,
+    "abstention": 0.032
+   }
+  },
+  {
+   "acteur": "PA793362",
+   "nom": "José Gonzalez",
+   "groupe": "RN",
+   "loyaute": 0.9897,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA795900",
+   "nom": "Marine Hamelet",
+   "groupe": "RN",
+   "loyaute": 0.9892,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA841587",
+   "nom": "David Magnier",
+   "groupe": "RN",
+   "loyaute": 0.9929,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA796050",
+   "nom": "Philippe Schreck",
+   "groupe": "RN",
+   "loyaute": 0.9903,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA841737",
+   "nom": "Jonathan Gery",
+   "groupe": "RN",
+   "loyaute": 0.994,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA796042",
+   "nom": "Frédéric Boccaletti",
+   "groupe": "RN",
+   "loyaute": 0.9832,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.984,
+    "contre": 0.007,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA841075",
+   "nom": "Sylvie Josserand",
+   "groupe": "RN",
+   "loyaute": 0.9952,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA795974",
+   "nom": "Philippe Lottiaux",
+   "groupe": "RN",
+   "loyaute": 0.983,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.984,
+    "contre": 0.007,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA793548",
+   "nom": "Caroline Colombier",
+   "groupe": "RN",
+   "loyaute": 0.9888,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA794418",
+   "nom": "Florence Goulet",
+   "groupe": "RN",
+   "loyaute": 0.9921,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA842073",
+   "nom": "Gaëtan Dussausaye",
+   "groupe": "RN",
+   "loyaute": 0.8851,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.952,
+    "contre": 0.019,
+    "abstention": 0.029
+   }
+  },
+  {
+   "acteur": "PA720468",
+   "nom": "Sébastien Chenu",
+   "groupe": "RN",
+   "loyaute": 0.9487,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.973,
+    "contre": 0.011,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA793616",
+   "nom": "Kévin Mauvieux",
+   "groupe": "RN",
+   "loyaute": 0.9928,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA793672",
+   "nom": "Christine Loir",
+   "groupe": "RN",
+   "loyaute": 0.9887,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA793928",
+   "nom": "Edwige Diaz",
+   "groupe": "RN",
+   "loyaute": 0.9711,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.98,
+    "contre": 0.008,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA795778",
+   "nom": "Jean-Philippe Tanguy",
+   "groupe": "RN",
+   "loyaute": 0.9755,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.982,
+    "contre": 0.008,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA794030",
+   "nom": "Alexis Jolly",
+   "groupe": "RN",
+   "loyaute": 0.9815,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.984,
+    "contre": 0.007,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA794322",
+   "nom": "Thomas Ménagé",
+   "groupe": "RN",
+   "loyaute": 0.9099,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.96,
+    "contre": 0.016,
+    "abstention": 0.024
+   }
+  },
+  {
+   "acteur": "PA841981",
+   "nom": "Catherine Rimbert",
+   "groupe": "RN",
+   "loyaute": 0.9942,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA720822",
+   "nom": "Bruno Bilde",
+   "groupe": "RN",
+   "loyaute": 0.9928,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA794530",
+   "nom": "Matthieu Marchio",
+   "groupe": "RN",
+   "loyaute": 0.9746,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.982,
+    "contre": 0.008,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA793374",
+   "nom": "Romain Baubry",
+   "groupe": "RN",
+   "loyaute": 0.9806,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.984,
+    "contre": 0.007,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA796026",
+   "nom": "Julie Lechanteux",
+   "groupe": "RN",
+   "loyaute": 0.9918,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA793182",
+   "nom": "Jorys Bovet",
+   "groupe": "RN",
+   "loyaute": 0.9922,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA793656",
+   "nom": "Lisette Pollet",
+   "groupe": "RN",
+   "loyaute": 0.9958,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.989,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA793696",
+   "nom": "Serge Muller",
+   "groupe": "RN",
+   "loyaute": 0.993,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA720668",
+   "nom": "Emmanuel Blairy",
+   "groupe": "RN",
+   "loyaute": 0.9959,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.989,
+    "contre": 0.005,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA840075",
+   "nom": "Eddy Casterman",
+   "groupe": "RN",
+   "loyaute": 0.9924,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA793592",
+   "nom": "Géraldine Grangier",
+   "groupe": "RN",
+   "loyaute": 0.9953,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA794770",
+   "nom": "Michèle Martinez",
+   "groupe": "RN",
+   "loyaute": 0.9935,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA793632",
+   "nom": "Timothée Houssin",
+   "groupe": "RN",
+   "loyaute": 0.9791,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.983,
+    "contre": 0.008,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA794570",
+   "nom": "Alexandre Sabatou",
+   "groupe": "RN",
+   "loyaute": 0.9763,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.982,
+    "contre": 0.008,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA794434",
+   "nom": "Christophe Bentz",
+   "groupe": "RN",
+   "loyaute": 0.9914,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA840781",
+   "nom": "Romain Tonussi",
+   "groupe": "RN",
+   "loyaute": 0.9909,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA841955",
+   "nom": "Matthias Renault",
+   "groupe": "RN",
+   "loyaute": 0.9923,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA794354",
+   "nom": "Hélène Laporte",
+   "groupe": "RN",
+   "loyaute": 0.9913,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA794582",
+   "nom": "Kévin Pfeffer",
+   "groupe": "RN",
+   "loyaute": 0.9557,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.975,
+    "contre": 0.01,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA794886",
+   "nom": "Sophie Blanc",
+   "groupe": "RN",
+   "loyaute": 0.9943,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA841873",
+   "nom": "Julien Limongi",
+   "groupe": "RN",
+   "loyaute": 0.9927,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA841131",
+   "nom": "Manon Bouquin",
+   "groupe": "RN",
+   "loyaute": 0.9902,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA841487",
+   "nom": "Anthony Boulogne",
+   "groupe": "RN",
+   "loyaute": 0.962,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.977,
+    "contre": 0.01,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA793218",
+   "nom": "Jordan Guitton",
+   "groupe": "RN",
+   "loyaute": 0.9809,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.984,
+    "contre": 0.007,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA793832",
+   "nom": "Yoann Gillet",
+   "groupe": "RN",
+   "loyaute": 0.9599,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.977,
+    "contre": 0.01,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA840143",
+   "nom": "Guillaume Florquin",
+   "groupe": "RN",
+   "loyaute": 0.9956,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.989,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA793134",
+   "nom": "Jérôme Buisson",
+   "groupe": "RN",
+   "loyaute": 0.9919,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA841563",
+   "nom": "Claire Marais-Beuil",
+   "groupe": "RN",
+   "loyaute": 0.9927,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA794894",
+   "nom": "Anaïs Sabatini",
+   "groupe": "RN",
+   "loyaute": 0.9923,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA794442",
+   "nom": "Laurence Robert-Dehault",
+   "groupe": "RN",
+   "loyaute": 0.9934,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA841621",
+   "nom": "Auguste Evrard",
+   "groupe": "RN",
+   "loyaute": 0.9923,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA721932",
+   "nom": "Marie-France Lorho",
+   "groupe": "RN",
+   "loyaute": 0.9953,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA793298",
+   "nom": "Lionel Tivoli",
+   "groupe": "RN",
+   "loyaute": 0.9931,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA793382",
+   "nom": "Emmanuel Taché",
+   "groupe": "RN",
+   "loyaute": 0.9889,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA840967",
+   "nom": "René Lioret",
+   "groupe": "RN",
+   "loyaute": 0.981,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.984,
+    "contre": 0.007,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA722382",
+   "nom": "Benjamin Dirx",
+   "groupe": "EPR",
+   "loyaute": 0.9645,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.013,
+    "contre": 0.973,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA719798",
+   "nom": "Daniel Labaronne",
+   "groupe": "EPR",
+   "loyaute": 0.961,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.014,
+    "contre": 0.971,
+    "abstention": 0.015
+   }
+  },
+  {
+   "acteur": "PA795864",
+   "nom": "Pierre Cazeneuve",
+   "groupe": "EPR",
+   "loyaute": 0.9664,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.013,
+    "contre": 0.974,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA721158",
+   "nom": "Pieyre-Alexandre Anglade",
+   "groupe": "EPR",
+   "loyaute": 0.969,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.975,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA719472",
+   "nom": "Jean-René Cazeneuve",
+   "groupe": "EPR",
+   "loyaute": 0.9563,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.015,
+    "contre": 0.969,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA720154",
+   "nom": "Nicole Dubré-Chirat",
+   "groupe": "EPR",
+   "loyaute": 0.9783,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.016,
+    "abstention": 0.974
+   }
+  },
+  {
+   "acteur": "PA794802",
+   "nom": "Charles Sitzenstuhl",
+   "groupe": "EPR",
+   "loyaute": 0.8833,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.032,
+    "contre": 0.933,
+    "abstention": 0.035
+   }
+  },
+  {
+   "acteur": "PA643184",
+   "nom": "Brigitte Klinkert",
+   "groupe": "EPR",
+   "loyaute": 0.9739,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.977,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA642935",
+   "nom": "Olivier Becht",
+   "groupe": "EPR",
+   "loyaute": 0.9186,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.024,
+    "contre": 0.95,
+    "abstention": 0.026
+   }
+  },
+  {
+   "acteur": "PA795664",
+   "nom": "Paul Midy",
+   "groupe": "EPR",
+   "loyaute": 0.9886,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.984,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA720022",
+   "nom": "Michel Lauzzana",
+   "groupe": "EPR",
+   "loyaute": 0.9565,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.015,
+    "contre": 0.969,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA345722",
+   "nom": "Constance Le Grip",
+   "groupe": "EPR",
+   "loyaute": 0.9624,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.014,
+    "contre": 0.972,
+    "abstention": 0.015
+   }
+  },
+  {
+   "acteur": "PA718850",
+   "nom": "Pierre Cordier",
+   "groupe": "DR",
+   "loyaute": 0.8864,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.918,
+    "contre": 0.035,
+    "abstention": 0.047
+   }
+  },
+  {
+   "acteur": "PA332523",
+   "nom": "Marie-Christine Dalloz",
+   "groupe": "DR",
+   "loyaute": 0.918,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.938,
+    "contre": 0.026,
+    "abstention": 0.035
+   }
+  },
+  {
+   "acteur": "PA346782",
+   "nom": "Philippe Juvin",
+   "groupe": "DR",
+   "loyaute": 0.8827,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.046,
+    "contre": 0.036,
+    "abstention": 0.918
+   }
+  },
+  {
+   "acteur": "PA794118",
+   "nom": "Antoine Vermorel-Marques",
+   "groupe": "DR",
+   "loyaute": 0.9184,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.034,
+    "contre": 0.026,
+    "abstention": 0.94
+   }
+  },
+  {
+   "acteur": "PA722390",
+   "nom": "Josiane Corneloup",
+   "groupe": "DR",
+   "loyaute": 0.928,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.945,
+    "contre": 0.024,
+    "abstention": 0.032
+   }
+  },
+  {
+   "acteur": "PA774954",
+   "nom": "Anne-Laure Blin",
+   "groupe": "DR",
+   "loyaute": 0.9638,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.967,
+    "contre": 0.014,
+    "abstention": 0.018
+   }
+  },
+  {
+   "acteur": "PA607090",
+   "nom": "Jean-Pierre Vigier",
+   "groupe": "DR",
+   "loyaute": 0.9373,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.95,
+    "contre": 0.021,
+    "abstention": 0.028
+   }
+  },
+  {
+   "acteur": "PA793094",
+   "nom": "Nicolas Ray",
+   "groupe": "DR",
+   "loyaute": 0.9449,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.955,
+    "contre": 0.019,
+    "abstention": 0.025
+   }
+  },
+  {
+   "acteur": "PA793508",
+   "nom": "Hubert Brigand",
+   "groupe": "DR",
+   "loyaute": 0.9072,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.931,
+    "contre": 0.029,
+    "abstention": 0.039
+   }
+  },
+  {
+   "acteur": "PA642725",
+   "nom": "Eric Liégeon",
+   "groupe": "DR",
+   "loyaute": 0.9073,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.931,
+    "contre": 0.029,
+    "abstention": 0.039
+   }
+  },
+  {
+   "acteur": "PA719968",
+   "nom": "Sylvie Bonnet",
+   "groupe": "DR",
+   "loyaute": 0.9709,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.972,
+    "contre": 0.013,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA840979",
+   "nom": "Corentin Le Fur",
+   "groupe": "DR",
+   "loyaute": 0.95,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.023,
+    "contre": 0.018,
+    "abstention": 0.959
+   }
+  },
+  {
+   "acteur": "PA794810",
+   "nom": "Louise Morel",
+   "groupe": "Dem",
+   "loyaute": 0.9185,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.014,
+    "contre": 0.058,
+    "abstention": 0.928
+   }
+  },
+  {
+   "acteur": "PA331582",
+   "nom": "Philippe Vigier",
+   "groupe": "Dem",
+   "loyaute": 0.9618,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.977,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA720728",
+   "nom": "Jean-Paul Mattei",
+   "groupe": "Dem",
+   "loyaute": 0.9594,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.976,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA722336",
+   "nom": "Vincent Thiébaut",
+   "groupe": "HOR",
+   "loyaute": 0.9387,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.019,
+    "contre": 0.96,
+    "abstention": 0.021
+   }
+  },
+  {
+   "acteur": "PA794470",
+   "nom": "Félicie Gérard",
+   "groupe": "HOR",
+   "loyaute": 0.9124,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.024,
+    "contre": 0.947,
+    "abstention": 0.028
+   }
+  },
+  {
+   "acteur": "PA842125",
+   "nom": "Thomas Lam",
+   "groupe": "HOR",
+   "loyaute": 0.8636,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.035,
+    "contre": 0.924,
+    "abstention": 0.041
+   }
+  },
+  {
+   "acteur": "PA719778",
+   "nom": "François Jolivet",
+   "groupe": "HOR",
+   "loyaute": 0.9341,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.02,
+    "contre": 0.958,
+    "abstention": 0.022
+   }
+  },
+  {
+   "acteur": "PA721844",
+   "nom": "Béatrice Piron",
+   "groupe": "HOR",
+   "loyaute": 0.9019,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.027,
+    "contre": 0.942,
+    "abstention": 0.031
+   }
+  },
+  {
+   "acteur": "PA721458",
+   "nom": "Xavier Roseren",
+   "groupe": "HOR",
+   "loyaute": 0.9465,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.017,
+    "contre": 0.964,
+    "abstention": 0.019
+   }
+  },
+  {
+   "acteur": "PA332228",
+   "nom": "Thierry Benoit",
+   "groupe": "HOR",
+   "loyaute": 0.8433,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.04,
+    "contre": 0.083,
+    "abstention": 0.877
+   }
+  },
+  {
+   "acteur": "PA607619",
+   "nom": "Paul Molac",
+   "groupe": "LIOT",
+   "loyaute": 0.8054,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.021,
+    "contre": 0.939,
+    "abstention": 0.041
+   }
+  },
+  {
+   "acteur": "PA719138",
+   "nom": "Michel Castellani",
+   "groupe": "LIOT",
+   "loyaute": 0.8575,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.952,
+    "abstention": 0.031
+   }
+  },
+  {
+   "acteur": "PA942",
+   "nom": "Charles de Courson",
+   "groupe": "LIOT",
+   "loyaute": 0.8675,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.955,
+    "abstention": 0.029
+   }
+  },
+  {
+   "acteur": "PA840817",
+   "nom": "Joël Bruneau",
+   "groupe": "LIOT",
+   "loyaute": 0.8594,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.953,
+    "abstention": 0.031
+   }
+  },
+  {
+   "acteur": "PA841931",
+   "nom": "Laurent Mazaury",
+   "groupe": "LIOT",
+   "loyaute": 0.9004,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.013,
+    "contre": 0.964,
+    "abstention": 0.023
+   }
+  },
+  {
+   "acteur": "PA721474",
+   "nom": "Stéphane Viry",
+   "groupe": "LIOT",
+   "loyaute": 0.9186,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.916,
+    "contre": 0.064,
+    "abstention": 0.02
+   }
+  },
+  {
+   "acteur": "PA267763",
+   "nom": "Jean-Pierre Bataille",
+   "groupe": "LIOT",
+   "loyaute": 0.8744,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.015,
+    "contre": 0.957,
+    "abstention": 0.028
+   }
+  },
+  {
+   "acteur": "PA840809",
+   "nom": "Gérault Verny",
+   "groupe": "UDR",
+   "loyaute": 0.9561,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.975,
+    "contre": 0.011,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA840685",
+   "nom": "Vincent Trébuchet",
+   "groupe": "UDR",
+   "loyaute": 0.9831,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.984,
+    "contre": 0.007,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA841613",
+   "nom": "Marc de Fleurian",
+   "groupe": "RN",
+   "loyaute": 0.9892,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA796034",
+   "nom": "Frank Giletti",
+   "groupe": "RN",
+   "loyaute": 0.9932,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA841439",
+   "nom": "Pascal Jenft",
+   "groupe": "RN",
+   "loyaute": 0.9952,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA795410",
+   "nom": "Béatrice Roullaud",
+   "groupe": "RN",
+   "loyaute": 0.9773,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.983,
+    "contre": 0.008,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA793102",
+   "nom": "Christian Girard",
+   "groupe": "RN",
+   "loyaute": 0.9852,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.985,
+    "contre": 0.007,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA841825",
+   "nom": "Patrice Martin",
+   "groupe": "RN",
+   "loyaute": 0.985,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.985,
+    "contre": 0.007,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA795644",
+   "nom": "Nathalie Da Conceicao Carvalho",
+   "groupe": "RN",
+   "loyaute": 0.9881,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA841451",
+   "nom": "Julien Guibert",
+   "groupe": "RN",
+   "loyaute": 0.9936,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA794734",
+   "nom": "Michel Guiniot",
+   "groupe": "RN",
+   "loyaute": 0.9788,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.983,
+    "contre": 0.008,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA842097",
+   "nom": "Sophie-Laurence Roy",
+   "groupe": "RN",
+   "loyaute": 0.9932,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA841495",
+   "nom": "Maxime Amblard",
+   "groupe": "RN",
+   "loyaute": 0.9798,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.983,
+    "contre": 0.007,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA841749",
+   "nom": "Tiffany Joncour",
+   "groupe": "RN",
+   "loyaute": 0.9899,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA793354",
+   "nom": "Joëlle Mélin",
+   "groupe": "RN",
+   "loyaute": 0.9885,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA840801",
+   "nom": "Emmanuel Fouquart",
+   "groupe": "RN",
+   "loyaute": 0.9947,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA840119",
+   "nom": "Sandra Delannoy",
+   "groupe": "RN",
+   "loyaute": 0.9835,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.985,
+    "contre": 0.007,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA840159",
+   "nom": "Bruno Clavet",
+   "groupe": "RN",
+   "loyaute": 0.98,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.983,
+    "contre": 0.007,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA840869",
+   "nom": "Florence Joubert",
+   "groupe": "RN",
+   "loyaute": 0.992,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA841645",
+   "nom": "Théo Bernhardt",
+   "groupe": "RN",
+   "loyaute": 0.9416,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.971,
+    "contre": 0.012,
+    "abstention": 0.017
+   }
+  },
+  {
+   "acteur": "PA794946",
+   "nom": "Antoine Villedieu",
+   "groupe": "RN",
+   "loyaute": 0.9854,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.985,
+    "contre": 0.007,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA842255",
+   "nom": "Anne Sicard",
+   "groupe": "RN",
+   "loyaute": 0.9903,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA793166",
+   "nom": "Jocelyn Dessigny",
+   "groupe": "RN",
+   "loyaute": 0.9887,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA795786",
+   "nom": "Yaël Ménaché",
+   "groupe": "RN",
+   "loyaute": 0.9897,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA793158",
+   "nom": "José Beaurain",
+   "groupe": "RN",
+   "loyaute": 0.9814,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.984,
+    "contre": 0.007,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA796118",
+   "nom": "Bénédicte Auzanot",
+   "groupe": "RN",
+   "loyaute": 0.988,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.006,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA841605",
+   "nom": "Antoine Golliot",
+   "groupe": "RN",
+   "loyaute": 0.9923,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA794598",
+   "nom": "Laurent Jacobelli",
+   "groupe": "RN",
+   "loyaute": 0.9912,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA794562",
+   "nom": "Philippe Ballard",
+   "groupe": "RN",
+   "loyaute": 0.9893,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA794670",
+   "nom": "Caroline Parmentier",
+   "groupe": "RN",
+   "loyaute": 0.991,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA795912",
+   "nom": "Laure Lavalette",
+   "groupe": "RN",
+   "loyaute": 0.9938,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA842001",
+   "nom": "Guillaume Bigot",
+   "groupe": "RN",
+   "loyaute": 0.9774,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.983,
+    "contre": 0.008,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA840837",
+   "nom": "Pascal Markowsky",
+   "groupe": "RN",
+   "loyaute": 0.989,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA841837",
+   "nom": "Robert Le Bourgeois",
+   "groupe": "RN",
+   "loyaute": 0.9931,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA841479",
+   "nom": "Frédéric Weber",
+   "groupe": "RN",
+   "loyaute": 0.9869,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.007,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA840857",
+   "nom": "Nadine Lechon",
+   "groupe": "RN",
+   "loyaute": 0.9909,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA793146",
+   "nom": "Nicolas Dragon",
+   "groupe": "RN",
+   "loyaute": 0.9953,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA793254",
+   "nom": "Julien Rancoule",
+   "groupe": "RN",
+   "loyaute": 0.9848,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.985,
+    "contre": 0.007,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA841199",
+   "nom": "Thierry Perez",
+   "groupe": "RN",
+   "loyaute": 0.993,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA719388",
+   "nom": "Annaïg Le Meur",
+   "groupe": "EPR",
+   "loyaute": 0.9898,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.985,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA721852",
+   "nom": "Marie Lebec",
+   "groupe": "EPR",
+   "loyaute": 0.9807,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.981,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA722190",
+   "nom": "Gabriel Attal",
+   "groupe": "EPR",
+   "loyaute": 0.9907,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.007,
+    "contre": 0.985,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA795920",
+   "nom": "Prisca Thevenot",
+   "groupe": "EPR",
+   "loyaute": 0.9702,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.975,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA720342",
+   "nom": "Nicole Le Peih",
+   "groupe": "EPR",
+   "loyaute": 0.9755,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.978,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA720362",
+   "nom": "Belkhir Belhaddad",
+   "groupe": "SOC",
+   "loyaute": 0.9159,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.015,
+    "contre": 0.962,
+    "abstention": 0.023
+   }
+  },
+  {
+   "acteur": "PA721296",
+   "nom": "Guillaume Gouffier Valente",
+   "groupe": "EPR",
+   "loyaute": 0.9571,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.015,
+    "contre": 0.026,
+    "abstention": 0.959
+   }
+  },
+  {
+   "acteur": "PA795962",
+   "nom": "Joséphine Missoffe",
+   "groupe": "EPR",
+   "loyaute": 0.8666,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.036,
+    "contre": 0.925,
+    "abstention": 0.04
+   }
+  },
+  {
+   "acteur": "PA794798",
+   "nom": "Françoise Buffet",
+   "groupe": "EPR",
+   "loyaute": 0.965,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.013,
+    "contre": 0.973,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA267200",
+   "nom": "Sébastien Huyghe",
+   "groupe": "EPR",
+   "loyaute": 0.8546,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.88,
+    "contre": 0.077,
+    "abstention": 0.043
+   }
+  },
+  {
+   "acteur": "PA719338",
+   "nom": "Graziella Melchior",
+   "groupe": "EPR",
+   "loyaute": 0.9831,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.982,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA842147",
+   "nom": "Christophe Mongardien",
+   "groupe": "EPR",
+   "loyaute": 0.9699,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.975,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA642847",
+   "nom": "Thibault Bazin",
+   "groupe": "DR",
+   "loyaute": 0.9124,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.935,
+    "contre": 0.028,
+    "abstention": 0.037
+   }
+  },
+  {
+   "acteur": "PA330008",
+   "nom": "Xavier Breton",
+   "groupe": "DR",
+   "loyaute": 0.8577,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.9,
+    "contre": 0.042,
+    "abstention": 0.058
+   }
+  },
+  {
+   "acteur": "PA719640",
+   "nom": "Sophie Mette",
+   "groupe": "Dem",
+   "loyaute": 0.9545,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.975,
+    "abstention": 0.015
+   }
+  },
+  {
+   "acteur": "PA719822",
+   "nom": "Sabine Thillaye",
+   "groupe": "Dem",
+   "loyaute": 0.9509,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.974,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA793520",
+   "nom": "Mickaël Cosson",
+   "groupe": "Dem",
+   "loyaute": 0.915,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.015,
+    "contre": 0.962,
+    "abstention": 0.024
+   }
+  },
+  {
+   "acteur": "PA720334",
+   "nom": "Jimmy Pahun",
+   "groupe": "Dem",
+   "loyaute": 0.9159,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.014,
+    "contre": 0.962,
+    "abstention": 0.024
+   }
+  },
+  {
+   "acteur": "PA842299",
+   "nom": "Emmanuel Tjibaou",
+   "groupe": "GDR",
+   "loyaute": 0.9654,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.974,
+    "abstention": 0.015
+   }
+  },
+  {
+   "acteur": "PA841207",
+   "nom": "Charles Alloncle",
+   "groupe": "UDR",
+   "loyaute": 0.9705,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.98,
+    "contre": 0.009,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA793246",
+   "nom": "Frédéric Falcon",
+   "groupe": "RN",
+   "loyaute": 0.9862,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.985,
+    "contre": 0.007,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA842085",
+   "nom": "Sébastien Humbert",
+   "groupe": "RN",
+   "loyaute": 0.9937,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA817203",
+   "nom": "Laure Miller",
+   "groupe": "EPR",
+   "loyaute": 0.9263,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.022,
+    "contre": 0.954,
+    "abstention": 0.024
+   }
+  },
+  {
+   "acteur": "PA721426",
+   "nom": "Véronique Riotton",
+   "groupe": "EPR",
+   "loyaute": 0.9731,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.977,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA720256",
+   "nom": "Géraldine Bannier",
+   "groupe": "Dem",
+   "loyaute": 0.9435,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.042,
+    "abstention": 0.947
+   }
+  },
+  {
+   "acteur": "PA793398",
+   "nom": "Jérémie Patrier-Leitus",
+   "groupe": "HOR",
+   "loyaute": 0.9168,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.023,
+    "contre": 0.95,
+    "abstention": 0.027
+   }
+  },
+  {
+   "acteur": "PA841769",
+   "nom": "Éric Michoux",
+   "groupe": "UDR",
+   "loyaute": 0.9637,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.978,
+    "contre": 0.01,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA841067",
+   "nom": "Alexandre Allegret-Pilot",
+   "groupe": "UDR",
+   "loyaute": 0.9566,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.975,
+    "contre": 0.011,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA841359",
+   "nom": "Constance de Pélichy",
+   "groupe": "LIOT",
+   "loyaute": 0.9059,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.013,
+    "contre": 0.965,
+    "abstention": 0.022
+   }
+  },
+  {
+   "acteur": "PA794762",
+   "nom": "Sandrine Dogor-Such",
+   "groupe": "RN",
+   "loyaute": 0.9961,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.989,
+    "contre": 0.005,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA794702",
+   "nom": "Delphine Lingemann",
+   "groupe": "Dem",
+   "loyaute": 0.9301,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.013,
+    "contre": 0.051,
+    "abstention": 0.937
+   }
+  },
+  {
+   "acteur": "PA795100",
+   "nom": "Éric Martineau",
+   "groupe": "Dem",
+   "loyaute": 0.9508,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.974,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA794114",
+   "nom": "Emmanuel Mandon",
+   "groupe": "Dem",
+   "loyaute": 0.8245,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.025,
+    "contre": 0.931,
+    "abstention": 0.044
+   }
+  },
+  {
+   "acteur": "PA2952",
+   "nom": "Jean-Luc Warsmann",
+   "groupe": "LIOT",
+   "loyaute": 0.7599,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.024,
+    "contre": 0.927,
+    "abstention": 0.049
+   }
+  },
+  {
+   "acteur": "PA793230",
+   "nom": "Angélique Ranc",
+   "groupe": "RN",
+   "loyaute": 0.9908,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA841553",
+   "nom": "Thierry Tesson",
+   "groupe": "RN",
+   "loyaute": 0.9918,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA720614",
+   "nom": "Marine Le Pen",
+   "groupe": "RN",
+   "loyaute": 0.9976,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.989,
+    "contre": 0.005,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA840135",
+   "nom": "Alexandre Dufosset",
+   "groupe": "RN",
+   "loyaute": 0.935,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.969,
+    "contre": 0.013,
+    "abstention": 0.019
+   }
+  },
+  {
+   "acteur": "PA794678",
+   "nom": "Thierry Frappé",
+   "groupe": "RN",
+   "loyaute": 0.9949,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA795552",
+   "nom": "Julien Odoul",
+   "groupe": "RN",
+   "loyaute": 0.9878,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.006,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA794590",
+   "nom": "Alexandre Loubet",
+   "groupe": "RN",
+   "loyaute": 0.9933,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA841761",
+   "nom": "Aurélien Dutremble",
+   "groupe": "RN",
+   "loyaute": 0.9947,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA795528",
+   "nom": "Charles Rodwell",
+   "groupe": "EPR",
+   "loyaute": 0.9306,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.021,
+    "contre": 0.956,
+    "abstention": 0.023
+   }
+  },
+  {
+   "acteur": "PA719756",
+   "nom": "Christine Le Nabour",
+   "groupe": "EPR",
+   "loyaute": 0.9854,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.983,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA719632",
+   "nom": "Sophie Panonacle",
+   "groupe": "EPR",
+   "loyaute": 0.9518,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.966,
+    "abstention": 0.017
+   }
+  },
+  {
+   "acteur": "PA841395",
+   "nom": "Maxime Michelet",
+   "groupe": "UDR",
+   "loyaute": 0.9861,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.985,
+    "contre": 0.007,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA721004",
+   "nom": "Amélia Lakrafi",
+   "groupe": "EPR",
+   "loyaute": 0.9506,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.966,
+    "abstention": 0.018
+   }
+  },
+  {
+   "acteur": "PA721182",
+   "nom": "Frédéric Petit",
+   "groupe": "Dem",
+   "loyaute": 0.9724,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.981,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA842279",
+   "nom": "Anchya Bamana",
+   "groupe": "RN",
+   "loyaute": 0.9835,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.985,
+    "contre": 0.007,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA794198",
+   "nom": "Roger Chudeau",
+   "groupe": "RN",
+   "loyaute": 0.9776,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.983,
+    "contre": 0.008,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA841139",
+   "nom": "Julien Gabarron",
+   "groupe": "RN",
+   "loyaute": 0.9965,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.989,
+    "contre": 0.005,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA840757",
+   "nom": "Monique Griseti",
+   "groupe": "RN",
+   "loyaute": 0.9884,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA793290",
+   "nom": "Gisèle Lelouis",
+   "groupe": "RN",
+   "loyaute": 0.9941,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA840915",
+   "nom": "Thibaut Monnier",
+   "groupe": "RN",
+   "loyaute": 0.9912,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA842227",
+   "nom": "Joseph Rivière",
+   "groupe": "RN",
+   "loyaute": 0.9915,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA719890",
+   "nom": "Danielle Brulebois",
+   "groupe": "EPR",
+   "loyaute": 0.914,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.025,
+    "contre": 0.948,
+    "abstention": 0.027
+   }
+  },
+  {
+   "acteur": "PA842311",
+   "nom": "Vincent Caure",
+   "groupe": "EPR",
+   "loyaute": 0.9847,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.013,
+    "abstention": 0.979
+   }
+  },
+  {
+   "acteur": "PA840235",
+   "nom": "Moerani Frébault",
+   "groupe": "EPR",
+   "loyaute": 0.9598,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.014,
+    "contre": 0.025,
+    "abstention": 0.961
+   }
+  },
+  {
+   "acteur": "PA722366",
+   "nom": "Jean-Luc Fugit",
+   "groupe": "EPR",
+   "loyaute": 0.9766,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.979,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA721764",
+   "nom": "Olivia Grégoire",
+   "groupe": "EPR",
+   "loyaute": 0.9677,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.974,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA719550",
+   "nom": "Liliana Tanguy",
+   "groupe": "EPR",
+   "loyaute": 0.824,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.045,
+    "contre": 0.904,
+    "abstention": 0.051
+   }
+  },
+  {
+   "acteur": "PA721584",
+   "nom": "Jean Terlier",
+   "groupe": "EPR",
+   "loyaute": 0.9586,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.014,
+    "contre": 0.97,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA607395",
+   "nom": "Stéphane Travert",
+   "groupe": "EPR",
+   "loyaute": 0.9324,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.02,
+    "contre": 0.957,
+    "abstention": 0.023
+   }
+  },
+  {
+   "acteur": "PA720354",
+   "nom": "Jean-Michel Jacques",
+   "groupe": "EPR",
+   "loyaute": 0.9699,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.975,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA717379",
+   "nom": "Sylvain Maillard",
+   "groupe": "EPR",
+   "loyaute": 0.97,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.975,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA795722",
+   "nom": "Karl Olive",
+   "groupe": "EPR",
+   "loyaute": 0.9081,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.026,
+    "contre": 0.945,
+    "abstention": 0.029
+   }
+  },
+  {
+   "acteur": "PA794178",
+   "nom": "Jean-Pierre Taite",
+   "groupe": "DR",
+   "loyaute": 0.9288,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.945,
+    "contre": 0.024,
+    "abstention": 0.031
+   }
+  },
+  {
+   "acteur": "PA842141",
+   "nom": "Élisabeth de Maistre",
+   "groupe": "DR",
+   "loyaute": 0.9312,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.029,
+    "contre": 0.023,
+    "abstention": 0.948
+   }
+  },
+  {
+   "acteur": "PA720092",
+   "nom": "Richard Ramos",
+   "groupe": "Dem",
+   "loyaute": 0.8955,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.017,
+    "contre": 0.955,
+    "abstention": 0.028
+   }
+  },
+  {
+   "acteur": "PA722162",
+   "nom": "Nicolas Turquois",
+   "groupe": "Dem",
+   "loyaute": 0.9444,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.041,
+    "abstention": 0.948
+   }
+  },
+  {
+   "acteur": "PA794234",
+   "nom": "François Gernigon",
+   "groupe": "HOR",
+   "loyaute": 0.955,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.015,
+    "contre": 0.968,
+    "abstention": 0.017
+   }
+  },
+  {
+   "acteur": "PA719528",
+   "nom": "Jean-François Portarrieu",
+   "groupe": "HOR",
+   "loyaute": 0.9252,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.022,
+    "contre": 0.954,
+    "abstention": 0.025
+   }
+  },
+  {
+   "acteur": "PA841017",
+   "nom": "Harold Huwart",
+   "groupe": "LIOT",
+   "loyaute": 0.879,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.88,
+    "contre": 0.092,
+    "abstention": 0.027
+   }
+  },
+  {
+   "acteur": "PA721486",
+   "nom": "Christophe Naegelen",
+   "groupe": "LIOT",
+   "loyaute": 0.8623,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.954,
+    "abstention": 0.03
+   }
+  },
+  {
+   "acteur": "PA840701",
+   "nom": "Bernard Chaix",
+   "groupe": "UDR",
+   "loyaute": 0.936,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.968,
+    "contre": 0.013,
+    "abstention": 0.019
+   }
+  },
+  {
+   "acteur": "PA840773",
+   "nom": "Olivier Fayssat",
+   "groupe": "UDR",
+   "loyaute": 0.9836,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.984,
+    "contre": 0.007,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA840721",
+   "nom": "Marc Chavent",
+   "groupe": "UDR",
+   "loyaute": 0.9747,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.981,
+    "contre": 0.008,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA719404",
+   "nom": "Didier Le Gac",
+   "groupe": "EPR",
+   "loyaute": 0.9628,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.014,
+    "contre": 0.972,
+    "abstention": 0.015
+   }
+  },
+  {
+   "acteur": "PA721234",
+   "nom": "Maud Petit",
+   "groupe": "Dem",
+   "loyaute": 0.803,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.027,
+    "contre": 0.924,
+    "abstention": 0.049
+   }
+  },
+  {
+   "acteur": "PA793194",
+   "nom": "Lionel Vuibert",
+   "groupe": "NI",
+   "loyaute": 0.8816,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.023,
+    "contre": 0.075,
+    "abstention": 0.902
+   }
+  },
+  {
+   "acteur": "PA794838",
+   "nom": "Didier Lemaire",
+   "groupe": "HOR",
+   "loyaute": 0.95,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.966,
+    "abstention": 0.018
+   }
+  },
+  {
+   "acteur": "PA722102",
+   "nom": "Annie Vidal",
+   "groupe": "EPR",
+   "loyaute": 0.7038,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.073,
+    "contre": 0.846,
+    "abstention": 0.082
+   }
+  },
+  {
+   "acteur": "PA718884",
+   "nom": "Valérie Bazin-Malgras",
+   "groupe": "DR",
+   "loyaute": 0.9643,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.967,
+    "contre": 0.014,
+    "abstention": 0.018
+   }
+  },
+  {
+   "acteur": "PA794750",
+   "nom": "Thierry Liger",
+   "groupe": "DR",
+   "loyaute": 0.9081,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.932,
+    "contre": 0.029,
+    "abstention": 0.039
+   }
+  },
+  {
+   "acteur": "PA718784",
+   "nom": "Éric Pauget",
+   "groupe": "DR",
+   "loyaute": 0.9691,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.97,
+    "contre": 0.013,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA719558",
+   "nom": "Erwan Balanant",
+   "groupe": "Dem",
+   "loyaute": 0.9194,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.014,
+    "contre": 0.963,
+    "abstention": 0.023
+   }
+  },
+  {
+   "acteur": "PA720038",
+   "nom": "Sandrine Josso",
+   "groupe": "Dem",
+   "loyaute": 0.9406,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.97,
+    "abstention": 0.018
+   }
+  },
+  {
+   "acteur": "PA722374",
+   "nom": "Cyrille Isaac-Sibille",
+   "groupe": "Dem",
+   "loyaute": 0.8918,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.017,
+    "contre": 0.075,
+    "abstention": 0.907
+   }
+  },
+  {
+   "acteur": "PA805166",
+   "nom": "Anne Bergantz",
+   "groupe": "Dem",
+   "loyaute": 0.9489,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.973,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA840657",
+   "nom": "Sophie Ricourt Vaginay",
+   "groupe": "UDR",
+   "loyaute": 0.9582,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.976,
+    "contre": 0.01,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA719938",
+   "nom": "Marc Fesneau",
+   "groupe": "Dem",
+   "loyaute": 0.9671,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.979,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA793342",
+   "nom": "Alexandra Martin (Alpes-Maritimes)",
+   "groupe": "DR",
+   "loyaute": 0.9216,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.94,
+    "contre": 0.026,
+    "abstention": 0.034
+   }
+  },
+  {
+   "acteur": "PA309643",
+   "nom": "Véronique Besse",
+   "groupe": "NI",
+   "loyaute": 0.7643,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.794,
+    "contre": 0.144,
+    "abstention": 0.062
+   }
+  },
+  {
+   "acteur": "PA719436",
+   "nom": "Nicolas Meizonnet",
+   "groupe": "RN",
+   "loyaute": 0.9945,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA720146",
+   "nom": "Denis Masséglia",
+   "groupe": "EPR",
+   "loyaute": 0.9535,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.967,
+    "abstention": 0.017
+   }
+  },
+  {
+   "acteur": "PA719272",
+   "nom": "Frédérique Meunier",
+   "groupe": "DR",
+   "loyaute": 0.7886,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.856,
+    "contre": 0.06,
+    "abstention": 0.083
+   }
+  },
+  {
+   "acteur": "PA267780",
+   "nom": "Agnès Firmin Le Bodo",
+   "groupe": "HOR",
+   "loyaute": 0.9295,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.021,
+    "contre": 0.04,
+    "abstention": 0.939
+   }
+  },
+  {
+   "acteur": "PA720230",
+   "nom": "Lise Magnier",
+   "groupe": "HOR",
+   "loyaute": 0.8884,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.03,
+    "contre": 0.061,
+    "abstention": 0.91
+   }
+  },
+  {
+   "acteur": "PA793270",
+   "nom": "Jean-François Rousset",
+   "groupe": "EPR",
+   "loyaute": 0.9823,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.981,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA841431",
+   "nom": "Nathalie Colin-Oesterlé",
+   "groupe": "HOR",
+   "loyaute": 0.9136,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.024,
+    "contre": 0.048,
+    "abstention": 0.928
+   }
+  },
+  {
+   "acteur": "PA793432",
+   "nom": "Franck Allisio",
+   "groupe": "RN",
+   "loyaute": 0.9848,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.985,
+    "contre": 0.007,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA793892",
+   "nom": "Stéphanie Galzy",
+   "groupe": "RN",
+   "loyaute": 0.9526,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.974,
+    "contre": 0.011,
+    "abstention": 0.015
+   }
+  },
+  {
+   "acteur": "PA794502",
+   "nom": "Michaël Taverne",
+   "groupe": "RN",
+   "loyaute": 0.9924,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA642695",
+   "nom": "Éric Bothorel",
+   "groupe": "EPR",
+   "loyaute": 0.9406,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.019,
+    "contre": 0.961,
+    "abstention": 0.02
+   }
+  },
+  {
+   "acteur": "PA606507",
+   "nom": "Florent Boudié",
+   "groupe": "EPR",
+   "loyaute": 0.9714,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.976,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA794658",
+   "nom": "Philippe Fait",
+   "groupe": "HOR",
+   "loyaute": 0.8954,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.028,
+    "contre": 0.939,
+    "abstention": 0.033
+   }
+  },
+  {
+   "acteur": "PA712014",
+   "nom": "Vincent Ledoux",
+   "groupe": "EPR",
+   "loyaute": 0.9498,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.966,
+    "abstention": 0.018
+   }
+  },
+  {
+   "acteur": "PA720370",
+   "nom": "Ludovic Mendes",
+   "groupe": "EPR",
+   "loyaute": 0.9567,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.015,
+    "contre": 0.969,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA721410",
+   "nom": "Émilie Bonnivard",
+   "groupe": "DR",
+   "loyaute": 0.9586,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.964,
+    "contre": 0.016,
+    "abstention": 0.02
+   }
+  },
+  {
+   "acteur": "PA267285",
+   "nom": "Laurent Wauquiez",
+   "groupe": "DR",
+   "loyaute": 0.9732,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.973,
+    "contre": 0.012,
+    "abstention": 0.015
+   }
+  },
+  {
+   "acteur": "PA794830",
+   "nom": "Hubert Ott",
+   "groupe": "Dem",
+   "loyaute": 0.8821,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.018,
+    "contre": 0.951,
+    "abstention": 0.031
+   }
+  },
+  {
+   "acteur": "PA794278",
+   "nom": "Xavier Albertini",
+   "groupe": "HOR",
+   "loyaute": 0.945,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.017,
+    "contre": 0.963,
+    "abstention": 0.02
+   }
+  },
+  {
+   "acteur": "PA719052",
+   "nom": "Loïc Kervran",
+   "groupe": "HOR",
+   "loyaute": 0.9214,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.022,
+    "contre": 0.952,
+    "abstention": 0.026
+   }
+  },
+  {
+   "acteur": "PA793992",
+   "nom": "Henri Alfandari",
+   "groupe": "HOR",
+   "loyaute": 0.9575,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.014,
+    "contre": 0.969,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA642988",
+   "nom": "Hervé de Lépinau",
+   "groupe": "RN",
+   "loyaute": 0.992,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA793608",
+   "nom": "Katiana Levavasseur",
+   "groupe": "RN",
+   "loyaute": 0.9868,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.007,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA795966",
+   "nom": "Stéphane Rambaud",
+   "groupe": "RN",
+   "loyaute": 0.9829,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.984,
+    "contre": 0.007,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA794330",
+   "nom": "Anthony Brosse",
+   "groupe": "EPR",
+   "loyaute": 0.9696,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.975,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA719922",
+   "nom": "Lionel Causse",
+   "groupe": "EPR",
+   "loyaute": 0.898,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.028,
+    "contre": 0.94,
+    "abstention": 0.031
+   }
+  },
+  {
+   "acteur": "PA795908",
+   "nom": "Yannick Chenevard",
+   "groupe": "EPR",
+   "loyaute": 0.9623,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.961,
+    "contre": 0.024,
+    "abstention": 0.015
+   }
+  },
+  {
+   "acteur": "PA794982",
+   "nom": "Julie Delpech",
+   "groupe": "EPR",
+   "loyaute": 0.9828,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.982,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA719412",
+   "nom": "Sandrine Le Feur",
+   "groupe": "EPR",
+   "loyaute": 0.9465,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.017,
+    "contre": 0.964,
+    "abstention": 0.019
+   }
+  },
+  {
+   "acteur": "PA795730",
+   "nom": "Bastien Marchive",
+   "groupe": "EPR",
+   "loyaute": 0.9345,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.02,
+    "contre": 0.038,
+    "abstention": 0.942
+   }
+  },
+  {
+   "acteur": "PA794206",
+   "nom": "Christophe Marion",
+   "groupe": "EPR",
+   "loyaute": 0.9769,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.979,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA721816",
+   "nom": "Ian Boucard",
+   "groupe": "DR",
+   "loyaute": 0.9142,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.035,
+    "contre": 0.027,
+    "abstention": 0.937
+   }
+  },
+  {
+   "acteur": "PA718838",
+   "nom": "Fabrice Brun",
+   "groupe": "DR",
+   "loyaute": 0.872,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.05,
+    "contre": 0.897,
+    "abstention": 0.052
+   }
+  },
+  {
+   "acteur": "PA841047",
+   "nom": "François-Xavier Ceccoli",
+   "groupe": "DR",
+   "loyaute": 0.9148,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.035,
+    "contre": 0.027,
+    "abstention": 0.938
+   }
+  },
+  {
+   "acteur": "PA266797",
+   "nom": "Philippe Gosselin",
+   "groupe": "DR",
+   "loyaute": 0.9351,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.949,
+    "contre": 0.022,
+    "abstention": 0.029
+   }
+  },
+  {
+   "acteur": "PA267794",
+   "nom": "Michèle Tabarot",
+   "groupe": "DR",
+   "loyaute": 0.9764,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.975,
+    "contre": 0.011,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA266808",
+   "nom": "Vincent Rolland",
+   "groupe": "DR",
+   "loyaute": 0.9509,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.959,
+    "contre": 0.018,
+    "abstention": 0.023
+   }
+  },
+  {
+   "acteur": "PA721984",
+   "nom": "Philippe Latombe",
+   "groupe": "Dem",
+   "loyaute": 0.9596,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.977,
+    "abstention": 0.014
+   }
+  },
+  {
+   "acteur": "PA795374",
+   "nom": "Pascal Lecamp",
+   "groupe": "Dem",
+   "loyaute": 0.9636,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.978,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA720720",
+   "nom": "Josy Poueyto",
+   "groupe": "Dem",
+   "loyaute": 0.9389,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.045,
+    "abstention": 0.943
+   }
+  },
+  {
+   "acteur": "PA687214",
+   "nom": "Sylvain Berrios",
+   "groupe": "HOR",
+   "loyaute": 0.8941,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.029,
+    "contre": 0.058,
+    "abstention": 0.914
+   }
+  },
+  {
+   "acteur": "PA267042",
+   "nom": "Yannick Favennec-Bécot",
+   "groupe": "LIOT",
+   "loyaute": 0.9186,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.968,
+    "abstention": 0.02
+   }
+  },
+  {
+   "acteur": "PA330240",
+   "nom": "Éric Ciotti",
+   "groupe": "UDR",
+   "loyaute": 0.9637,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.978,
+    "contre": 0.01,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA841183",
+   "nom": "Hanane Mansouri",
+   "groupe": "UDR",
+   "loyaute": 0.9779,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.983,
+    "contre": 0.008,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA722150",
+   "nom": "Sacha Houlié",
+   "groupe": "SOC",
+   "loyaute": 0.8808,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.02,
+    "contre": 0.95,
+    "abstention": 0.031
+   }
+  },
+  {
+   "acteur": "PA793852",
+   "nom": "Pierre Meurin",
+   "groupe": "RN",
+   "loyaute": 0.9896,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA722000",
+   "nom": "Stéphane Buchou",
+   "groupe": "EPR",
+   "loyaute": 0.9772,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.979,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA719118",
+   "nom": "François Cormier-Bouligeon",
+   "groupe": "EPR",
+   "loyaute": 0.9745,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.971,
+    "contre": 0.018,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA722134",
+   "nom": "Jean-Marie Fiévet",
+   "groupe": "EPR",
+   "loyaute": 0.9695,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.975,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA722358",
+   "nom": "Thomas Gassilloud",
+   "groupe": "EPR",
+   "loyaute": 0.9279,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.022,
+    "contre": 0.041,
+    "abstention": 0.938
+   }
+  },
+  {
+   "acteur": "PA757225",
+   "nom": "Mikaele Seo",
+   "groupe": "EPR",
+   "loyaute": 0.9687,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.975,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA720190",
+   "nom": "Bertrand Sorre",
+   "groupe": "EPR",
+   "loyaute": 0.9824,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.981,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA794486",
+   "nom": "Violette Spillebout",
+   "groupe": "EPR",
+   "loyaute": 0.9507,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.966,
+    "abstention": 0.018
+   }
+  },
+  {
+   "acteur": "PA719512",
+   "nom": "Corinne Vignon",
+   "groupe": "EPR",
+   "loyaute": 0.9727,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.977,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA722252",
+   "nom": "Marie-Pierre Rixain",
+   "groupe": "EPR",
+   "loyaute": 0.9326,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.02,
+    "contre": 0.957,
+    "abstention": 0.022
+   }
+  },
+  {
+   "acteur": "PA266793",
+   "nom": "Jean-Yves Bony",
+   "groupe": "DR",
+   "loyaute": 0.898,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.041,
+    "contre": 0.032,
+    "abstention": 0.927
+   }
+  },
+  {
+   "acteur": "PA330909",
+   "nom": "Vincent Descoeur",
+   "groupe": "DR",
+   "loyaute": 0.9037,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.039,
+    "contre": 0.03,
+    "abstention": 0.931
+   }
+  },
+  {
+   "acteur": "PA712015",
+   "nom": "Julien Dive",
+   "groupe": "DR",
+   "loyaute": 0.9036,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.929,
+    "contre": 0.03,
+    "abstention": 0.041
+   }
+  },
+  {
+   "acteur": "PA608826",
+   "nom": "Virginie Duby-Muller",
+   "groupe": "DR",
+   "loyaute": 0.9245,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.032,
+    "contre": 0.025,
+    "abstention": 0.944
+   }
+  },
+  {
+   "acteur": "PA794058",
+   "nom": "Justine Gruet",
+   "groupe": "DR",
+   "loyaute": 0.9531,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.96,
+    "contre": 0.017,
+    "abstention": 0.022
+   }
+  },
+  {
+   "acteur": "PA721336",
+   "nom": "Blandine Brocard",
+   "groupe": "Dem",
+   "loyaute": 0.7158,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.037,
+    "contre": 0.19,
+    "abstention": 0.773
+   }
+  },
+  {
+   "acteur": "PA793716",
+   "nom": "Laurent Croizier",
+   "groupe": "Dem",
+   "loyaute": 0.9358,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.969,
+    "abstention": 0.019
+   }
+  },
+  {
+   "acteur": "PA793122",
+   "nom": "Romain Daubié",
+   "groupe": "Dem",
+   "loyaute": 0.8707,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.019,
+    "contre": 0.089,
+    "abstention": 0.891
+   }
+  },
+  {
+   "acteur": "PA795258",
+   "nom": "Frantz Gumbs",
+   "groupe": "Dem",
+   "loyaute": 0.9565,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.975,
+    "abstention": 0.015
+   }
+  },
+  {
+   "acteur": "PA841339",
+   "nom": "Jean-Michel Brard",
+   "groupe": "HOR",
+   "loyaute": 0.8712,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.034,
+    "contre": 0.069,
+    "abstention": 0.897
+   }
+  },
+  {
+   "acteur": "PA720138",
+   "nom": "Laetitia Saint-Paul",
+   "groupe": "HOR",
+   "loyaute": 0.9302,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.02,
+    "contre": 0.956,
+    "abstention": 0.023
+   }
+  },
+  {
+   "acteur": "PA796078",
+   "nom": "Estelle Youssouffa",
+   "groupe": "LIOT",
+   "loyaute": 0.9481,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.976,
+    "abstention": 0.015
+   }
+  },
+  {
+   "acteur": "PA795244",
+   "nom": "Stéphane Lenormand",
+   "groupe": "LIOT",
+   "loyaute": 0.8921,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.014,
+    "contre": 0.961,
+    "abstention": 0.025
+   }
+  },
+  {
+   "acteur": "PA721110",
+   "nom": "Nicole Sanquer",
+   "groupe": "LIOT",
+   "loyaute": 0.7992,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.021,
+    "contre": 0.937,
+    "abstention": 0.042
+   }
+  },
+  {
+   "acteur": "PA720976",
+   "nom": "Max Mathiasin",
+   "groupe": "LIOT",
+   "loyaute": 0.7958,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.021,
+    "contre": 0.936,
+    "abstention": 0.043
+   }
+  },
+  {
+   "acteur": "PA719286",
+   "nom": "Paul-André Colombani",
+   "groupe": "LIOT",
+   "loyaute": 0.8736,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.015,
+    "contre": 0.957,
+    "abstention": 0.028
+   }
+  },
+  {
+   "acteur": "PA793322",
+   "nom": "Christelle D'Intorni",
+   "groupe": "UDR",
+   "loyaute": 0.9834,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.984,
+    "contre": 0.007,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA840983",
+   "nom": "Bartolomé Lenoir",
+   "groupe": "UDR",
+   "loyaute": 0.9689,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.979,
+    "contre": 0.009,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA795540",
+   "nom": "Daniel Grenon",
+   "groupe": "NI",
+   "loyaute": 0.8556,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.87,
+    "contre": 0.09,
+    "abstention": 0.04
+   }
+  },
+  {
+   "acteur": "PA720100",
+   "nom": "Aurélien Pradié",
+   "groupe": "NI",
+   "loyaute": 0.7209,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.758,
+    "contre": 0.17,
+    "abstention": 0.072
+   }
+  },
+  {
+   "acteur": "PA795046",
+   "nom": "Caroline Yadan",
+   "groupe": "EPR",
+   "loyaute": 0.9833,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.977,
+    "contre": 0.013,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA569",
+   "nom": "Philippe Bonnecarrère",
+   "groupe": "NI",
+   "loyaute": 0.891,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.022,
+    "contre": 0.947,
+    "abstention": 0.031
+   }
+  },
+  {
+   "acteur": "PA643175",
+   "nom": "Stella Dupont",
+   "groupe": "NI",
+   "loyaute": 0.868,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.88,
+    "contre": 0.083,
+    "abstention": 0.037
+   }
+  },
+  {
+   "acteur": "PA719218",
+   "nom": "Hervé Berville",
+   "groupe": "EPR",
+   "loyaute": 0.954,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.016,
+    "contre": 0.968,
+    "abstention": 0.017
+   }
+  },
+  {
+   "acteur": "PA722284",
+   "nom": "Bruno Fuchs",
+   "groupe": "Dem",
+   "loyaute": 0.9381,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.969,
+    "abstention": 0.019
+   }
+  },
+  {
+   "acteur": "PA719024",
+   "nom": "Christophe Blanchet",
+   "groupe": "Dem",
+   "loyaute": 0.9477,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.973,
+    "abstention": 0.017
+   }
+  },
+  {
+   "acteur": "PA342240",
+   "nom": "Jean-Luc Bourgeaux",
+   "groupe": "DR",
+   "loyaute": 0.9231,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.941,
+    "contre": 0.025,
+    "abstention": 0.033
+   }
+  },
+  {
+   "acteur": "PA267318",
+   "nom": "Jean-Carles Grelier",
+   "groupe": "Dem",
+   "loyaute": 0.9484,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.039,
+    "abstention": 0.951
+   }
+  },
+  {
+   "acteur": "PA794710",
+   "nom": "Julien Brugerolles",
+   "groupe": "GDR",
+   "loyaute": 0.9753,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.971,
+    "contre": 0.018,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA840889",
+   "nom": "Matthieu Bloch",
+   "groupe": "UDR",
+   "loyaute": 0.9465,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.972,
+    "contre": 0.012,
+    "abstention": 0.016
+   }
+  },
+  {
+   "acteur": "PA794718",
+   "nom": "Christine Engrand",
+   "groupe": "NI",
+   "loyaute": 0.7564,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.788,
+    "contre": 0.149,
+    "abstention": 0.063
+   }
+  },
+  {
+   "acteur": "PA721314",
+   "nom": "Raphaël Schellenberger",
+   "groupe": "NI",
+   "loyaute": 0.8693,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.025,
+    "contre": 0.938,
+    "abstention": 0.036
+   }
+  },
+  {
+   "acteur": "PA605782",
+   "nom": "Laurent Marcangeli",
+   "groupe": "HOR",
+   "loyaute": 0.9547,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.015,
+    "contre": 0.968,
+    "abstention": 0.017
+   }
+  },
+  {
+   "acteur": "PA841801",
+   "nom": "Danièle Carteron",
+   "groupe": "EPR",
+   "loyaute": 0.9971,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.989,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA794518",
+   "nom": "Pierre Marle",
+   "groupe": "HOR",
+   "loyaute": 0.9158,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.024,
+    "contre": 0.949,
+    "abstention": 0.027
+   }
+  },
+  {
+   "acteur": "PA795124",
+   "nom": "Didier Padey",
+   "groupe": "Dem",
+   "loyaute": 0.9472,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.039,
+    "abstention": 0.95
+   }
+  },
+  {
+   "acteur": "PA717161",
+   "nom": "Élisabeth Borne",
+   "groupe": "EPR",
+   "loyaute": 0.9679,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.021,
+    "abstention": 0.967
+   }
+  },
+  {
+   "acteur": "PA643104",
+   "nom": "Christelle Minard",
+   "groupe": "DR",
+   "loyaute": 0.9607,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.965,
+    "contre": 0.015,
+    "abstention": 0.02
+   }
+  },
+  {
+   "acteur": "PA795402",
+   "nom": "Nathalie Coggia",
+   "groupe": "EPR",
+   "loyaute": 0.9738,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.977,
+    "abstention": 0.012
+   }
+  },
+  {
+   "acteur": "PA841973",
+   "nom": "Pierre-Henri Carbonnel",
+   "groupe": "UDR",
+   "loyaute": 0.9795,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.983,
+    "contre": 0.008,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA368",
+   "nom": "Michel Barnier",
+   "groupe": "DR",
+   "loyaute": 0.8983,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.926,
+    "contre": 0.032,
+    "abstention": 0.043
+   }
+  },
+  {
+   "acteur": "PA795326",
+   "nom": "Christopher Weissberg",
+   "groupe": "EPR",
+   "loyaute": 0.98,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.015,
+    "abstention": 0.975
+   }
+  },
+  {
+   "acteur": "PA795390",
+   "nom": "Sandrine Lalanne",
+   "groupe": "EPR",
+   "loyaute": 0.937,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.019,
+    "contre": 0.959,
+    "abstention": 0.021
+   }
+  },
+  {
+   "acteur": "PA842183",
+   "nom": "Benoît Blanchard",
+   "groupe": "HOR",
+   "loyaute": 0.8966,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.028,
+    "contre": 0.94,
+    "abstention": 0.032
+   }
+  },
+  {
+   "acteur": "PA870009",
+   "nom": "Lionel Duparay",
+   "groupe": "DR",
+   "loyaute": 0.9358,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.949,
+    "contre": 0.022,
+    "abstention": 0.029
+   }
+  },
+  {
+   "acteur": "PA794430",
+   "nom": "Michel Criaud",
+   "groupe": "HOR",
+   "loyaute": 0.9266,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.021,
+    "contre": 0.954,
+    "abstention": 0.024
+   }
+  },
+  {
+   "acteur": "PA841151",
+   "nom": "Alix Fruchon",
+   "groupe": "DR",
+   "loyaute": 0.7376,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.098,
+    "contre": 0.074,
+    "abstention": 0.829
+   }
+  },
+  {
+   "acteur": "PA795954",
+   "nom": "Catherine Ibled",
+   "groupe": "EPR",
+   "loyaute": 0.9808,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.009,
+    "contre": 0.981,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA795334",
+   "nom": "Benoît Larrouquis",
+   "groupe": "EPR",
+   "loyaute": 0.9576,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.015,
+    "contre": 0.026,
+    "abstention": 0.959
+   }
+  },
+  {
+   "acteur": "PA793214",
+   "nom": "Audrey Abadie-Amiel",
+   "groupe": "LIOT",
+   "loyaute": 0.9333,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.972,
+    "abstention": 0.017
+   }
+  },
+  {
+   "acteur": "PA878242",
+   "nom": "Antoine Valentin",
+   "groupe": "UDR",
+   "loyaute": 0.976,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.982,
+    "contre": 0.008,
+    "abstention": 0.01
+   }
+  },
+  {
+   "acteur": "PA879389",
+   "nom": "Marie-Philippe Lubet",
+   "groupe": "EPR",
+   "loyaute": 0.9759,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.011,
+    "contre": 0.978,
+    "abstention": 0.011
+   }
+  },
+  {
+   "acteur": "PA857021",
+   "nom": "Alim Latrèche",
+   "groupe": "EPR",
+   "loyaute": 0.9164,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.024,
+    "contre": 0.949,
+    "abstention": 0.027
+   }
+  },
+  {
+   "acteur": "PA794578",
+   "nom": "Véronique Ludmann",
+   "groupe": "HOR",
+   "loyaute": 0.9528,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.015,
+    "contre": 0.967,
+    "abstention": 0.017
+   }
+  },
+  {
+   "acteur": "PA721612",
+   "nom": "Carole Guillerm",
+   "groupe": "Dem",
+   "loyaute": 0.9547,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.975,
+    "abstention": 0.015
+   }
+  },
+  {
+   "acteur": "PA793334",
+   "nom": "Cyril Tribuiani",
+   "groupe": "RN",
+   "loyaute": 0.9945,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA841531",
+   "nom": "Shéhérazade Bentorki",
+   "groupe": "LFI-NFP",
+   "loyaute": 0.9979,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.005,
+    "contre": 0.989,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA840175",
+   "nom": "Dorine Bregman",
+   "groupe": "SOC",
+   "loyaute": 0.9795,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.983,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA841595",
+   "nom": "Cendrine Chazé",
+   "groupe": "DR",
+   "loyaute": 0.9534,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.961,
+    "contre": 0.017,
+    "abstention": 0.022
+   }
+  },
+  {
+   "acteur": "PA841059",
+   "nom": "Catherine Dellong Meng",
+   "groupe": "RN",
+   "loyaute": 0.9866,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.986,
+    "contre": 0.007,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA721632",
+   "nom": "Patricia Lemoine",
+   "groupe": "EPR",
+   "loyaute": 0.9854,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.008,
+    "contre": 0.983,
+    "abstention": 0.009
+   }
+  },
+  {
+   "acteur": "PA718820",
+   "nom": "Pauline Cestrières",
+   "groupe": "EPR",
+   "loyaute": 0.9708,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.012,
+    "contre": 0.976,
+    "abstention": 0.013
+   }
+  },
+  {
+   "acteur": "PA720390",
+   "nom": "Jérôme End",
+   "groupe": "DR",
+   "loyaute": 0.9255,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.943,
+    "contre": 0.024,
+    "abstention": 0.033
+   }
+  },
+  {
+   "acteur": "PA793556",
+   "nom": "Sabine Gervais",
+   "groupe": "Dem",
+   "loyaute": 0.9887,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.006,
+    "contre": 0.986,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA840745",
+   "nom": "Édouard Jordan",
+   "groupe": "RN",
+   "loyaute": 0.9909,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA794262",
+   "nom": "Patricia Maussion",
+   "groupe": "Dem",
+   "loyaute": 0.8631,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.02,
+    "contre": 0.944,
+    "abstention": 0.035
+   }
+  },
+  {
+   "acteur": "PA840067",
+   "nom": "Gabriel Tomatis",
+   "groupe": "RN",
+   "loyaute": 0.9912,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.987,
+    "contre": 0.006,
+    "abstention": 0.007
+   }
+  },
+  {
+   "acteur": "PA840107",
+   "nom": "Bernard Chaumeil",
+   "groupe": "RN",
+   "loyaute": 0.9932,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.988,
+    "contre": 0.006,
+    "abstention": 0.006
+   }
+  },
+  {
+   "acteur": "PA793944",
+   "nom": "Alexandra Martin (Gironde)",
+   "groupe": "EPR",
+   "loyaute": 0.9367,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.005,
+    "abstention": 0.99
+   },
+   "opinion": {
+    "pour": 0.019,
+    "contre": 0.036,
+    "abstention": 0.944
+   }
+  },
+  {
+   "acteur": "PA841377",
+   "nom": "Emeline Rey-Rinchet",
+   "groupe": "DR",
+   "loyaute": 0.9928,
+   "opinion0": {
+    "pour": 0.99,
+    "contre": 0.005,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.985,
+    "contre": 0.007,
+    "abstention": 0.008
+   }
+  },
+  {
+   "acteur": "PA841543",
+   "nom": "Jean Bodart",
+   "groupe": "LIOT",
+   "loyaute": 0.9327,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.01,
+    "contre": 0.972,
+    "abstention": 0.017
+   }
+  },
+  {
+   "acteur": "PA841993",
+   "nom": "Dominique Paillat",
+   "groupe": "HOR",
+   "loyaute": 1.0,
+   "opinion0": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   },
+   "opinion": {
+    "pour": 0.005,
+    "contre": 0.99,
+    "abstention": 0.005
+   }
+  }
+ ],
+ "affinites": {
+  "DR": {
+   "DR": 1.0,
+   "Dem": 0.387,
+   "EPR": 0.504,
+   "EcoS": -0.435,
+   "GDR": -0.42,
+   "HOR": 0.446,
+   "LFI-NFP": -0.513,
+   "LIOT": 0.261,
+   "NI": 0.296,
+   "RN": 0.297,
+   "SOC": -0.295,
+   "UDR": 0.308
+  },
+  "Dem": {
+   "DR": 0.387,
+   "Dem": 1.0,
+   "EPR": 0.627,
+   "EcoS": -0.043,
+   "GDR": -0.058,
+   "HOR": 0.672,
+   "LFI-NFP": -0.143,
+   "LIOT": 0.517,
+   "NI": 0.512,
+   "RN": -0.035,
+   "SOC": 0.091,
+   "UDR": -0.066
+  },
+  "EPR": {
+   "DR": 0.504,
+   "Dem": 0.627,
+   "EPR": 1.0,
+   "EcoS": -0.201,
+   "GDR": -0.205,
+   "HOR": 0.596,
+   "LFI-NFP": -0.297,
+   "LIOT": 0.378,
+   "NI": 0.423,
+   "RN": 0.073,
+   "SOC": -0.065,
+   "UDR": 0.073
+  },
+  "EcoS": {
+   "DR": -0.435,
+   "Dem": -0.043,
+   "EPR": -0.201,
+   "EcoS": 1.0,
+   "GDR": 0.711,
+   "HOR": -0.164,
+   "LFI-NFP": 0.696,
+   "LIOT": 0.027,
+   "NI": -0.038,
+   "RN": -0.59,
+   "SOC": 0.592,
+   "UDR": -0.688
+  },
+  "GDR": {
+   "DR": -0.42,
+   "Dem": -0.058,
+   "EPR": -0.205,
+   "EcoS": 0.711,
+   "GDR": 1.0,
+   "HOR": -0.171,
+   "LFI-NFP": 0.674,
+   "LIOT": 0.031,
+   "NI": -0.081,
+   "RN": -0.542,
+   "SOC": 0.558,
+   "UDR": -0.633
+  },
+  "HOR": {
+   "DR": 0.446,
+   "Dem": 0.672,
+   "EPR": 0.596,
+   "EcoS": -0.164,
+   "GDR": -0.171,
+   "HOR": 1.0,
+   "LFI-NFP": -0.265,
+   "LIOT": 0.473,
+   "NI": 0.443,
+   "RN": 0.047,
+   "SOC": -0.033,
+   "UDR": 0.056
+  },
+  "LFI-NFP": {
+   "DR": -0.513,
+   "Dem": -0.143,
+   "EPR": -0.297,
+   "EcoS": 0.696,
+   "GDR": 0.674,
+   "HOR": -0.265,
+   "LFI-NFP": 1.0,
+   "LIOT": -0.069,
+   "NI": -0.139,
+   "RN": -0.612,
+   "SOC": 0.472,
+   "UDR": -0.694
+  },
+  "LIOT": {
+   "DR": 0.261,
+   "Dem": 0.517,
+   "EPR": 0.378,
+   "EcoS": 0.027,
+   "GDR": 0.031,
+   "HOR": 0.473,
+   "LFI-NFP": -0.069,
+   "LIOT": 1.0,
+   "NI": 0.485,
+   "RN": -0.015,
+   "SOC": 0.168,
+   "UDR": -0.073
+  },
+  "NI": {
+   "DR": 0.296,
+   "Dem": 0.512,
+   "EPR": 0.423,
+   "EcoS": -0.038,
+   "GDR": -0.081,
+   "HOR": 0.443,
+   "LFI-NFP": -0.139,
+   "LIOT": 0.485,
+   "NI": 1.0,
+   "RN": 0.043,
+   "SOC": 0.085,
+   "UDR": 0.072
+  },
+  "RN": {
+   "DR": 0.297,
+   "Dem": -0.035,
+   "EPR": 0.073,
+   "EcoS": -0.59,
+   "GDR": -0.542,
+   "HOR": 0.047,
+   "LFI-NFP": -0.612,
+   "LIOT": -0.015,
+   "NI": 0.043,
+   "RN": 1.0,
+   "SOC": -0.501,
+   "UDR": 0.799
+  },
+  "SOC": {
+   "DR": -0.295,
+   "Dem": 0.091,
+   "EPR": -0.065,
+   "EcoS": 0.592,
+   "GDR": 0.558,
+   "HOR": -0.033,
+   "LFI-NFP": 0.472,
+   "LIOT": 0.168,
+   "NI": 0.085,
+   "RN": -0.501,
+   "SOC": 1.0,
+   "UDR": -0.594
+  },
+  "UDR": {
+   "DR": 0.308,
+   "Dem": -0.066,
+   "EPR": 0.073,
+   "EcoS": -0.688,
+   "GDR": -0.633,
+   "HOR": 0.056,
+   "LFI-NFP": -0.694,
+   "LIOT": -0.073,
+   "NI": 0.072,
+   "RN": 0.799,
+   "SOC": -0.594,
+   "UDR": 1.0
+  }
+ },
+ "recap_president": "**Mes chers collègues,**\n\nNous arrivons au terme de nos débats sur ce projet de loi constitutionnelle instituant une autonomie législative pour la Corse au sein de la République, texte qui vise à reconnaître les spécificités de ce territoire en lui conférant un pouvoir normatif propre, tout en maintenant son ancrage dans le cadre constitutionnel national. \n\nLe clivage qui traverse cette assemblée ne porte pas tant sur le principe d'une reconnaissance des particularités corses que sur l'architecture juridique proposée : les groupes Socialiste et LIOT soutiennent cette autonomie normative à condition qu'elle exclue strictement les domaines régaliens et s'inscrive dans un cadre stable garantissant l'égalité républicaine ; les groupes La France Insoumise et Écologiste dénoncent une autonomie vidée de sa substance par l'absence de moyens budgétaires et de mécanismes d'arbitrage clairs, qu'ils jugent malhonnête envers les élus corses ; les groupes Ensemble pour la République, Droite Républicaine et Démocrate rejettent ce qu'ils qualifient de « prestidigitation institutionnelle », craignant une fragmentation du droit national faute de garde-fous opérationnels et d'autorité clairement désignée pour trancher les conflits de normes ; enfin, les groupes Rassemblement National et GDR-NUPES s'opposent à toute différenciation territoriale qu'ils estiment contraire au principe d'indivisibilité de la République et porteuse de dérives communautaristes. \n\nNous allons maintenant procéder à la mise aux voix de l'ensemble du projet de loi.",
+ "marge_erreur": 25
+}
