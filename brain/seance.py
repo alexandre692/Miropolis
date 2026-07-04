@@ -25,6 +25,7 @@ from agent import POSITIONS, DeputyAgent  # noqa: E402
 from model_io import MockBrain  # noqa: E402
 
 PROFILS = os.path.join("data", "deputes_profils.json")
+ACTIFS = os.path.join("data", "deputes_actifs.json")
 CURSEURS = os.path.join("data", "curseurs_deputes.json")
 ENRICHIS = os.path.join("data", "scrutins_enrichis.jsonl")
 
@@ -80,6 +81,17 @@ def load_scrutin(uid):
     return meta
 
 
+def load_actifs():
+    """Députés EN EXERCICE (data/deputes_actifs.json — pipeline/build_deputes_actifs.py).
+    Sans ce filtre, le mode fictif prenait les 640 acteurs de la XVIIe
+    législature (départs + remplaçants) : impossible, 577 sièges."""
+    if os.path.exists(ACTIFS):
+        return set(json.load(open(ACTIFS, encoding="utf-8")))
+    print("!! data/deputes_actifs.json absent — lancer pipeline/build_deputes_actifs.py"
+          " (fallback : TOUS les acteurs de la législature, sur-effectif)")
+    return None
+
+
 def build_agents(participants=None):
     profils = json.load(open(PROFILS, encoding="utf-8"))
     curseurs = {}
@@ -122,7 +134,7 @@ def scrutin_fictif(titre, theme="autre", salience="haute",
         "salience": salience,
         "sort": None,        # inconnu : aucune issue réelle
         "reel": None,        # aucun décompte réel à comparer
-        "participants": [],  # vide → build_agents(None) prend TOUS les députés
+        "participants": [],  # le main filtre sur load_actifs() (577 en exercice)
     }
 
 
@@ -406,7 +418,7 @@ def main():
             p.error("--fictif exige --titre \"...\"")
         scrutin = scrutin_fictif(args.titre, theme=args.theme,
                                  salience=args.salience, type_vote=args.type_vote)
-        agents = build_agents(None)  # tous les députés en exercice
+        agents = build_agents(load_actifs())  # les 577 EN EXERCICE (pas les 640 de la législature)
     else:
         if not args.scrutin:
             p.error("--scrutin requis (ou utilise --fictif --titre \"...\")")
