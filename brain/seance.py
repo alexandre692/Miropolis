@@ -65,6 +65,8 @@ def load_scrutin(uid):
     # qui a réellement participé (pour conditionner le tally sur la
     # participation réelle — prédire l'absentéisme est un autre problème)
     participants = set()
+    votes_reels = {}  # acteurRef -> position réelle (vote nominatif public)
+    POS_KEY = {"pours": "pour", "contres": "contre", "abstentions": "abstention"}
     groupes = (scr.get("ventilationVotes", {}).get("organe", {}).get("groupes", {}).get("groupe")) or []
     if isinstance(groupes, dict):
         groupes = [groupes]
@@ -77,7 +79,9 @@ def load_scrutin(uid):
             for x in v or []:
                 if x.get("acteurRef"):
                     participants.add(x["acteurRef"])
+                    votes_reels[x["acteurRef"]] = POS_KEY[k]
     meta["participants"] = sorted(participants)
+    meta["votes_reels"] = votes_reels
     return meta
 
 
@@ -334,7 +338,7 @@ def real_first_speaker(scrutin):
 
 
 def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=True,
-             casting_reel=False):
+             casting_reel=False, calibre=False):
     groups = sorted({a.groupe for a in agents})
     affinites = load_affinites()
     propension = load_propension()
@@ -351,6 +355,24 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
     group_probs = {g: brain.group_position(g, scrutin) for g in groups}
     for a in agents:
         a.init_opinion(group_probs[a.groupe], scrutin.get("theme", "autre"))
+    if calibre and scrutin.get("votes_reels"):
+        # MODE CALIBRÉ (démo/replay) : l'ancre de chaque député = son vote
+        # nominatif RÉEL sur ce scrutin (données publiques AN), pas la
+        # prédiction LLM. Le débat, les orateurs, le texte restent simulés ;
+        # seul l'ancrage du vote est branché sur la réalité — le tally colle
+        # donc au résultat réel à ~1 voix près. À dire tel quel en démo :
+        # "opinions ancrées sur le vote nominatif réel".
+        vr = scrutin["votes_reels"]
+        n_cal = 0
+        for a in agents:
+            pos = vr.get(a.acteur)
+            if not pos:
+                continue
+            a.opinion0 = {p: (0.99 if p == pos else 0.005) for p in POSITIONS}
+            a.opinion = dict(a.opinion0)
+            n_cal += 1
+        if verbose:
+            print(f"CALIBRÉ sur le vote nominatif réel : {n_cal}/{len(agents)} députés ancrés\n")
     # tally AVANT débat = les consignes de vote en entrant dans l'hémicycle ;
     # l'écart avec le tally final mesure ce que la séance elle-même a déplacé
     tally_avant = {p: round(sum(a.opinion[p] for a in agents), 1) for p in POSITIONS}
@@ -456,6 +478,11 @@ def main():
     p.add_argument("--no-steer", action="store_true")
     p.add_argument("--casting-reel", action="store_true",
                    help="replay : orateurs réels du jour (défaut = casting PRÉDIT)")
+    p.add_argument("--calibre", action="store_true",
+                   help="démo/replay : ancre chaque député sur son vote nominatif RÉEL "
+                        "(le tally colle au résultat réel ; débat toujours simulé)")
+    p.add_argument("--models-map", default=None,
+                   help="fichier models_map alternatif (ex. brain/models_map_premium.json)")
     # --- mode projet de loi FICTIF (prédiction pure, aucune issue réelle) ---
     p.add_argument("--fictif", action="store_true",
                    help="simule un texte de loi INVENTÉ (--titre requis, pas de --scrutin)")
@@ -486,7 +513,8 @@ def main():
     elif args.openrouter:
         from openrouter_brain import OpenRouterBrain
         from prompt_pack import PromptPacks
-        brain = OpenRouterBrain(packs=PromptPacks(), priors=MockBrain())
+        mmap = json.load(open(args.models_map, encoding="utf-8")) if args.models_map else None
+        brain = OpenRouterBrain(packs=PromptPacks(), priors=MockBrain(), models_map=mmap)
     else:
         from model_io import GemmaBrain
 
@@ -494,7 +522,7 @@ def main():
 
     res = simulate(brain, scrutin, agents, rounds=args.rounds,
                    speakers_per_group=args.speakers_per_group,
-                   casting_reel=args.casting_reel)
+                   casting_reel=args.casting_reel, calibre=args.calibre)
 
     reel = scrutin["reel"]  # None en mode fictif
     print("\n================ TALLY ================")

@@ -262,8 +262,12 @@ class OpenRouterBrain:
         system = (
             f"{context}\n\n{bloc_verbatims}\n\n"
             "RÈGLES STRICTES : 4 à 6 phrases, première personne, registre de "
-            "séance publique (adresse à la présidence, interpellations). Ne "
-            "cite JAMAIS un chiffre qui n'est pas dans le contexte ci-dessus. "
+            "séance publique. La séance est présidée par Yaël Braun-Pivet : "
+            "adresse-toi à « Madame la Présidente » (jamais « Monsieur le "
+            "Président »). INTERDIT d'inventer : aucun chiffre, aucun nom "
+            "propre, aucun événement, aucun article de loi qui ne figure pas "
+            "dans le contexte ci-dessus — s'il te manque un fait, argumente "
+            "sur les principes sans l'inventer. Réponds en FRANÇAIS uniquement. "
             "Réponds aux arguments réellement exprimés avant toi SANS "
             "reformuler ni paraphraser leur phrase d'ouverture ou leur "
             "tournure — même en cas d'accord, retrouve TON angle et TES mots, "
@@ -301,7 +305,8 @@ class OpenRouterBrain:
             f"nationale. Un orateur adverse vient de dire : "
             f"« {target_text[:300]} ». Lance UNE interjection d'une phrase, "
             "mordante et sans détour — attaque l'argument, jamais la "
-            "personne (pas d'insulte), mais ne mâche pas tes mots.")}]
+            "personne (pas d'insulte), mais ne mâche pas tes mots. En "
+            "FRANÇAIS uniquement, sans inventer de chiffre ni de fait.")}]
         try:
             return _call(self._dep_model(agent), messages,
                          temperature=1.0, max_tokens=max_tokens).strip()

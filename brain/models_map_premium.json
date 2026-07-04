@@ -1,0 +1,41 @@
+{
+  "_config": {
+    "orchestrateur": "anthropic/claude-sonnet-4.5",
+    "depute_default": "anthropic/claude-haiku-4.5"
+  },
+  "_note": "Variante PREMIUM pour le run de démo (--models-map brain/models_map_premium.json) : uniquement des modèles haut de gamme instruct — moins d'hallucinations, meilleur français, registre tenu. Coût ~5-10x le map standard, à réserver aux runs qu'on garde. Mêmes règles : pool par groupe, pioche stable par hash d'acteurRef.",
+  "RN": [
+    "anthropic/claude-haiku-4.5",
+    "google/gemini-2.5-flash",
+    "mistralai/mistral-medium-3.1",
+    "deepseek/deepseek-chat-v3.1"
+  ],
+  "EPR": [
+    "google/gemini-2.5-flash",
+    "anthropic/claude-haiku-4.5",
+    "mistralai/mistral-medium-3.1",
+    "qwen/qwen3-235b-a22b-2507"
+  ],
+  "LFI-NFP": [
+    "deepseek/deepseek-chat-v3.1",
+    "qwen/qwen3-235b-a22b-2507",
+    "anthropic/claude-haiku-4.5"
+  ],
+  "SOC": [
+    "anthropic/claude-haiku-4.5",
+    "meta-llama/llama-3.3-70b-instruct",
+    "google/gemini-2.5-flash"
+  ],
+  "DR": [
+    "mistralai/mistral-medium-3.1",
+    "google/gemini-2.5-flash",
+    "anthropic/claude-haiku-4.5"
+  ],
+  "HOR": ["google/gemini-2.5-flash", "mistralai/mistral-medium-3.1"],
+  "Dem": ["anthropic/claude-haiku-4.5", "mistralai/mistral-medium-3.1"],
+  "EcoS": ["qwen/qwen3-235b-a22b-2507", "anthropic/claude-haiku-4.5"],
+  "LIOT": ["meta-llama/llama-3.3-70b-instruct", "google/gemini-2.5-flash"],
+  "GDR": ["deepseek/deepseek-chat-v3.1", "anthropic/claude-haiku-4.5"],
+  "UDR": ["mistralai/mistral-medium-3.1", "deepseek/deepseek-chat-v3.1"],
+  "NI": ["google/gemini-2.5-flash", "anthropic/claude-haiku-4.5"]
+}
