@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Miropolis — Architecture technique</title>
+<style>
+  :root{--bg:#14161f;--panel:#1c1f2b;--ink:#E6E9F0;--ink2:#9aa3b5;--line:#2a2f3f;
+    --c1:#4A72DE;--c2:#2BA3B5;--c3:#C29B1F;--c4:#E5446D;--c5:#2FA45C;--warn:#9C79CC}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:13px/1.45 "Segoe UI",system-ui,sans-serif;padding:22px 26px;min-width:1350px}
+  h1{margin:0;font-size:20px;letter-spacing:.3px}
+  .sub{color:var(--ink2);font-size:12.5px;margin:3px 0 18px}
+  .flow{display:grid;grid-template-columns:1fr 26px 1fr 26px 1.15fr 26px 1.15fr 26px 1fr;gap:0;align-items:stretch}
+  .col{display:flex;flex-direction:column;gap:10px}
+  .col > h2{margin:0 0 2px;font-size:12px;text-transform:uppercase;letter-spacing:1px;
+    padding-bottom:6px;border-bottom:2px solid var(--accent)}
+  .col > h2 small{display:block;text-transform:none;letter-spacing:0;color:var(--ink2);font-weight:400;margin-top:2px}
+  .box{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:9px 11px}
+  .box b{font-size:12.5px}
+  .box .d{color:var(--ink2);font-size:11.5px;margin-top:2px}
+  .box .f{color:#7d879c;font-size:10.5px;margin-top:3px;font-family:Consolas,monospace}
+  .box .n{color:var(--accent);font-weight:600}
+  .arrow{display:flex;align-items:center;justify-content:center;color:#4a5268;font-size:20px;padding-top:40px}
+  .band{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .bandbox{border:1px dashed var(--line);border-radius:12px;padding:10px 14px;background:#181b26}
+  .bandbox h3{margin:0 0 6px;font-size:11.5px;text-transform:uppercase;letter-spacing:.8px}
+  .bandbox .items{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:11.5px;color:var(--ink2)}
+  .bandbox .items b{color:var(--ink)}
+  .shield h3{color:#57d18b}.proof h3{color:#e0b34c}
+  .rd{margin-top:14px;border:1px dashed #3a3050;border-radius:12px;padding:8px 14px;
+    font-size:11.5px;color:var(--ink2);background:#191627}
+  .rd b{color:var(--warn)}
+  .legend{margin-top:12px;font-size:10.5px;color:#7d879c}
+</style>
+</head>
+<body>
+<h1>MIROPOLIS — architecture technique</h1>
+<div class="sub">Simulation projective d'une séance de l'Assemblée nationale · 100 % open data AN (Licence Ouverte) ·
+règle d'or : <b style="color:var(--ink)">si l'Assemblée a la donnée on la mesure, sinon on demande au modèle</b></div>
+
+<div class="flow">
+
+  <div class="col" style="--accent:var(--c1)">
+    <h2>① Sources — open data AN<small>6 datasets bruts, croisés par dossierRef / seanceRef / acteurRef</small></h2>
+    <div class="box"><b>Scrutins nominatifs</b><div class="d"><span class="n">7 966</span> votes, 577 députés, ventilation individuelle</div><div class="f">json/VTANR5L17V*.json</div></div>
+    <div class="box"><b>Comptes rendus de séance</b><div class="d"><span class="n">580</span> séances → <span class="n">71 500</span> interventions substantielles</div><div class="f">syseron XML → discours_par_depute.jsonl.gz</div></div>
+    <div class="box"><b>Amendements</b><div class="d"><span class="n">121 110</span> — auteur, cosignataires, date de dépôt</div><div class="f">Amendements.json.zip (lu in-zip)</div></div>
+    <div class="box"><b>Dossiers législatifs</b><div class="d"><span class="n">705</span> avec rapporteurs datés + commissions au fond</div><div class="f">Dossiers.json.zip</div></div>
+    <div class="box"><b>Réunions / agenda</b><div class="d"><span class="n">7 362</span> réunions : présences nominatives + ODJ par séance</div><div class="f">Agenda.json.zip</div></div>
+    <div class="box"><b>Fiches acteurs & organes</b><div class="d">577 députés, mandats datés (groupes, commissions)</div><div class="f">json 3/acteur, organe</div></div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="col" style="--accent:var(--c2)">
+    <h2>② Données dérivées<small>pipelines Python purs, reproductibles, tout est daté</small></h2>
+    <div class="box"><b>Profils comportementaux</b><div class="d">loyauté (méd. <span class="n">0.970</span>), dissidences par thème, abstention</div><div class="f">build_depute_profiles.py</div></div>
+    <div class="box"><b>Affinités inter-groupes</b><div class="d">2·P(même vote)−1 : RN↔UDR <span class="n">+0.80</span>, gauche⊣UDR <span class="n">−0.6</span></div><div class="f">build_group_affinities.py</div></div>
+    <div class="box"><b>Packs de voix</b><div class="d">verbatims par député × thème, cités (date + CR au JO)</div><div class="f">prompt_pack.py</div></div>
+    <div class="box"><b>Signaux de casting</b><div class="d">rapporteurs · amendeurs · membres/présences commission · historique du dossier en séance</div><div class="f">build_casting_signals.py + build_commission_signal.py</div></div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="col" style="--accent:var(--c3)">
+    <h2>③ Cerveau déterministe<small>aucun LLM — calculable, reproductible, backtesté</small></h2>
+    <div class="box"><b>Casting prédictif proportionnel</b><div class="d">qui parlera : 6 signaux datés · p@3 <span class="n">0.399</span> (plafond oracle 0.683) · recall orateurs <span class="n">0.49</span> ≈ 9× hasard</div><div class="f">predicted_casting() — seance.py</div></div>
+    <div class="box"><b>Ancres de vote</b><div class="d">position groupe × loyauté × dissidence thématique — <b>le LLM ne vote jamais</b></div><div class="f">agent.py · baseline à battre 0.519</div></div>
+    <div class="box"><b>Influence Friedkin-Johnsen signée</b><div class="d">λ = loyauté mesurée ; poids = affinités ; répulsion (boomerang) incluse</div><div class="f">agent.fj_update()</div></div>
+    <div class="box"><b>Tally & verdict</b><div class="d">vote = Σ probabilités individuelles · avant/après débat · « voix déplacées »</div><div class="f">simulate() — seance.py</div></div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="col" style="--accent:var(--c4)">
+    <h2>④ Couche agentique générative<small>le langage seulement — multi-modèles via API</small></h2>
+    <div class="box"><b>Orchestrateur</b><div class="d">grand modèle, temp 0.2, JSON strict : position des groupes <b>ancrée au prior</b> (écart à justifier) + résumé roulant (mémoire collective)</div><div class="f">openrouter_brain.py</div></div>
+    <div class="box"><b>577 agents-députés</b><div class="d">prompt assemblé des données : profil chiffré + 3 verbatims sourcés + ledger (mémoire indiv.) + réflexion privée → intervention · anti-consensus · zéro chiffre inventé</div><div class="f">pools ~30 modèles ∝ poids des groupes, affectation stable</div></div>
+    <div class="box"><b>Présidente & spontanéité</b><div class="d">« La parole est à… » · interjections ∝ hostilité mesurée (hash → rejouable)</div><div class="f">seance.py + models_map.json</div></div>
+    <div class="box"><b>Robustesse</b><div class="d">repli déterministe si l'API tombe — <b>la démo ne peut pas crasher</b></div><div class="f">retries + fallback priors</div></div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="col" style="--accent:var(--c5)">
+    <h2>⑤ Séance & démo<small>sorties vérifiables, visualisation immersive</small></h2>
+    <div class="box"><b>Run de séance</b><div class="d">rounds de débat → transcript + opinions + tally vs réel</div><div class="f">runs/seance_*.json</div></div>
+    <div class="box"><b>Hémicycle 3D</b><div class="d">577 sièges, orateurs qui se lèvent, arcs d'influence, vague de vote, verdict prédit vs réel — fichier autonome sans réseau</div><div class="f">front/demo.html (build_demo.py)</div></div>
+    <div class="box"><b>Mode backtest</b><div class="d">rejouer un scrutin réel jamais vu, modèle gelé à J-1, révélation du réel à la fin</div><div class="f">--scrutin VTANR5L17V…</div></div>
+    <div class="box"><b>Mode prospectif</b><div class="d">un texte INVENTÉ → séance complète (le produit)</div><div class="f">scrutin_fictif()</div></div>
+  </div>
+</div>
+
+<div class="band">
+  <div class="bandbox shield"><h3>⛨ Pare-feu temporel — transversal</h3>
+    <div class="items"><span>verbatims filtrés <b>date &lt; J</b></span><span>amendements : dépôt &lt; J</span><span>nominations rapporteurs datées</span><span>présences commission datées</span><span>mandats début/fin</span><span>priors : split temporel</span><span>= « le modèle ne sait rien du lendemain »</span></div></div>
+  <div class="bandbox proof"><h3>⚖ Validation — tout est backtesté</h3>
+    <div class="items"><span>casting : <b>0.106 → 0.399</b> (7 itérations, 101 séances test)</span><span>plafond oracle calculé : <b>0.683</b></span><span>baseline vote à battre : <b>0.519</b></span><span>culs-de-sac documentés (QAG, feuilleton)</span><span>scripts reproductibles : <b>pipeline/backtest_*.py</b></span></div></div>
+</div>
+
+<div class="rd">🔬 <b>Voie R&D (hors chemin démo, dans le repo)</b> — fine-tuning QLoRA Gemma-2-9B par groupe (training/) + personnalisation par activations SAE/Gemma Scope avec curseurs par député dérivés de leurs discours (steering/) : la thèse « différentes formes de pensée sur un même modèle », mise en pause à 13h de la deadline au profit du prompt engineering — architecture prête pour la suite.</div>
+
+<div class="legend">Miropolis · Hackathon Assemblée nationale 2026 « Le parcours de la loi : vers une IA de confiance » · données : data.assemblee-nationale.fr (Licence Ouverte)</div>
+</body>
+</html>
