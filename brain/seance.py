@@ -301,19 +301,31 @@ def simulate(brain, scrutin, agents, rounds=2, speakers_per_group=1, verbose=Tru
 
     transcript, summary = [], ""
     last_speakers = []
+    # CASTING PROPORTIONNEL : classement GLOBAL par score prédit (toutes
+    # couleurs mêlées) — les groupes mobilisés sur CE texte parlent plus,
+    # comme dans la vraie séance. Garde-fou théâtral : max 2 orateurs d'un
+    # même groupe par round. (validé : precision 0.44 / recall 0.45-0.51)
+    ranked = sorted(agents, key=lambda a: (
+        orateurs_reels.get(a.acteur, 0) * 1000
+        + speaker_score(a, scrutin.get("theme", "autre"), propension)
+    ), reverse=True)
+    deja_parle = set()
+    per_round = max(1, speakers_per_group) * len(groups)
     for r in range(rounds):
         heard, round_speakers = [], []
-        for g in groups:
-            members = [a for a in agents if a.groupe == g]
-            if not members:
+        par_groupe_ce_round = {}
+        round_cast = []
+        for a in ranked:
+            if len(round_cast) >= per_round:
+                break
+            if a.acteur in deja_parle or par_groupe_ce_round.get(a.groupe, 0) >= 2:
                 continue
-            # casting : les orateurs RÉELS de la séance d'abord (s'ils sont
-            # connus), sinon les spécialistes du thème (propension mesurée)
-            members.sort(key=lambda a: (
-                orateurs_reels.get(a.acteur, 0) * 1000
-                + speaker_score(a, scrutin.get("theme", "autre"), propension)
-            ), reverse=True)
-            for speaker in members[:speakers_per_group]:
+            round_cast.append(a)
+            par_groupe_ce_round[a.groupe] = par_groupe_ce_round.get(a.groupe, 0) + 1
+        for speaker in round_cast:
+            deja_parle.add(speaker.acteur)
+            g = speaker.groupe
+            if True:
                 ctx = speaker.context_block(summary, [t["texte"] for t in transcript[-3:]])
                 extra = ambient_cursors(speaker, last_speakers, affinites)
                 texte = brain.intervention(speaker, scrutin, ctx, extra_cursors=extra)
